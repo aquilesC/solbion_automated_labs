@@ -1,0 +1,93 @@
+{
+  "contact_page_specification": {
+    "page_settings": {
+      "page_title": "Solbion | Contact & Technical Integration Briefing",
+      "meta_description": "Connect with Solbion's AI and hardware engineers to establish your materials optimization loop. Request custom workcells, LaaS pilots, or Data Consortium access.",
+      "global_styles": {
+        "theme": "Dark Tech Industrial",
+        "colors": {
+          "background": "#12161A",
+          "text_primary": "#FFFFFF",
+          "accent_action": "#00F0FF",
+          "neutral_baseline": "#333F4A"
+        },
+        "typography": {
+          "headings": "Space Grotesk / Inter",
+          "body_and_data": "Roboto Mono / Fira Code"
+        }
+      }
+    },
+    "layout_structure": [
+      {
+        "section_id": "contact_hero",
+        "component_type": "HeroTechnical",
+        "content": {
+          "super_header": "ESTABLISH LINK",
+          "headline": "Initiate Active Learning Loop.",
+          "subheadline": "Our systems operate closed-loop optimization workflows 24/7. Connect your material goals to our automated physical engine. Queue your integration briefing below."
+        }
+      },
+      {
+        "section_id": "system_status_panel",
+        "component_type": "SidebarDetails",
+        "content": {
+          "node_title": "PHYSICAL INTERFACE",
+          "node_location": "Amsterdam Node (HQ)",
+          "node_coords": "52.3702° N, 4.8952° E",
+          "node_email": "telemetry@solbion.com",
+          "system_status_header": "TELEMETRY STATUS",
+          "status_logs": [
+            "ACTIVE ORCHESTRATION LAYER: NOMINAL",
+            "COMBINATORIAL SYNTHESIS MODULES: 8/8 ONLINE",
+            "INLINE METROLOGY BEAMS: SYNCHRONIZED",
+            "BAYESIAN OPTIMIZER LATENCY: 12ms",
+            "Consortium firehose buffer: nominal"
+          ]
+        }
+      },
+      {
+        "section_id": "integration_form",
+        "component_type": "FormspreeAjaxForm",
+        "content": {
+          "form_id": "xvzjyzdb",
+          "endpoint_url": "https://formspree.io/f/xvzjyzdb",
+          "fields": {
+            "name": {
+              "label": "IDENTIFIER (FULL NAME)",
+              "placeholder": "Enter full name / callsign"
+            },
+            "email": {
+              "label": "ENDPOINT (EMAIL ADDRESS)",
+              "placeholder": "e.g., name@organization.com"
+            },
+            "organization": {
+              "label": "DOMAIN (ORGANIZATION)",
+              "placeholder": "Company, university, or lab name"
+            },
+            "objective": {
+              "label": "OBJECTIVE VECTOR (PRIMARY INTEREST)",
+              "options": [
+                { "value": "", "label": "Select objective..." },
+                { "value": "hardware", "label": "1. System Integration (Custom Workcells & Hardware)" },
+                { "value": "laas", "label": "2. Lab-as-a-Service (High-Throughput Material Screening)" },
+                { "value": "data", "label": "3. Data Consortium (ML Telemetry & API Access)" },
+                { "value": "general", "label": "4. General Telemetry Query / Other" }
+              ]
+            },
+            "message": {
+              "label": "PAYLOAD SPECIFICATION (PROJECT PARAMETERS)",
+              "placeholder": "Outline your mechatronic requirements, target materials chemistry, performance bottlenecks, or research goals..."
+            }
+          },
+          "submit_label": "ESTABLISH LINK",
+          "success_message": {
+            "header": "LINK ESTABLISHED",
+            "subheader": "Payload transmitted successfully.",
+            "body": "Your integration briefing request has been queued in our active learning scheduler. A technical representative will establish a return channel shortly.",
+            "status_code": "HTTP 202 ACCEPTED // SESSION_INIT"
+          }
+        }
+      }
+    ]
+  }
+}

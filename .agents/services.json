@@ -1,0 +1,177 @@
+{
+  "services_page_specification": {
+    "page_settings": {
+      "page_title": "Solbion | Lab-as-a-Service (LaaS) for Materials R&D",
+      "meta_description": "Accelerate your product roadmap with Solbion's Lab-as-a-Service. Collapse 6-month sequential material screening campaigns into a two-week automated run.",
+      "global_styles": {
+        "theme": "Dark Tech Industrial",
+        "colors": {
+          "background": "#12161A",
+          "text_primary": "#FFFFFF",
+          "accent_action": "#00F0FF",
+          "neutral_baseline": "#333F4A"
+        },
+        "typography": {
+          "headings": "Space Grotesk / Inter",
+          "body_and_data": "Roboto Mono / Fira Code"
+        }
+      }
+    },
+    "layout_structure": [
+      {
+        "section_id": "global_navigation",
+        "component_type": "Navbar",
+        "layout": "Sticky top-bar, solid Carbon Black background.",
+        "content": {
+          "logo": {
+            "alt_text": "Solbion Lattice Matrix Icon",
+            "source_placeholder": "/assets/brand/logo-icon-only.svg"
+          },
+          "active_link": "Lab-as-a-Service"
+        }
+      },
+      {
+        "section_id": "services_hero",
+        "component_type": "HeroBusiness",
+        "layout": "Centered alignment, bold typography maximizing screen real estate. Background features a fast-moving, high-contrast data cascade.",
+        "content": {
+          "super_header": "LAB-AS-A-SERVICE (LAAS)",
+          "headline": "Outpace the Market.",
+          "subheadline": "Collapse a 6-month sequential screening campaign into a two-week automated run. We deliver the winning material and the negative space map.",
+          "primary_cta": {
+            "label": "Request a Pilot Proposal",
+            "url": "/contact?intent=laas_pilot",
+            "style": "Solid, Laser Cyan Fill, Large"
+          },
+          "secondary_cta": {
+            "label": "See How We Protect Your IP",
+            "url": "#split_ip_framework",
+            "style": "Text link with downward arrow"
+          }
+        }
+      },
+      {
+        "section_id": "value_proposition_metrics",
+        "component_type": "StatsGrid",
+        "layout": "Three-column grid showcasing hard ROI metrics and business value. Heavy numerical emphasis.",
+        "content": {
+          "section_tag": "R&D ACCELERATION",
+          "header": "De-Risking as a Service",
+          "metrics": [
+            {
+              "stat": "10x",
+              "label": "Speed-to-Data",
+              "description": "Skip the CapEx of building a wet lab or outfitting a cleanroom. Tap directly into our high-throughput automated workflow to screen hundreds of combinations per week."
+            },
+            {
+              "stat": "90%",
+              "label": "Cost Reduction per Formulation",
+              "description": "By eliminating manual human labor and parallelizing metrology, the unit cost of discovering and validating a new alloy or coating drops drastically."
+            },
+            {
+              "stat": "100%",
+              "label": "Negative Space Mapped",
+              "description": "Knowing what fails is just as valuable as knowing what succeeds. We provide a high-fidelity map of the boundaries of your chemical space to prevent future wasted R&D."
+            }
+          ]
+        }
+      },
+      {
+        "section_id": "split_ip_framework",
+        "component_type": "SplitIPDiagram",
+        "layout": "High-contrast dual-zone layout. Left side (Client Zone) highlighted in white/grey; Right side (Solbion Zone) highlighted with Laser Cyan accents.",
+        "content": {
+          "section_tag": "ASSET PROTECTION",
+          "header": "Complete Commercial Security",
+          "body": "When you engage our Lab-as-a-Service, you are buying a definitive commercial advantage. Our master service agreements utilize a strict Split-IP framework to ensure your product roadmap remains exclusively yours.",
+          "zones": [
+            {
+              "zone_name": "Your Foreground IP",
+              "ownership": "100% Client Owned",
+              "details": [
+                "The specific, optimized composition of matter (e.g., the exact ternary alloy ratio or barrier layer recipe).",
+                "Full patent rights to manufacture and commercialize the discovered material.",
+                "Exclusive access to the finalized material performance report."
+              ]
+            },
+            {
+              "zone_name": "Our Background IP",
+              "ownership": "Solbion Retained",
+              "details": [
+                "Anonymized machine telemetry and baseline process curves.",
+                "The 'negative space' failure data used to train our foundational models.",
+                "The active learning algorithms and digital twin software architectures used during the campaign."
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "section_id": "campaign_workflow",
+        "component_type": "HorizontalProcessFlow",
+        "layout": "Four-step horizontal pipeline with progressive Laser Cyan highlight states.",
+        "content": {
+          "section_tag": "THE PIPELINE",
+          "header": "From Hypothesis to IP in Weeks",
+          "steps": [
+            {
+              "step": "01. Parameter Definition",
+              "description": "We establish the chemical boundaries and the precise target metrics (e.g., thermal expansion, electrical conductivity, sub-5nm uniformity)."
+            },
+            {
+              "step": "02. High-Throughput Screening",
+              "description": "Our automated platform executes rapid combinatorial spreads, synthesizing up to 500 physical variations per week."
+            },
+            {
+              "step": "03. Active Optimization",
+              "description": "Closed-loop metrology feeds data back to the AI, which autonomously narrows the search field to zero in on the top 5% of candidates."
+            },
+            {
+              "step": "04. Data Handoff",
+              "description": "You receive the physical recipe for the winning candidate and a machine-readable JSON dataset mapping the entire campaign for your internal ML teams."
+            }
+          ]
+        }
+      },
+      {
+        "section_id": "closing_call_to_action",
+        "component_type": "CenteredFocusBox",
+        "layout": "Solid Steel Grey block container inside Carbon Black viewport. Sharp, executive-level messaging.",
+        "content": {
+          "header": "Your product roadmap cannot wait.",
+          "body": "Whether you are a deep tech spinout scaling up a prototype or an enterprise foundry battling Moore's Law, speed is your only defensible moat. Schedule a technical scoping session today.",
+          "button": {
+            "label": "Book a Scoping Session",
+            "url": "/contact",
+            "style": "Solid, Laser Cyan Fill, Centered"
+          }
+        }
+      },
+      {
+        "section_id": "global_footer",
+        "component_type": "FooterMatrix",
+        "layout": "Minimalist four-column footer.",
+        "content": {
+          "copyright": "© 2026 Solbion. All rights reserved. Operating open-architecture materials acceleration platforms from Amsterdam.",
+          "columns": [
+            {
+              "title": "Platform",
+              "links": [
+                { "label": "System Integration", "url": "/hardware" },
+                { "label": "Lab-as-a-Service", "url": "/services" },
+                { "label": "Data Consortium", "url": "/data" }
+              ]
+            },
+            {
+              "title": "Company",
+              "links": [
+                { "label": "About Us", "url": "/about" },
+                { "label": "Contact", "url": "/contact" }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

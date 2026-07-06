@@ -1,0 +1,158 @@
+{
+  "hardware_page_specification": {
+    "page_settings": {
+      "page_title": "Solbion | System Integration & Open Hardware",
+      "meta_description": "Break free from vendor lock-in. Solbion retrofits legacy vacuum chambers and synthesis tools with open-architecture robotics and Python-driven middleware to create autonomous laboratories.",
+      "global_styles": {
+        "theme": "Dark Tech Industrial",
+        "colors": {
+          "background": "#12161A",
+          "text_primary": "#FFFFFF",
+          "accent_action": "#00F0FF",
+          "neutral_baseline": "#333F4A"
+        },
+        "typography": {
+          "headings": "Space Grotesk / Inter",
+          "body_and_code": "Roboto Mono / Fira Code"
+        }
+      }
+    },
+    "layout_structure": [
+      {
+        "section_id": "global_navigation",
+        "component_type": "Navbar",
+        "layout": "Sticky top-bar, Carbon Black background.",
+        "content": {
+          "logo": {
+            "alt_text": "Solbion Lattice Matrix Icon",
+            "source_placeholder": "/assets/brand/logo-icon-only.svg"
+          },
+          "active_link": "System Integration"
+        }
+      },
+      {
+        "section_id": "hardware_hero",
+        "component_type": "HeroTechnical",
+        "layout": "Left-aligned heavy typography with right-aligned wireframe animation of a vacuum chamber being digitized.",
+        "content": {
+          "super_header": "SYSTEM INTEGRATION SERVICES",
+          "headline": "Break the Black Box.",
+          "subheadline": "Don't buy a closed-source million-euro tool. Let us turn your existing vacuum chambers and legacy deposition hardware into a programmable, autonomous laboratory.",
+          "primary_cta": {
+            "label": "Schedule an Integration Audit",
+            "url": "/contact?intent=hardware",
+            "style": "Solid, Laser Cyan Fill"
+          },
+          "secondary_cta": {
+            "label": "View Architecture",
+            "url": "#digital_twin_architecture",
+            "style": "Text link with chevron arrow"
+          }
+        }
+      },
+      {
+        "section_id": "the_problem_lock_in",
+        "component_type": "TwoColumnText",
+        "layout": "High-contrast section. Left side defines the legacy problem; right side defines the open-architecture solution.",
+        "content": {
+          "left_column": {
+            "heading": "The Proprietary Trap",
+            "body": "Legacy hardware OEMs build exceptional vacuum components but trap you in rigid, proprietary PLC (Programmable Logic Controller) architectures. They are designed for human operators to run static recipes, not for dynamic AI orchestration. If you cannot programmatically command your mass flow controllers or read real-time metrology via an open API, you cannot run active learning loops."
+          },
+          "right_column": {
+            "heading": "The Open-Architecture Imperative",
+            "body": "Solbion champions an open-hardware ecosystem. We bypass proprietary software limitations by retrofitting your existing PVD, ALD, or Spark Ablation tools with custom mechatronics. We expose every valve, sensor, and motor to a unified, Python-based middleware layer, bridging the physical world with modern computational materials science."
+          }
+        }
+      },
+      {
+        "section_id": "digital_twin_architecture",
+        "component_type": "InteractiveBlockDiagram",
+        "layout": "Full-width technical diagram section. Users can hover over different layers (Physical, Edge, Middleware, Application) to see data flow.",
+        "content": {
+          "section_tag": "ORCHESTRATION LAYER",
+          "header": "Building the Digital Twin",
+          "diagram_layers": [
+            {
+              "layer": "1. Physical Hardware",
+              "components": [
+                "UHV Chamber",
+                "Mass Flow Controllers (MFCs)",
+                "In-Vacuum Stepper Motors (Mask/Substrate positioning)",
+                "Inline Metrology (e.g., SMPS, Ellipsometry)"
+              ],
+              "description": "The raw synthesis and characterization layer. We utilize commoditized or existing facility hardware to minimize CapEx."
+            },
+            {
+              "layer": "2. Edge Control & Mechatronics",
+              "components": [
+                "Open-Source Microcontrollers (Arduino/Teensy)",
+                "Analog-to-Digital Converters (ADCs)",
+                "Solenoid Valve Relays"
+              ],
+              "description": "We replace or parallel-wire proprietary PLCs with high-frequency, open-source edge controllers that act as translators for physical signals."
+            },
+            {
+              "layer": "3. The Solbion Middleware",
+              "components": [
+                "Python-based Equipment APIs",
+                "REST/gRPC communication protocols",
+                "Unified Telemetry Database (SQLite/PostgreSQL)"
+              ],
+              "description": "A centralized daemon that creates a 'Digital Twin' of the hardware. It synchronizes substrate movement with precise gas dosing and logs every environmental variable."
+            },
+            {
+              "layer": "4. Active Learning Engine",
+              "components": [
+                "Bayesian Optimization Algorithms",
+                "Cloud Compute / ML Models"
+              ],
+              "description": "The 'Brain'. It reads the metrology data from Layer 3, predicts the optimal next experiment, and commands the Middleware to execute the run autonomously."
+            }
+          ]
+        }
+      },
+      {
+        "section_id": "integration_process",
+        "component_type": "VerticalTimeline",
+        "layout": "Centered timeline detailing the deployment phases of a custom automated workcell.",
+        "content": {
+          "section_tag": "DEPLOYMENT",
+          "header": "How We Upgrade Your Lab",
+          "steps": [
+            {
+              "phase": "Phase 1: Hardware & API Audit",
+              "description": "We assess your existing tools (or spec used equipment for procurement). We map out the required I/O interfaces, UHV stepper motor integration for combinatorial masks, and metrology feedback loops."
+            },
+            {
+              "phase": "Phase 2: Mechatronic Retrofit",
+              "description": "Our engineering team installs the edge control layer, bypassing rigid PLCs and bringing all mass flow controllers, power supplies, and sensors into a unified digital network."
+            },
+            {
+              "phase": "Phase 3: Middleware Deployment",
+              "description": "We deploy the Solbion Python orchestrator locally. Your machine is now a node on a network, addressable via simple code commands."
+            },
+            {
+              "phase": "Phase 4: Handoff & ML Integration",
+              "description": "We hand over the API documentation. Your computational scientists can immediately begin running continuous, closed-loop discovery campaigns using their preferred ML frameworks."
+            }
+          ]
+        }
+      },
+      {
+        "section_id": "closing_call_to_action",
+        "component_type": "CenteredFocusBox",
+        "layout": "Solid Steel Grey block container inside Carbon Black viewport. Data-heavy aesthetic.",
+        "content": {
+          "header": "Take command of your hardware.",
+          "body": "Stop adapting your R&D to the limitations of proprietary software. Let us build the middleware that sets your discovery loops free.",
+          "button": {
+            "label": "Request an Integration Audit",
+            "url": "/contact",
+            "style": "Solid, Laser Cyan Fill, Centered"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,316 @@
+{% extends "base.html" %}
+{% set active_page = "Data Consortium" %}
+
+{% block title %}{{ DATA_SPEC.page_settings.page_title or super() }}{% endblock %}
+{% block description %}{{ DATA_SPEC.page_settings.meta_description or super() }}{% endblock %}
+
+{% block content %}
+<!-- Data Hero Section -->
+<section class="max-w-7xl mx-auto px-6 py-16 md:py-28 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <!-- Left: Technical Copy -->
+    <div class="lg:col-span-7 flex flex-col items-start text-left">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4">
+            {{ DATA_SECTIONS.data_hero.content.super_header }}
+        </span>
+        <h1 class="font-headers text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] uppercase text-text-primary mb-6 drop-shadow-[0_0_15px_var(--color-accent-dim)]">
+            {{ DATA_SECTIONS.data_hero.content.headline }}
+        </h1>
+        <p class="font-mono text-sm md:text-base text-text-muted leading-relaxed mb-8 max-w-2xl">
+            {{ DATA_SECTIONS.data_hero.content.subheadline }}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            {% if DATA_SECTIONS.data_hero.content.primary_cta %}
+            <a href="{{ DATA_SECTIONS.data_hero.content.primary_cta.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-bg font-headers text-sm font-semibold uppercase tracking-wider rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_20px_var(--color-accent-glow)] transition-all duration-300">
+                {{ DATA_SECTIONS.data_hero.content.primary_cta.label }}
+            </a>
+            {% endif %}
+            {% if DATA_SECTIONS.data_hero.content.secondary_cta %}
+            <a href="{{ DATA_SECTIONS.data_hero.content.secondary_cta.url }}" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-transparent text-text-primary font-headers text-sm font-semibold uppercase tracking-wider rounded border border-baseline hover:border-accent hover:text-accent transition-all duration-300 group/link">
+                {{ DATA_SECTIONS.data_hero.content.secondary_cta.label }}
+                <svg class="w-4 h-4 transform transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    
+    <!-- Right: Scrolling Terminal Simulator -->
+    <div class="lg:col-span-5 flex justify-center items-center">
+        <div class="w-full max-w-[440px] border border-baseline/30 bg-bg-alt/50 rounded flex flex-col items-stretch overflow-hidden relative shadow-2xl">
+            <!-- Terminal Header -->
+            <div class="bg-[#0b0e11] px-4 py-3 flex justify-between items-center border-b border-baseline/20">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
+                </div>
+                <span class="font-mono text-[10px] text-text-muted">consortium_firehose_stream.py</span>
+                <span class="w-2 h-2 rounded-full bg-accent animate-ping shadow-[0_0_6px_#00F0FF]"></span>
+            </div>
+            
+            <!-- Terminal Body -->
+            <div class="p-4 bg-[#0d1115] font-mono text-[10px] leading-relaxed flex flex-col gap-1 min-h-[250px] max-h-[250px] overflow-y-auto" id="live-terminal-log">
+                <div class="text-text-muted">[SYSTEM] Connecting to stream: wss://stream.solbion.com/v1/telemetry...</div>
+                <div class="text-accent">[SYSTEM] Stream established. Streaming live synthesis records.</div>
+                <div class="text-text-muted">[RECORD] id: run_9024 | type: spark_ablation | status: FAILURE_OVERHEATED</div>
+                <div class="text-text-muted">[RECORD] id: run_9025 | type: magnetron_sputter | status: SUCCESS_NOMINAL</div>
+            </div>
+            
+            <!-- Terminal Status -->
+            <div class="bg-[#0b0e11] px-4 py-2 border-t border-baseline/20 flex justify-between items-center font-mono text-[9px] text-text-muted">
+                <span>BUFFER: NOMINAL</span>
+                <span class="text-accent">24.2 EPS (EVENTS/SEC)</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Built for ML / Feature Grid -->
+<section id="core_advantages" class="max-w-7xl mx-auto px-6 py-24 border-t border-baseline/20">
+    <div class="mb-16 text-center lg:text-left">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3">
+            {{ DATA_SECTIONS.core_advantages.content.section_tag }}
+        </span>
+        <h2 class="font-headers text-3xl font-bold tracking-tight uppercase text-text-primary">
+            {{ DATA_SECTIONS.core_advantages.content.header }}
+        </h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {% if DATA_SECTIONS.core_advantages.content.features %}
+            {% for ft in DATA_SECTIONS.core_advantages.content.features %}
+                <div class="border border-baseline/30 bg-bg-alt/30 p-8 rounded flex flex-col items-start transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_15px_var(--color-accent-dim)] group relative">
+                    <!-- Icon placeholder visual -->
+                    <div class="w-8 h-8 rounded border border-baseline/30 flex items-center justify-center mb-6 group-hover:border-accent/50 group-hover:bg-accent/5 transition-all duration-300">
+                        {% if ft.icon == "Database" %}
+                            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                                <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+                            </svg>
+                        {% elif ft.icon == "AlertTriangle" %}
+                            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                            </svg>
+                        {% else %}
+                            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        {% endif %}
+                    </div>
+                    
+                    <h3 class="font-headers text-base font-bold uppercase text-text-primary mb-3">
+                        {{ ft.title }}
+                    </h3>
+                    <p class="font-mono text-xs text-text-muted leading-relaxed">
+                        {{ ft.description }}
+                    </p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</section>
+
+<!-- Schema Explorer / Interactive Code Block -->
+<section id="schema_explorer" class="w-full bg-bg-alt/40 py-24 border-y border-baseline/20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="mb-12 text-center lg:text-left">
+            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3">
+                {{ DATA_SECTIONS.schema_explorer.content.section_tag }}
+            </span>
+            <h2 class="font-headers text-3xl font-bold tracking-tight uppercase text-text-primary mb-4">
+                {{ DATA_SECTIONS.schema_explorer.content.header }}
+            </h2>
+            <p class="font-mono text-sm text-text-muted leading-relaxed max-w-3xl">
+                {{ DATA_SECTIONS.schema_explorer.content.body }}
+            </p>
+        </div>
+        
+        <!-- IDE Mockup -->
+        <div class="max-w-4xl mx-auto border border-baseline/30 bg-[#0d1115] rounded-lg overflow-hidden shadow-2xl">
+            <!-- IDE Tabs -->
+            <div class="bg-[#080b0e] border-b border-baseline/20 flex px-4">
+                <button class="px-5 py-3 font-mono text-xs font-bold uppercase border-b-2 border-accent text-accent focus:outline-none ide-tab-btn" data-tab-target="payload-tab">
+                    JSON Payload
+                </button>
+                <button class="px-5 py-3 font-mono text-xs font-bold uppercase border-b-2 border-transparent text-text-muted hover:text-text-primary focus:outline-none ide-tab-btn" data-tab-target="endpoint-tab">
+                    API Endpoint
+                </button>
+            </div>
+            
+            <!-- IDE Editor -->
+            <div class="p-6 overflow-x-auto min-h-[360px] font-mono text-xs leading-relaxed text-[#f8f8f2]">
+                <!-- Payload Tab -->
+                <div id="payload-tab" class="ide-tab-content">
+                    <pre class="text-[#f1fa8c]"><code class="language-json">{{ DATA_SECTIONS.schema_explorer.content.code_snippet.code }}</code></pre>
+                </div>
+                
+                <!-- Endpoint Tab -->
+                <div id="endpoint-tab" class="ide-tab-content hidden">
+                    <div class="flex flex-col gap-4 text-text-muted">
+                        <div>
+                            <span class="text-accent font-bold">GET</span> <span class="text-text-primary">https://api.solbion.com/v1/experiments/run_7894_bimetallic_cu_ni</span>
+                        </div>
+                        <div class="border-t border-baseline/20 pt-4 flex flex-col gap-1">
+                            <span class="text-accent font-bold">// HEADERS</span>
+                            <span>Authorization: Bearer sb_live_key_5d29_4e1e_87b4_bf85be34ecc4</span>
+                            <span>Accept: application/json</span>
+                        </div>
+                        <div class="border-t border-baseline/20 pt-4 flex flex-col gap-1">
+                            <span class="text-accent font-bold">// RESPONSE CODE</span>
+                            <span class="text-green-400">200 OK (application/json)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Subscription Tiers (subscription_tiers) -->
+<section id="subscription_tiers" class="max-w-7xl mx-auto px-6 py-24">
+    <div class="mb-16 text-center">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3">
+            {{ DATA_SECTIONS.subscription_tiers.content.section_tag }}
+        </span>
+        <h2 class="font-headers text-3xl font-bold tracking-tight uppercase text-text-primary">
+            {{ DATA_SECTIONS.subscription_tiers.content.header }}
+        </h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+        {% if DATA_SECTIONS.subscription_tiers.content.tiers %}
+            {% for tier in DATA_SECTIONS.subscription_tiers.content.tiers %}
+                {% set is_enterprise = loop.index == 2 %}
+                <div class="border {% if is_enterprise %}border-accent bg-bg-alt/40 shadow-[0_0_20px_var(--color-accent-dim)]{% else %}border-baseline bg-bg-alt/20{% endif %} p-8 rounded flex flex-col justify-between items-stretch transition-all duration-300 hover:scale-[1.01]">
+                    <div class="w-full">
+                        <div class="flex justify-between items-center pb-4 border-b {% if is_enterprise %}border-accent{% else %}border-baseline{% endif %} mb-6">
+                            <div>
+                                <h3 class="font-headers text-lg font-bold uppercase {% if is_enterprise %}text-accent{% else %}text-text-primary{% endif %}">
+                                    {{ tier.name }}
+                                </h3>
+                                <span class="font-mono text-[10px] text-text-muted">{{ tier.target }}</span>
+                            </div>
+                            <span class="font-mono text-[9px] uppercase {% if is_enterprise %}text-accent{% else %}text-baseline{% endif %}">
+                                {% if is_enterprise %}ENTERPRISE{% else %}STARTUP/ACADEMIC{% endif %}
+                            </span>
+                        </div>
+                        
+                        <ul class="flex flex-col gap-3 mb-8">
+                            {% for feature in tier.features %}
+                                <li class="flex gap-2 items-start text-xs font-mono text-text-muted">
+                                    <svg class="w-4 h-4 {% if is_enterprise %}text-accent{% else %}text-text-primary{% endif %} flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>{{ feature }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    
+                    <a href="/contact?intent={% if is_enterprise %}enterprise_data{% else %}startup_data{% endif %}" class="inline-flex items-center justify-center px-8 py-3 w-full font-headers text-xs font-bold uppercase tracking-wider rounded border {% if is_enterprise %}bg-accent border-accent text-bg hover:bg-transparent hover:text-accent hover:shadow-[0_0_15px_var(--color-accent-glow)]{% else %}bg-transparent border-baseline text-text-primary hover:border-accent hover:text-accent{% endif %} transition-all duration-300">
+                        {{ tier.cta }}
+                    </a>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</section>
+
+<!-- Centered Focus Box (closing_call_to_action) -->
+<section id="closing_call_to_action" class="max-w-7xl mx-auto px-6 py-24">
+    {% if DATA_SECTIONS.closing_call_to_action %}
+        <div class="relative border border-baseline/40 bg-bg-alt/60 p-10 md:p-16 rounded text-center flex flex-col items-center max-w-4xl mx-auto overflow-hidden group hover:border-accent/40 transition-colors duration-300">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-baseline)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+            
+            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4 z-10">INITIATE API ACCESS</span>
+            <h2 class="font-headers text-3xl md:text-4xl font-bold tracking-tight uppercase text-text-primary mb-4 z-10">
+                {{ DATA_SECTIONS.closing_call_to_action.content.header }}
+            </h2>
+            <p class="font-mono text-sm text-text-muted leading-relaxed mb-8 max-w-xl z-10">
+                {{ DATA_SECTIONS.closing_call_to_action.content.body }}
+            </p>
+            {% if DATA_SECTIONS.closing_call_to_action.content.button %}
+                <a href="{{ DATA_SECTIONS.closing_call_to_action.content.button.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-bg font-headers text-sm font-semibold uppercase tracking-wider rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_25px_var(--color-accent-glow)] transition-all duration-300 z-10">
+                    {{ DATA_SECTIONS.closing_call_to_action.content.button.label }}
+                </a>
+            {% endif %}
+        </div>
+    {% endif %}
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Live Scrolling Terminal Log Simulator
+    const terminal = document.getElementById('live-terminal-log');
+    
+    // Live synthesis metrics variables to simulate real experimental flows
+    const runsList = [
+        { id: 9026, type: "atomic_layer_deposition", status: "SUCCESS_NOMINAL", details: "Thickness=4.8nm, Uniformity=99.2%" },
+        { id: 9027, type: "spark_ablation", status: "FAILURE_ELECTRODE_WEAR", details: "Wear threshold exceeded on node_02" },
+        { id: 9028, type: "magnetron_sputter", status: "SUCCESS_NOMINAL", details: "CuNi alloy, ratio 60:40 +/- 0.5%" },
+        { id: 9029, type: "plasma_pvd", status: "FAILURE_PRESSURE_SPIKE", details: "Spike at 42s: 1.8e-2 mbar (Limit 1.0e-2)" },
+        { id: 9030, type: "atomic_layer_deposition", status: "SUCCESS_NOMINAL", details: "TiO2 layer, sub-5nm target reached" },
+        { id: 9031, type: "spark_ablation", status: "SUCCESS_NOMINAL", details: "Au nanoparticles size: 2.3nm +/- 0.4nm" },
+        { id: 9032, type: "magnetron_sputter", status: "FAILURE_OUT_OF_BOUNDS", details: "Conductivity below 4.2 MS/m" },
+    ];
+    
+    let logCounter = 0;
+    
+    function appendLog() {
+        if (!terminal) return;
+        
+        const run = runsList[logCounter % runsList.length];
+        logCounter++;
+        
+        const timeStr = new Date().toISOString().substring(11, 19);
+        
+        // Log entry representing telemetry values
+        const logLine = document.createElement('div');
+        const isSuccess = run.status.startsWith('SUCCESS');
+        
+        logLine.innerHTML = `
+            <span class="text-text-muted">[${timeStr}]</span> 
+            <span class="text-[#8B9BB0]">id: run_${run.id}</span> 
+            <span class="text-[#FFFFFF]">[${run.type}]</span> 
+            <span class="${isSuccess ? 'text-accent' : 'text-red-400'}">${run.status}</span> 
+            <span class="text-text-muted">(${run.details})</span>
+        `;
+        
+        terminal.appendChild(logLine);
+        
+        // Keep terminal scrolled to the bottom
+        terminal.scrollTop = terminal.scrollHeight;
+    }
+    
+    // Append a log line every 1.5 seconds
+    setInterval(appendLog, 1500);
+
+    // IDE Tab switching logic
+    const tabButtons = document.querySelectorAll('.ide-tab-btn');
+    const tabContents = document.querySelectorAll('.ide-tab-content');
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-tab-target');
+            
+            tabButtons.forEach(b => {
+                b.classList.remove('border-accent', 'text-accent');
+                b.classList.add('border-transparent', 'text-text-muted');
+            });
+            btn.classList.add('border-accent', 'text-accent');
+            btn.classList.remove('border-transparent', 'text-text-muted');
+            
+            tabContents.forEach(content => {
+                if (content.id === target) {
+                    content.classList.remove('hidden');
+                } else {
+                    content.classList.add('hidden');
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

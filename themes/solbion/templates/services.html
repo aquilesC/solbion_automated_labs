@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+{% set active_page = "Lab-as-a-Service" %}
+
+{% block title %}{{ SERVICES_SPEC.page_settings.page_title or super() }}{% endblock %}
+{% block description %}{{ SERVICES_SPEC.page_settings.meta_description or super() }}{% endblock %}
+
+{% block content %}
+<style>
+    @keyframes slide-down-data {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+    }
+    .data-stream-col {
+        writing-mode: vertical-rl;
+        text-orientation: monospace;
+    }
+</style>
+
+<!-- Services Hero Section -->
+<section class="relative w-full overflow-hidden border-b border-baseline/30 py-24 md:py-36 flex flex-col items-center justify-center text-center bg-bg">
+    <!-- Moving Data Cascade Background -->
+    <div class="absolute inset-0 opacity-15 font-mono text-[9px] pointer-events-none select-none flex justify-between px-10">
+        <div class="data-stream-col text-accent animate-[slide-down-data_8s_linear_infinite]">010101010010111010101001010101110100101010</div>
+        <div class="data-stream-col text-accent animate-[slide-down-data_14s_linear_infinite_2s]">10011001100110011001100110011001100110011001</div>
+        <div class="data-stream-col text-accent animate-[slide-down-data_10s_linear_infinite_0.5s]">00110011001100110011001100110011001100110011</div>
+        <div class="data-stream-col text-accent animate-[slide-down-data_18s_linear_infinite_4s]">111000111000111000111000111000111000111000111000</div>
+        <div class="data-stream-col text-accent animate-[slide-down-data_12s_linear_infinite_1s]">0100101010011101011010011010101011101010100101</div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
+        <span class="font-mono text-xs font-semibold tracking-[0.22em] text-accent uppercase mb-4">
+            {{ SERVICES_SECTIONS.services_hero.content.super_header }}
+        </span>
+        <h1 class="font-headers text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight uppercase text-text-primary mb-6 leading-tight drop-shadow-[0_0_20px_var(--color-accent-dim)]">
+            {{ SERVICES_SECTIONS.services_hero.content.headline }}
+        </h1>
+        <p class="font-mono text-sm md:text-base text-text-muted leading-relaxed mb-10 max-w-2xl">
+            {{ SERVICES_SECTIONS.services_hero.content.subheadline }}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
+            {% if SERVICES_SECTIONS.services_hero.content.primary_cta %}
+            <a href="{{ SERVICES_SECTIONS.services_hero.content.primary_cta.url }}" class="inline-flex items-center justify-center px-10 py-4 bg-accent text-bg font-headers text-sm font-bold uppercase tracking-wider rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_25px_var(--color-accent-glow)] transition-all duration-300">
+                {{ SERVICES_SECTIONS.services_hero.content.primary_cta.label }}
+            </a>
+            {% endif %}
+            {% if SERVICES_SECTIONS.services_hero.content.secondary_cta %}
+            <a href="{{ SERVICES_SECTIONS.services_hero.content.secondary_cta.url }}" class="inline-flex items-center justify-center gap-2 font-headers text-xs font-bold uppercase tracking-wider text-text-primary hover:text-accent transition-colors duration-300 group/down mt-2 sm:mt-0">
+                {{ SERVICES_SECTIONS.services_hero.content.secondary_cta.label }}
+                <svg class="w-4 h-4 transform transition-transform duration-300 group-hover/down:translate-y-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Stats Grid / Value Proposition -->
+<section id="value_proposition_metrics" class="max-w-7xl mx-auto px-6 py-24">
+    <div class="mb-16 text-center lg:text-left">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3">
+            {{ SERVICES_SECTIONS.value_proposition_metrics.content.section_tag }}
+        </span>
+        <h2 class="font-headers text-3xl font-bold tracking-tight uppercase text-text-primary">
+            {{ SERVICES_SECTIONS.value_proposition_metrics.content.header }}
+        </h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {% if SERVICES_SECTIONS.value_proposition_metrics.content.metrics %}
+            {% for metric in SERVICES_SECTIONS.value_proposition_metrics.content.metrics %}
+                <div class="border border-baseline/30 bg-bg-alt/30 p-8 rounded flex flex-col justify-between items-start transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_15px_var(--color-accent-dim)] group">
+                    <div class="w-full">
+                        <span class="font-headers text-4xl lg:text-6xl font-extrabold text-accent block mb-2 tracking-tighter drop-shadow-[0_0_10px_var(--color-accent-dim)]">
+                            {{ metric.stat }}
+                        </span>
+                        <h3 class="font-headers text-base font-bold uppercase text-text-primary mb-4">
+                            {{ metric.label }}
+                        </h3>
+                        <p class="font-mono text-xs text-text-muted leading-relaxed">
+                            {{ metric.description }}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</section>
+
+<!-- Split IP Framework (split_ip_framework) -->
+<section id="split_ip_framework" class="w-full bg-bg-alt/40 py-24 border-y border-baseline/20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="mb-16 text-center max-w-3xl mx-auto">
+            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3">
+                {{ SERVICES_SECTIONS.split_ip_framework.content.section_tag }}
+            </span>
+            <h2 class="font-headers text-3xl font-bold tracking-tight uppercase text-text-primary mb-4">
+                {{ SERVICES_SECTIONS.split_ip_framework.content.header }}
+            </h2>
+            <p class="font-mono text-sm text-text-muted leading-relaxed">
+                {{ SERVICES_SECTIONS.split_ip_framework.content.body }}
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
+            {% if SERVICES_SECTIONS.split_ip_framework.content.zones %}
+                <!-- Zone 1: Foreground IP (Client Zone - White/Grey styling) -->
+                {% set zone1 = SERVICES_SECTIONS.split_ip_framework.content.zones[0] %}
+                <div class="border border-baseline bg-bg-alt/60 p-8 rounded flex flex-col justify-between items-start transition-transform duration-300 hover:scale-[1.01] hover:shadow-[0_4px_20px_rgba(255,255,255,0.05)]">
+                    <div class="w-full">
+                        <div class="flex justify-between items-center pb-4 border-b border-baseline mb-6">
+                            <h3 class="font-headers text-lg font-bold uppercase text-text-primary">
+                                {{ zone1.zone_name }}
+                            </h3>
+                            <span class="font-mono text-[10px] bg-text-primary text-bg px-2.5 py-0.5 rounded font-bold uppercase tracking-wider">
+                                {{ zone1.ownership }}
+                            </span>
+                        </div>
+                        <ul class="flex flex-col gap-4">
+                            {% for item in zone1.details %}
+                                <li class="flex gap-3 items-start">
+                                    <svg class="w-4 h-4 text-text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span class="font-mono text-xs text-text-muted leading-relaxed">{{ item }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Zone 2: Background IP (Solbion Zone - Cyan styling) -->
+                {% set zone2 = SERVICES_SECTIONS.split_ip_framework.content.zones[1] %}
+                <div class="border border-accent bg-bg-alt/60 p-8 rounded flex flex-col justify-between items-start transition-transform duration-300 hover:scale-[1.01] hover:shadow-[0_0_20px_var(--color-accent-dim)]">
+                    <div class="w-full">
+                        <div class="flex justify-between items-center pb-4 border-b border-accent mb-6">
+                            <h3 class="font-headers text-lg font-bold uppercase text-accent">
+                                {{ zone2.zone_name }}
+                            </h3>
+                            <span class="font-mono text-[10px] bg-accent text-bg px-2.5 py-0.5 rounded font-bold uppercase tracking-wider">
+                                {{ zone2.ownership }}
+                            </span>
+                        </div>
+                        <ul class="flex flex-col gap-4">
+                            {% for item in zone2.details %}
+                                <li class="flex gap-3 items-start">
+                                    <svg class="w-4 h-4 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span class="font-mono text-xs text-text-muted leading-relaxed">{{ item }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Campaign Workflow (campaign_workflow) -->
+<section id="campaign_workflow" class="max-w-7xl mx-auto px-6 py-24">
+    <div class="mb-16 text-center">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3">
+            {{ SERVICES_SECTIONS.campaign_workflow.content.section_tag }}
+        </span>
+        <h2 class="font-headers text-3xl font-bold tracking-tight uppercase text-text-primary">
+            {{ SERVICES_SECTIONS.campaign_workflow.content.header }}
+        </h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {% if SERVICES_SECTIONS.campaign_workflow.content.steps %}
+            {% for step in SERVICES_SECTIONS.campaign_workflow.content.steps %}
+                <div class="border border-baseline/30 bg-bg-alt/30 p-6 rounded flex flex-col justify-between items-start transition-all duration-300 hover:border-accent/40 group relative">
+                    <div class="w-full">
+                        <span class="font-mono text-xs font-bold text-accent tracking-widest block mb-4">
+                            {{ step.step.split('.')[0] }}
+                        </span>
+                        <h3 class="font-headers text-base font-bold uppercase text-text-primary mb-3">
+                            {{ step.step.split('.')[1] or step.step }}
+                        </h3>
+                        <p class="font-mono text-xs text-text-muted leading-relaxed">
+                            {{ step.description }}
+                        </p>
+                    </div>
+                    <!-- Decorative progress line connection helper -->
+                    {% if not loop.last %}
+                        <div class="hidden lg:block absolute top-1/2 -right-[15px] w-[30px] h-[1px] bg-baseline/30 z-10"></div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</section>
+
+<!-- Centered Focus Box (closing_call_to_action) -->
+<section id="closing_call_to_action" class="max-w-7xl mx-auto px-6 py-24">
+    {% if SERVICES_SECTIONS.closing_call_to_action %}
+        <div class="relative border border-baseline/40 bg-bg-alt/60 p-10 md:p-16 rounded text-center flex flex-col items-center max-w-4xl mx-auto overflow-hidden group hover:border-accent/40 transition-colors duration-300">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-baseline)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+            
+            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4 z-10">INITIATE DISCOVERY RUN</span>
+            <h2 class="font-headers text-3xl md:text-4xl font-bold tracking-tight uppercase text-text-primary mb-4 z-10">
+                {{ SERVICES_SECTIONS.closing_call_to_action.content.header }}
+            </h2>
+            <p class="font-mono text-sm text-text-muted leading-relaxed mb-8 max-w-xl z-10">
+                {{ SERVICES_SECTIONS.closing_call_to_action.content.body }}
+            </p>
+            {% if SERVICES_SECTIONS.closing_call_to_action.content.button %}
+                <a href="{{ SERVICES_SECTIONS.closing_call_to_action.content.button.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-bg font-headers text-sm font-semibold uppercase tracking-wider rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_25px_var(--color-accent-glow)] transition-all duration-300 z-10">
+                    {{ SERVICES_SECTIONS.closing_call_to_action.content.button.label }}
+                </a>
+            {% endif %}
+        </div>
+    {% endif %}
+</section>
+{% endblock %}

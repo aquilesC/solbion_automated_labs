@@ -56,7 +56,7 @@
                             {% if SECTIONS.global_navigation %}
                                 {% for link in SECTIONS.global_navigation.content.nav_links %}
                                     <li>
-                                        <a href="{{ SITEURL }}{{ link.url }}" class="font-headers text-xs font-semibold uppercase tracking-wider text-text-muted hover:text-accent hover:drop-shadow-[0_0_6px_var(--color-accent-glow)] transition-all duration-200">
+                                        <a href="{{ SITEURL }}{{ link.url }}" class="font-headers text-xs font-semibold uppercase tracking-wider {% if active_page == link.label %}text-accent drop-shadow-[0_0_6px_var(--color-accent-glow)]{% else %}text-text-muted{% endif %} hover:text-accent hover:drop-shadow-[0_0_6px_var(--color-accent-glow)] transition-all duration-200">
                                             {{ link.label }}
                                         </a>
                                     </li>

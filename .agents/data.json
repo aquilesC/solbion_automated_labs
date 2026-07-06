@@ -1,0 +1,169 @@
+{
+  "data_page_specification": {
+    "page_settings": {
+      "page_title": "Solbion | The Materials Data Consortium",
+      "meta_description": "Fuel your materials AI with ground-truth physical reality. Subscribe to the world’s highest-fidelity stream of standardized material synthesis and failure data.",
+      "global_styles": {
+        "theme": "Dark Tech Industrial",
+        "colors": {
+          "background": "#12161A",
+          "text_primary": "#FFFFFF",
+          "accent_action": "#00F0FF",
+          "neutral_baseline": "#333F4A",
+          "code_block_bg": "#0D1115",
+          "syntax_highlight": "#F1FA8C"
+        },
+        "typography": {
+          "headings": "Space Grotesk / Inter",
+          "body_and_code": "Roboto Mono / Fira Code"
+        }
+      }
+    },
+    "layout_structure": [
+      {
+        "section_id": "global_navigation",
+        "component_type": "Navbar",
+        "layout": "Sticky top-bar, solid Carbon Black background.",
+        "content": {
+          "logo": {
+            "alt_text": "Solbion Lattice Matrix Icon",
+            "source_placeholder": "/assets/brand/logo-icon-only.svg"
+          },
+          "active_link": "Data Consortium"
+        }
+      },
+      {
+        "section_id": "data_hero",
+        "component_type": "HeroDeveloper",
+        "layout": "Left-aligned technical typography. Right side features a scrolling, syntax-highlighted terminal window streaming live data logs.",
+        "content": {
+          "super_header": "THE DATA CONSORTIUM",
+          "headline": "Simulation is just a guess.",
+          "subheadline": "Ground your internal AI models in thousands of physical, standardized data points. We provide the highest-fidelity, machine-readable training data for materials science, mapping both breakthroughs and invaluable synthesis failures.",
+          "primary_cta": {
+            "label": "Read the API Docs",
+            "url": "/docs/api",
+            "style": "Solid, Laser Cyan Fill"
+          },
+          "secondary_cta": {
+            "label": "View Data Schema",
+            "url": "#schema_explorer",
+            "style": "Text link with chevron arrow"
+          }
+        }
+      },
+      {
+        "section_id": "core_advantages",
+        "component_type": "FeatureGrid",
+        "layout": "Three-column, code-aesthetic grid emphasizing technical rigor and data fidelity.",
+        "content": {
+          "section_tag": "GROUND TRUTH",
+          "header": "Built for Machine Learning",
+          "features": [
+            {
+              "icon": "Database",
+              "title": "Structurally Unified",
+              "description": "No more parsing fragmented PDFs or messy ELNs. Every run across our physical automated labs is logged into a strictly typed schema, ready for immediate ingestion into your data lakes."
+            },
+            {
+              "icon": "AlertTriangle",
+              "title": "The Negative Space",
+              "description": "Algorithms learn faster from failure. We do not cherry-pick successes. Our dataset includes comprehensive logs of failed syntheses, anomalous degradation, and out-of-bounds reactions."
+            },
+            {
+              "icon": "Activity",
+              "title": "High-Fidelity Telemetry",
+              "description": "We log far more than just the end material. Access microsecond-level telemetry, including vacuum pressures, precursor flow rates, plasma energies, and real-time metrology feedback."
+            }
+          ]
+        }
+      },
+      {
+        "section_id": "schema_explorer",
+        "component_type": "InteractiveCodeBlock",
+        "layout": "Full-width section featuring a dark-mode IDE mockup. Tabs to toggle between Endpoint (REST/GraphQL) and Payload (JSON).",
+        "content": {
+          "section_tag": "SAMPLE PAYLOAD",
+          "header": "Inspect the Telemetry",
+          "body": "Every API response delivers the complete lifecycle of a physical synthesis run, linking hardware parameters directly to structural metrology.",
+          "code_snippet": {
+            "language": "json",
+            "code": "{\n  \"experiment_id\": \"run_7894_bimetallic_cu_ni\",\n  \"timestamp\": \"2026-07-06T14:32:01Z\",\n  \"outcome_flag\": \"FAILURE_NUCLEATION_ARREST\",\n  \"synthesis_parameters\": {\n    \"technique\": \"spark_ablation\",\n    \"carrier_gas\": \"Ar_99.999%\",\n    \"flow_rate_sccm\": 150.0,\n    \"spark_energy_joules\": 0.45,\n    \"chamber_pressure_mbar\": 1.2e-3\n  },\n  \"inline_metrology\": {\n    \"smps_particle_size_distribution\": {\n      \"median_diameter_nm\": 2.4,\n      \"geometric_standard_deviation\": 1.85\n    },\n    \"optical_emission_spectra\": {\n      \"peak_wavelengths_nm\": [324.7, 327.4, 341.4],\n      \"intensity_au\": [4502, 3811, 890]\n    }\n  },\n  \"metadata\": {\n    \"anomalies_detected\": [\"electrode_wear_variance\"],\n    \"machine_id\": \"node_amsterdam_02\"\n  }\n}"
+          }
+        }
+      },
+      {
+        "section_id": "subscription_tiers",
+        "component_type": "PricingTable",
+        "layout": "Two-column pricing comparison card. Left: Academic/Startup. Right: Enterprise R&D.",
+        "content": {
+          "section_tag": "ACCESS",
+          "header": "Join the Consortium",
+          "tiers": [
+            {
+              "name": "Academic & Seed",
+              "target": "Universities and Pre-Series A Startups",
+              "features": [
+                "Access to foundational, non-proprietary datasets",
+                "Rate-limited REST API access",
+                "Monthly batch CSV/JSON exports"
+              ],
+              "cta": "Apply for Access"
+            },
+            {
+              "name": "Enterprise R&D",
+              "target": "Fortune 500 Chemical & Semiconductor Firms",
+              "features": [
+                "Full firehose access to the negative space database",
+                "Real-time WebSocket streaming from public lab nodes",
+                "Dedicated VPC peering and integration engineering",
+                "IP indemnification"
+              ],
+              "cta": "Contact Sales"
+            }
+          ]
+        }
+      },
+      {
+        "section_id": "closing_call_to_action",
+        "component_type": "CenteredFocusBox",
+        "layout": "Solid Steel Grey block container inside Carbon Black viewport.",
+        "content": {
+          "header": "Stop modeling in a vacuum.",
+          "body": "Your active learning algorithms are only as good as the physical data feeding them. Connect to the Solbion database and start mapping reality.",
+          "button": {
+            "label": "Generate API Key",
+            "url": "/dashboard/register",
+            "style": "Solid, Laser Cyan Fill, Centered"
+          }
+        }
+      },
+      {
+        "section_id": "global_footer",
+        "component_type": "FooterMatrix",
+        "layout": "Minimalist four-column footer.",
+        "content": {
+          "copyright": "© 2026 Solbion. All rights reserved. Operating open-architecture materials acceleration platforms from Amsterdam.",
+          "columns": [
+            {
+              "title": "Platform",
+              "links": [
+                { "label": "System Integration", "url": "/hardware" },
+                { "label": "Lab-as-a-Service", "url": "/services" },
+                { "label": "Data Consortium", "url": "/data" }
+              ]
+            },
+            {
+              "title": "Developer Hub",
+              "links": [
+                { "label": "API Reference", "url": "/docs/api" },
+                { "label": "Data Schemas", "url": "/docs/schemas" },
+                { "label": "GitHub", "url": "https://github.com/solbion" }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

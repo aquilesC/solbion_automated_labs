@@ -1,0 +1,283 @@
+{% extends "base.html" %}
+{% set active_page = "Contact" %}
+
+{% block title %}{{ CONTACT_SPEC.page_settings.page_title or super() }}{% endblock %}
+{% block description %}{{ CONTACT_SPEC.page_settings.meta_description or super() }}{% endblock %}
+
+{% block content %}
+<style>
+    /* Scoped overrides and custom styling */
+    input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="true"] {
+        border-color: #f87171 !important; /* red-400 */
+        box-shadow: 0 0 10px rgba(248, 113, 113, 0.15) !important;
+    }
+    
+    .status-dot-blink {
+        animation: status-blink 1.5s step-start infinite;
+    }
+    
+    @keyframes status-blink {
+        50% { opacity: 0; }
+    }
+    
+    .telemetry-log-line {
+        border-left: 2px solid var(--color-baseline);
+        padding-left: 12px;
+        transition: all 0.3s ease;
+    }
+    
+    .telemetry-log-line:hover {
+        border-left-color: var(--color-accent);
+        background: rgba(0, 240, 255, 0.02);
+    }
+</style>
+
+<!-- Hero Section -->
+<section class="relative w-full overflow-hidden border-b border-baseline/30 py-16 md:py-24 bg-bg">
+    <!-- Low-opacity grid background -->
+    <div class="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(51,63,74,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(51,63,74,0.15)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-left">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3 animate-pulse">
+            {{ CONTACT_SECTIONS.contact_hero.content.super_header }}
+        </span>
+        <h1 class="font-headers text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] uppercase text-text-primary mb-6 drop-shadow-[0_0_15px_var(--color-accent-dim)]">
+            {{ CONTACT_SECTIONS.contact_hero.content.headline }}
+        </h1>
+        <p class="font-mono text-sm md:text-base text-text-muted leading-relaxed max-w-3xl">
+            {{ CONTACT_SECTIONS.contact_hero.content.subheadline }}
+        </p>
+    </div>
+</section>
+
+<!-- Content Grid -->
+<section class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    
+    <!-- Left Column: System Status & Node Details -->
+    <div class="lg:col-span-5 flex flex-col gap-8">
+        
+        <!-- Physical Coordinates Box -->
+        <div class="border border-baseline/30 bg-bg-alt/30 p-8 rounded relative overflow-hidden group hover:border-accent/40 transition-colors duration-300">
+            <span class="absolute top-2 right-3 font-mono text-[9px] text-text-muted opacity-45">NODE_LOC // v1.0.2</span>
+            
+            <h2 class="font-headers text-xs font-bold uppercase tracking-wider text-text-primary mb-6 pb-2 border-b border-baseline/20">
+                {{ CONTACT_SECTIONS.system_status_panel.content.node_title }}
+            </h2>
+            
+            <div class="flex flex-col gap-4 font-mono text-xs">
+                <div>
+                    <span class="text-text-muted block text-[10px] uppercase tracking-wider mb-0.5">Location</span>
+                    <span class="text-text-primary font-semibold text-sm">{{ CONTACT_SECTIONS.system_status_panel.content.node_location }}</span>
+                </div>
+                <div>
+                    <span class="text-text-muted block text-[10px] uppercase tracking-wider mb-0.5">Geospatial Coordinates</span>
+                    <span class="text-accent font-semibold tracking-wider">{{ CONTACT_SECTIONS.system_status_panel.content.node_coords }}</span>
+                </div>
+                <div>
+                    <span class="text-text-muted block text-[10px] uppercase tracking-wider mb-0.5">Communication Channel</span>
+                    <a href="mailto:{{ CONTACT_SECTIONS.system_status_panel.content.node_email }}" class="text-text-primary hover:text-accent underline transition-colors duration-200">
+                        {{ CONTACT_SECTIONS.system_status_panel.content.node_email }}
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Telemetry Logs Monitor -->
+        <div class="border border-baseline/30 bg-[#0d1115] rounded overflow-hidden flex flex-col shadow-lg">
+            <!-- Terminal Header -->
+            <div class="bg-[#0b0e11] px-4 py-3 flex justify-between items-center border-b border-baseline/20">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
+                </div>
+                <span class="font-mono text-[10px] text-text-muted">system_telemetry.log</span>
+                <span class="w-2 h-2 rounded-full bg-accent status-dot-blink shadow-[0_0_6px_#00F0FF]"></span>
+            </div>
+            
+            <!-- Terminal Body -->
+            <div class="p-6 flex flex-col gap-3 font-mono text-[10px] text-text-muted leading-relaxed">
+                <div class="text-accent/65 font-bold">// ESTABLISHING ACTIVE TELEMETRY LINK...</div>
+                {% for log in CONTACT_SECTIONS.system_status_panel.content.status_logs %}
+                    <div class="telemetry-log-line">
+                        {{ log }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <!-- Right Column: Form Container -->
+    <div class="lg:col-span-7">
+        
+        <!-- Formspree success container -->
+        <div data-fs-success class="hidden border border-accent/60 bg-bg-alt/45 p-8 md:p-12 rounded flex flex-col items-center text-center shadow-[0_0_30px_var(--color-accent-dim)]">
+            <div class="w-16 h-16 rounded-full border border-accent flex items-center justify-center mb-6 shadow-[0_0_15px_var(--color-accent-dim)]">
+                <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            
+            <h3 class="font-headers text-2xl font-bold uppercase text-accent mb-2 tracking-wider">
+                {{ CONTACT_SECTIONS.integration_form.content.success_message.header }}
+            </h3>
+            
+            <p class="font-mono text-xs text-accent opacity-80 uppercase tracking-widest mb-6">
+                {{ CONTACT_SECTIONS.integration_form.content.success_message.subheader }}
+            </p>
+            
+            <p class="font-mono text-sm text-text-muted leading-relaxed mb-8 max-w-md">
+                {{ CONTACT_SECTIONS.integration_form.content.success_message.body }}
+            </p>
+            
+            <div class="bg-[#12161A] border border-baseline/35 px-5 py-2.5 rounded font-mono text-[10px] text-text-muted uppercase tracking-wider">
+                {{ CONTACT_SECTIONS.integration_form.content.success_message.status_code }}
+            </div>
+        </div>
+        
+        <!-- Formspree error container -->
+        <div data-fs-error class="hidden mb-6 p-4 border border-red-500/40 bg-red-950/20 text-red-400 font-mono text-xs rounded">
+            <!-- Populated dynamically on form-level errors -->
+        </div>
+        
+        <!-- Form Element -->
+        <form id="contact-form" class="flex flex-col gap-6 border border-baseline/30 bg-bg-alt/20 p-8 rounded relative overflow-hidden group hover:border-baseline/50 transition-colors duration-300">
+            
+            <div class="absolute top-0 left-0 h-[3px] w-full bg-gradient-to-r from-transparent via-accent/30 to-transparent"></div>
+            
+            <!-- Name (Identifier) -->
+            <div class="flex flex-col gap-1.5">
+                <label for="name" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">
+                    {{ CONTACT_SECTIONS.integration_form.content.fields.name.label }}
+                </label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    required 
+                    data-fs-field
+                    placeholder="{{ CONTACT_SECTIONS.integration_form.content.fields.name.placeholder }}"
+                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30"
+                />
+                <span data-fs-error="name" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
+            </div>
+            
+            <!-- Email (Endpoint) -->
+            <div class="flex flex-col gap-1.5">
+                <label for="email" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">
+                    {{ CONTACT_SECTIONS.integration_form.content.fields.email.label }}
+                </label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required 
+                    data-fs-field
+                    placeholder="{{ CONTACT_SECTIONS.integration_form.content.fields.email.placeholder }}"
+                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30"
+                />
+                <span data-fs-error="email" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
+            </div>
+            
+            <!-- Organization (Domain) -->
+            <div class="flex flex-col gap-1.5">
+                <label for="organization" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">
+                    {{ CONTACT_SECTIONS.integration_form.content.fields.organization.label }}
+                </label>
+                <input 
+                    type="text" 
+                    id="organization" 
+                    name="organization" 
+                    data-fs-field
+                    placeholder="{{ CONTACT_SECTIONS.integration_form.content.fields.organization.placeholder }}"
+                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30"
+                />
+                <span data-fs-error="organization" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
+            </div>
+            
+            <!-- Objective (Objective Vector) -->
+            <div class="flex flex-col gap-1.5">
+                <label for="objective" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">
+                    {{ CONTACT_SECTIONS.integration_form.content.fields.objective.label }}
+                </label>
+                <div class="relative">
+                    <select 
+                        id="objective" 
+                        name="objective" 
+                        required 
+                        data-fs-field
+                        class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 appearance-none cursor-pointer"
+                    >
+                        {% for option in CONTACT_SECTIONS.integration_form.content.fields.objective.options %}
+                            <option value="{{ option.value }}">{{ option.label }}</option>
+                        {% endfor %}
+                    </select>
+                    <!-- Custom dropdown arrow -->
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-text-muted">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                        </svg>
+                    </div>
+                </div>
+                <span data-fs-error="objective" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
+            </div>
+            
+            <!-- Message (Payload) -->
+            <div class="flex flex-col gap-1.5">
+                <label for="message" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">
+                    {{ CONTACT_SECTIONS.integration_form.content.fields.message.label }}
+                </label>
+                <textarea 
+                    id="message" 
+                    name="message" 
+                    required 
+                    data-fs-field
+                    rows="5"
+                    placeholder="{{ CONTACT_SECTIONS.integration_form.content.fields.message.placeholder }}"
+                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 resize-y"
+                ></textarea>
+                <span data-fs-error="message" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
+            </div>
+            
+            <!-- Submit Button -->
+            <button 
+                type="submit" 
+                data-fs-submit-btn
+                class="w-full mt-2 inline-flex items-center justify-center px-8 py-3.5 bg-accent text-bg font-headers text-xs font-bold uppercase tracking-widest rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_20px_var(--color-accent-glow)] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+            >
+                {{ CONTACT_SECTIONS.integration_form.content.submit_label }}
+            </button>
+            
+        </form>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<!-- Formspree AJAX library -->
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: '{{ CONTACT_SECTIONS.integration_form.content.form_id }}' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+<!-- Autoselect query param logic -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const intent = params.get('intent');
+        if (intent) {
+            const selectEl = document.getElementById('objective');
+            if (selectEl) {
+                if (intent === 'laas' || intent === 'laas_pilot') {
+                    selectEl.value = 'laas';
+                } else if (intent === 'hardware' || intent === 'integration') {
+                    selectEl.value = 'hardware';
+                } else if (intent === 'data' || intent === 'consortium') {
+                    selectEl.value = 'data';
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}
