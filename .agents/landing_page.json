@@ -36,7 +36,7 @@
           ],
           "cta_button": {
             "label": "Access API",
-            "url": "/dashboard",
+            "url": "/api",
             "style": "Outline, Titanium White"
           }
         }
@@ -182,8 +182,7 @@
             {
               "title": "Developer Hub",
               "links": [
-                { "label": "API Docs", "url": "/docs/api" },
-                { "label": "Open Hardware Specifications", "url": "/docs/hardware" }
+                { "label": "Access API", "url": "/api" }
               ]
             }
           ]

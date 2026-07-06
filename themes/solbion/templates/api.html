@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% set active_page = "Access API" %}
+
+{% block title %}Access API | Register Your Interest{% endblock %}
+{% block description %}Register your interest for early access to the Solbion Data Consortium and orchestration API.{% endblock %}
+
+{% block content %}
+<style>
+    /* Scoped form validation and interactive styling */
+    input[aria-invalid="true"], textarea[aria-invalid="true"] {
+        border-color: #f87171 !important;
+        box-shadow: 0 0 10px rgba(248, 113, 113, 0.15) !important;
+    }
+    
+    .status-dot-blink {
+        animation: status-blink 1.5s step-start infinite;
+    }
+    
+    @keyframes status-blink {
+        50% { opacity: 0; }
+    }
+</style>
+
+<!-- Hero Section -->
+<section class="relative w-full overflow-hidden border-b border-baseline/30 py-16 md:py-24 bg-bg">
+    <!-- Low-opacity grid background -->
+    <div class="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(51,63,74,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(51,63,74,0.15)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none"></div>
+    
+    <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3 animate-pulse">
+            DEVELOPER PREVIEW
+        </span>
+        <h1 class="font-headers text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] uppercase text-text-primary mb-6 drop-shadow-[0_0_15px_var(--color-accent-dim)]">
+            Access The Network
+        </h1>
+        <p class="font-mono text-sm md:text-base text-text-muted leading-relaxed mx-auto max-w-2xl">
+            Register your interest to join the early access program for our autonomous orchestration APIs and the materials Data Consortium. We are onboarding technical teams directly integrating with our hardware and data layers.
+        </p>
+    </div>
+</section>
+
+<!-- Main Form Section -->
+<section class="max-w-3xl mx-auto px-6 py-16 md:py-24">
+    <!-- Form Container -->
+    <div class="relative bg-bg-alt/40 backdrop-blur-md border border-baseline/40 rounded-xl p-8 md:p-12 shadow-2xl overflow-hidden group hover:border-accent/40 transition-all duration-500">
+        
+        <!-- Top accent line -->
+        <div class="absolute top-0 left-0 h-[2px] w-full bg-gradient-to-r from-transparent via-accent to-transparent opacity-50"></div>
+        
+        <!-- Formspree success container -->
+        <div data-fs-success class="hidden flex-col items-center justify-center text-center py-8">
+            <div class="w-16 h-16 rounded-full border border-accent flex items-center justify-center mb-6 shadow-[0_0_15px_var(--color-accent-dim)]">
+                <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h3 class="font-headers text-2xl font-bold uppercase text-text-primary mb-3">Transmission Received</h3>
+            <p class="font-mono text-sm text-text-muted leading-relaxed max-w-md">
+                Your request for API access has been logged in our system. A technical integration specialist will contact you with provisioning details.
+            </p>
+            <div class="mt-8 bg-[#12161A] border border-baseline/35 px-4 py-2 rounded font-mono text-[10px] text-accent uppercase tracking-widest inline-flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-accent status-dot-blink"></span>
+                STATUS: 200 OK
+            </div>
+        </div>
+
+        <!-- Formspree error container -->
+        <div data-fs-error class="hidden mb-6 p-4 border border-red-500/40 bg-red-950/20 text-red-400 font-mono text-xs rounded">
+            <!-- Populated dynamically on form-level errors -->
+        </div>
+
+        <form id="api-access-form" class="flex flex-col gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Name -->
+                <div class="flex flex-col gap-2">
+                    <label for="name" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">Developer Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required 
+                        data-fs-field
+                        placeholder="John Doe"
+                        class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30"
+                    />
+                    <span data-fs-error="name" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
+                </div>
+                
+                <!-- Email -->
+                <div class="flex flex-col gap-2">
+                    <label for="email" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">Work Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        data-fs-field
+                        placeholder="john@organization.com"
+                        class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30"
+                    />
+                    <span data-fs-error="email" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
+                </div>
+            </div>
+
+            <!-- Organization -->
+            <div class="flex flex-col gap-2">
+                <label for="organization" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">Organization / Domain</label>
+                <input 
+                    type="text" 
+                    id="organization" 
+                    name="organization" 
+                    data-fs-field
+                    placeholder="E.g., Quantum Materials Inc."
+                    class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30"
+                />
+                <span data-fs-error="organization" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
+            </div>
+
+            <!-- Use Case / Message -->
+            <div class="flex flex-col gap-2">
+                <label for="message" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">Intended Use Case</label>
+                <textarea 
+                    id="message" 
+                    name="message" 
+                    required 
+                    data-fs-field
+                    rows="4"
+                    placeholder="Describe your technical requirements and data infrastructure..."
+                    class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 resize-y"
+                ></textarea>
+                <span data-fs-error="message" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button 
+                type="submit" 
+                data-fs-submit-btn
+                class="w-full mt-2 inline-flex items-center justify-center px-8 py-3.5 bg-accent text-bg font-headers text-xs font-bold uppercase tracking-widest rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_20px_var(--color-accent-glow)] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+            >
+                Request Provisioning
+            </button>
+        </form>
+    </div>
+    
+    <!-- Security / Compliance text -->
+    <div class="mt-8 text-center flex items-center justify-center gap-3 opacity-60">
+        <svg class="w-4 h-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8V7a4 4 0 00-8 0v4h8z"></path>
+        </svg>
+        <span class="font-mono text-[9px] text-text-muted uppercase tracking-widest">End-to-End Encrypted Transmission</span>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#api-access-form', formId: 'xdarjzen' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+{% endblock %}
