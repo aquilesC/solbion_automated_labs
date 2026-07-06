@@ -5,21 +5,6 @@
 {% block description %}Register your interest for early access to the Solbion Data Consortium and orchestration API.{% endblock %}
 
 {% block content %}
-<style>
-    /* Scoped form validation and interactive styling */
-    input[aria-invalid="true"], textarea[aria-invalid="true"] {
-        border-color: #f87171 !important;
-        box-shadow: 0 0 10px rgba(248, 113, 113, 0.15) !important;
-    }
-    
-    .status-dot-blink {
-        animation: status-blink 1.5s step-start infinite;
-    }
-    
-    @keyframes status-blink {
-        50% { opacity: 0; }
-    }
-</style>
 
 <!-- Hero Section -->
 <section class="relative w-full overflow-hidden border-b border-baseline/30 py-16 md:py-24 bg-bg">
@@ -59,7 +44,7 @@
                 Your request for API access has been logged in our system. A technical integration specialist will contact you with provisioning details.
             </p>
             <div class="mt-8 bg-[#12161A] border border-baseline/35 px-4 py-2 rounded font-mono text-[10px] text-accent uppercase tracking-widest inline-flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-accent status-dot-blink"></span>
+                <span class="w-2 h-2 rounded-full bg-accent animate-status-blink"></span>
                 STATUS: 200 OK
             </div>
         </div>
@@ -81,7 +66,7 @@
                         required 
                         data-fs-field
                         placeholder="John Doe"
-                        class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30"
+                        class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
                     />
                     <span data-fs-error="name" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
                 </div>
@@ -96,7 +81,7 @@
                         required 
                         data-fs-field
                         placeholder="john@organization.com"
-                        class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30"
+                        class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
                     />
                     <span data-fs-error="email" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
                 </div>
@@ -111,7 +96,7 @@
                     name="organization" 
                     data-fs-field
                     placeholder="E.g., Quantum Materials Inc."
-                    class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30"
+                    class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
                 />
                 <span data-fs-error="organization" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
             </div>
@@ -126,7 +111,7 @@
                     data-fs-field
                     rows="4"
                     placeholder="Describe your technical requirements and data infrastructure..."
-                    class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 resize-y"
+                    class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 resize-y aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
                 ></textarea>
                 <span data-fs-error="message" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
             </div>

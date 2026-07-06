@@ -5,7 +5,7 @@ This file outlines the project guidelines, technology stack, visual design const
 ## Technical Choices
 - **Static Site Generator:** Pelican (configured via `pelicanconf.py`).
 - **Python Environment:** Managed via `uv` using Python 3.12 (inside `.venv` virtual environment).
-- **Styling:** TailwindCSS via the Tailwind v4 CLI (`npm run build:css` or `npm run dev` handles compilation). No direct Vanilla CSS unless required for scoped overrides.
+- **Styling:** TailwindCSS via the Tailwind v4 CLI. **CRITICAL:** The style must always be compiled (`npm run build:css`) before committing changes, because the compiled version of the style (`style.css`) is what needs to be loaded into the template. There is no style compilation step on the cloud provider! No direct Vanilla CSS unless required for scoped overrides.
 - **Core Strategy:** Data-centric, high-fidelity layouts using Tailwind utility classes, subtle animations, and semantic HTML structure.
 
 ## Visual Identity (from brand_brief.json)

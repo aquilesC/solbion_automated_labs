@@ -12,6 +12,11 @@
 
   --font-headers: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
   --font-mono: 'Roboto Mono', 'Fira Code', monospace;
+
+  --animate-status-blink: status-blink 1.5s step-start infinite;
+  @keyframes status-blink {
+    50% { opacity: 0; }
+  }
 }
 
 @layer base {

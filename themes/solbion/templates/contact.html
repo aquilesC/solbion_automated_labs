@@ -5,32 +5,6 @@
 {% block description %}{{ CONTACT_SPEC.page_settings.meta_description or super() }}{% endblock %}
 
 {% block content %}
-<style>
-    /* Scoped overrides and custom styling */
-    input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="true"] {
-        border-color: #f87171 !important; /* red-400 */
-        box-shadow: 0 0 10px rgba(248, 113, 113, 0.15) !important;
-    }
-    
-    .status-dot-blink {
-        animation: status-blink 1.5s step-start infinite;
-    }
-    
-    @keyframes status-blink {
-        50% { opacity: 0; }
-    }
-    
-    .telemetry-log-line {
-        border-left: 2px solid var(--color-baseline);
-        padding-left: 12px;
-        transition: all 0.3s ease;
-    }
-    
-    .telemetry-log-line:hover {
-        border-left-color: var(--color-accent);
-        background: rgba(0, 240, 255, 0.02);
-    }
-</style>
 
 <!-- Hero Section -->
 <section class="relative w-full overflow-hidden border-b border-baseline/30 py-16 md:py-24 bg-bg">
@@ -92,14 +66,14 @@
                     <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
                 </div>
                 <span class="font-mono text-[10px] text-text-muted">system_telemetry.log</span>
-                <span class="w-2 h-2 rounded-full bg-accent status-dot-blink shadow-[0_0_6px_#00F0FF]"></span>
+                <span class="w-2 h-2 rounded-full bg-accent animate-status-blink shadow-[0_0_6px_#00F0FF]"></span>
             </div>
             
             <!-- Terminal Body -->
             <div class="p-6 flex flex-col gap-3 font-mono text-[10px] text-text-muted leading-relaxed">
                 <div class="text-accent/65 font-bold">// ESTABLISHING ACTIVE TELEMETRY LINK...</div>
                 {% for log in CONTACT_SECTIONS.system_status_panel.content.status_logs %}
-                    <div class="telemetry-log-line">
+                    <div class="border-l-2 border-baseline pl-3 transition-all duration-300 hover:border-accent hover:bg-[rgba(0,240,255,0.02)]">
                         {{ log }}
                     </div>
                 {% endfor %}
@@ -157,7 +131,7 @@
                     required 
                     data-fs-field
                     placeholder="{{ CONTACT_SECTIONS.integration_form.content.fields.name.placeholder }}"
-                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30"
+                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
                 />
                 <span data-fs-error="name" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
             </div>
@@ -174,7 +148,7 @@
                     required 
                     data-fs-field
                     placeholder="{{ CONTACT_SECTIONS.integration_form.content.fields.email.placeholder }}"
-                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30"
+                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
                 />
                 <span data-fs-error="email" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
             </div>
@@ -190,7 +164,7 @@
                     name="organization" 
                     data-fs-field
                     placeholder="{{ CONTACT_SECTIONS.integration_form.content.fields.organization.placeholder }}"
-                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30"
+                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
                 />
                 <span data-fs-error="organization" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
             </div>
@@ -206,7 +180,7 @@
                         name="objective" 
                         required 
                         data-fs-field
-                        class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 appearance-none cursor-pointer"
+                        class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 appearance-none cursor-pointer aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
                     >
                         {% for option in CONTACT_SECTIONS.integration_form.content.fields.objective.options %}
                             <option value="{{ option.value }}">{{ option.label }}</option>
@@ -234,7 +208,7 @@
                     data-fs-field
                     rows="5"
                     placeholder="{{ CONTACT_SECTIONS.integration_form.content.fields.message.placeholder }}"
-                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 resize-y"
+                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 resize-y aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
                 ></textarea>
                 <span data-fs-error="message" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
             </div>
