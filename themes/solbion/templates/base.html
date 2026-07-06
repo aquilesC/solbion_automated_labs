@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ LANDING_PAGE.metadata.title or SITENAME }}{% endblock %}</title>
+    <title>{% block title %}{{ LANDING_PAGE_SPEC.page_settings.page_title or SITENAME }}{% endblock %}</title>
     
     <!-- Meta tags for SEO -->
-    <meta name="description" content="{% block description %}{{ LANDING_PAGE.metadata.description or "Solbion is the autonomous engine for materials discovery." }}{% endblock %}">
+    <meta name="description" content="{% block description %}{{ LANDING_PAGE_SPEC.page_settings.meta_description or "Solbion is the autonomous engine for materials discovery." }}{% endblock %}">
     
     <!-- Declaring dark theme support for browser UI / scrollbars -->
     <meta name="color-scheme" content="dark">
@@ -45,22 +45,34 @@
                         <circle cx="76" cy="35" r="6" fill="#00F0FF" filter="drop-shadow(0 0 4px #00F0FF)" />
                         <circle cx="76" cy="65" r="6" fill="#00F0FF" filter="drop-shadow(0 0 4px #00F0FF)" />
                     </svg>
-                    <span class="group-hover:text-accent transition-colors duration-300">{{ SITENAME }}</span>
+                    <span class="group-hover:text-accent transition-colors duration-300">
+                        {{ SECTIONS.global_navigation.content.brand_name or SITENAME }}
+                    </span>
                 </a>
                 
-                <nav class="hidden md:block">
-                    <ul class="flex gap-8">
-                        {% if NAV_ITEMS %}
-                            {% for name, link in NAV_ITEMS %}
-                                <li>
-                                    <a href="{{ SITEURL }}/{{ link }}" class="font-headers text-xs font-semibold uppercase tracking-wider text-text-muted hover:text-accent hover:drop-shadow-[0_0_6px_var(--color-accent-glow)] transition-all duration-200">
-                                        {{ name }}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        {% endif %}
-                    </ul>
-                </nav>
+                <div class="flex items-center gap-8">
+                    <nav class="hidden md:block">
+                        <ul class="flex gap-8">
+                            {% if SECTIONS.global_navigation %}
+                                {% for link in SECTIONS.global_navigation.content.nav_links %}
+                                    <li>
+                                        <a href="{{ SITEURL }}{{ link.url }}" class="font-headers text-xs font-semibold uppercase tracking-wider text-text-muted hover:text-accent hover:drop-shadow-[0_0_6px_var(--color-accent-glow)] transition-all duration-200">
+                                            {{ link.label }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    
+                    {% if SECTIONS.global_navigation.content.cta_button %}
+                    <div class="hidden md:block">
+                        <a href="{{ SITEURL }}{{ SECTIONS.global_navigation.content.cta_button.url }}" class="inline-flex items-center justify-center px-4 py-2 border border-text-primary text-text-primary hover:border-accent hover:text-accent font-headers text-xs font-semibold uppercase tracking-wider rounded transition-all duration-300">
+                            {{ SECTIONS.global_navigation.content.cta_button.label }}
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
         </header>
 
@@ -70,15 +82,75 @@
         </main>
 
         <!-- Site Footer -->
-        <footer class="bg-bg-alt border-t border-baseline/30 py-10 transition-colors duration-300">
-            <div class="max-w-7xl mx-auto px-6 flex flex-col items-center gap-4 text-center text-xs text-text-muted">
-                <p>&copy; {{ CURRENT_YEAR or "2026" }} {{ AUTHOR }}. All rights reserved.</p>
-                <div class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shadow-[0_0_8px_#00F0FF]"></span>
-                    <p class="font-mono text-[10px] tracking-wider uppercase opacity-70 text-accent">System Status: Active learning loop nominal</p>
+        <footer class="bg-bg-alt border-t border-baseline/30 py-16 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-10">
+                <!-- Column 1: Brand Info -->
+                <div class="md:col-span-4 flex flex-col items-start gap-4">
+                    <div class="flex items-center gap-3 font-headers text-lg font-bold tracking-widest text-text-primary uppercase">
+                        <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <circle cx="50" cy="20" r="4" fill="#333F4A" />
+                            <circle cx="24" cy="35" r="4" fill="#333F4A" />
+                            <circle cx="76" cy="35" r="4" fill="#333F4A" />
+                            <circle cx="24" cy="65" r="4" fill="#333F4A" />
+                            <circle cx="76" cy="65" r="4" fill="#333F4A" />
+                            <circle cx="50" cy="80" r="4" fill="#333F4A" />
+                            <path d="M24 35 L50 20 L76 35 L76 65 L50 80" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="50" cy="20" r="6" fill="#00F0FF" filter="drop-shadow(0 0 4px #00F0FF)" />
+                            <circle cx="76" cy="35" r="6" fill="#00F0FF" filter="drop-shadow(0 0 4px #00F0FF)" />
+                            <circle cx="76" cy="65" r="6" fill="#00F0FF" filter="drop-shadow(0 0 4px #00F0FF)" />
+                        </svg>
+                        <span>{{ SECTIONS.global_navigation.content.brand_name or SITENAME }}</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shadow-[0_0_8px_#00F0FF]"></span>
+                        <p class="font-mono text-[9px] tracking-wider uppercase opacity-70 text-accent">System Status: Active learning loop nominal</p>
+                    </div>
+                </div>
+                
+                <!-- Columns 2-4: Links Matrix -->
+                <div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+                    {% if SECTIONS.global_footer %}
+                        {% for col in SECTIONS.global_footer.content.columns %}
+                            <div class="flex flex-col gap-4">
+                                <h4 class="font-headers text-xs font-bold uppercase tracking-wider text-text-primary">
+                                    {{ col.title }}
+                                </h4>
+                                <ul class="flex flex-col gap-2">
+                                    {% for link in col.links %}
+                                        <li>
+                                            <a href="{{ SITEURL }}{{ link.url }}" class="font-mono text-xs text-text-muted hover:text-accent transition-colors duration-200">
+                                                {{ link.label }}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </div>
+            
+            <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-baseline/10 text-left">
+                <p class="font-mono text-[10px] text-text-muted">
+                    {{ SECTIONS.global_footer.content.copyright or "© 2026 Solbion. All rights reserved." }}
+                </p>
+            </div>
         </footer>
+    </div>
+    
+    <script>
+        // Navbar styling transition on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.site-header');
+            if (window.scrollY > 20) {
+                header.classList.remove('bg-bg/80');
+                header.classList.add('bg-bg', 'shadow-[0_4px_30px_rgba(0,0,0,0.5)]');
+            } else {
+                header.classList.add('bg-bg/80');
+                header.classList.remove('bg-bg', 'shadow-[0_4px_30px_rgba(0,0,0,0.5)]');
+            }
+        });
+    </script>
     </div>
     
     {% block scripts %}{% endblock %}

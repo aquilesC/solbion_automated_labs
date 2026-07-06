@@ -2,28 +2,35 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="max-w-7xl mx-auto px-6 py-12 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<section class="max-w-7xl mx-auto px-6 py-16 md:py-28 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
     <div class="lg:col-span-7 flex flex-col items-start text-left">
-        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4">SYSTEM INITIATED // AUTONOMOUS MATERIALS SYNTHESIS</span>
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4">SYSTEM INITIATED // ACTIVE ORCHESTRATION</span>
         <h1 class="font-headers text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] uppercase text-text-primary mb-6 drop-shadow-[0_0_15px_var(--color-accent-dim)]">
-            {{ LANDING_PAGE.hero_section.headline }}
+            {{ SECTIONS.hero_anchor.content.headline }}
         </h1>
         <p class="font-mono text-sm md:text-base text-text-muted leading-relaxed mb-8 max-w-2xl">
-            {{ LANDING_PAGE.hero_section.subheadline }}
+            {{ SECTIONS.hero_anchor.content.subheadline }}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <a href="{{ LANDING_PAGE.hero_section.primary_cta.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-bg font-headers text-sm font-semibold uppercase tracking-wider rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_20px_var(--color-accent-glow)] transition-all duration-300">
-                {{ LANDING_PAGE.hero_section.primary_cta.label }}
+            {% if SECTIONS.hero_anchor.content.primary_cta %}
+            <a href="{{ SECTIONS.hero_anchor.content.primary_cta.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-bg font-headers text-sm font-semibold uppercase tracking-wider rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_20px_var(--color-accent-glow)] transition-all duration-300">
+                {{ SECTIONS.hero_anchor.content.primary_cta.label }}
             </a>
-            <a href="{{ LANDING_PAGE.hero_section.secondary_cta.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-transparent text-text-primary font-headers text-sm font-semibold uppercase tracking-wider rounded border border-baseline hover:border-accent hover:text-accent transition-all duration-300">
-                {{ LANDING_PAGE.hero_section.secondary_cta.label }}
+            {% endif %}
+            {% if SECTIONS.hero_anchor.content.secondary_cta %}
+            <a href="{{ SECTIONS.hero_anchor.content.secondary_cta.url }}" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-transparent text-text-primary font-headers text-sm font-semibold uppercase tracking-wider rounded border border-baseline hover:border-accent hover:text-accent transition-all duration-300 group/link">
+                {{ SECTIONS.hero_anchor.content.secondary_cta.label }}
+                <svg class="w-4 h-4 transform transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
             </a>
+            {% endif %}
         </div>
     </div>
     
     <div class="lg:col-span-5 flex justify-center items-center">
         <!-- Visual representation of the Lattice Matrix -->
-        <div class="relative w-full max-w-[400px] aspect-square rounded border border-baseline/30 bg-bg-alt/40 p-8 flex items-center justify-center overflow-hidden group hover:border-accent/50 transition-colors duration-500">
+        <div class="relative w-full max-w-[420px] aspect-square rounded border border-baseline/30 bg-bg-alt/40 p-8 flex items-center justify-center overflow-hidden group hover:border-accent/50 transition-colors duration-500">
             <!-- Background dot grid -->
             <div class="absolute inset-0 opacity-20 bg-[radial-gradient(var(--color-baseline)_1.5px,transparent_1.5px)] bg-[size:24px_24px] pointer-events-none"></div>
             
@@ -56,103 +63,184 @@
             </svg>
             
             <!-- Technical frame borders -->
-            <span class="absolute top-2 left-2 font-mono text-[9px] text-accent opacity-50">SYS.LOC: LAB_01</span>
-            <span class="absolute bottom-2 right-2 font-mono text-[9px] text-accent opacity-50">LATTICE_OP: ACTIVE</span>
+            <span class="absolute top-2 left-2 font-mono text-[9px] text-accent opacity-50">SYS.LOC: AMS_LAB_01</span>
+            <span class="absolute bottom-2 right-2 font-mono text-[9px] text-accent opacity-50">LATTICE_OP: NOMINAL</span>
         </div>
     </div>
 </section>
 
 <!-- Problem Section -->
-<section class="w-full bg-bg-alt/60 py-20 border-y border-baseline/30">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<section id="problem_statement" class="w-full bg-bg-alt/40 py-24 border-y border-baseline/20 relative overflow-hidden">
+    <!-- Low opacity grid background -->
+    <div class="absolute inset-0 opacity-15 bg-[linear-gradient(rgba(51,63,74,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(51,63,74,0.1)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
         <div class="lg:col-span-4">
-            <span class="font-mono text-xs font-semibold tracking-widest text-accent uppercase block mb-2">THE PROBLEM SPACE</span>
+            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3">
+                {{ SECTIONS.problem_statement.content.section_tag }}
+            </span>
             <h2 class="font-headers text-2xl lg:text-3xl font-bold tracking-tight uppercase text-text-primary">
-                {{ LANDING_PAGE.problem_section.heading }}
+                {{ SECTIONS.problem_statement.content.header }}
             </h2>
         </div>
         <div class="lg:col-span-8">
-            <p class="font-mono text-base text-text-muted leading-relaxed max-w-3xl">
-                {{ LANDING_PAGE.problem_section.body }}
+            <p class="font-mono text-sm md:text-base text-text-muted leading-relaxed max-w-3xl">
+                {{ SECTIONS.problem_statement.content.body_paragraph }}
             </p>
         </div>
     </div>
 </section>
 
-<!-- Solution Section & Benefits -->
-<section class="max-w-7xl mx-auto px-6 py-20">
-    <div class="mb-12">
-        <span class="font-mono text-xs font-semibold tracking-widest text-accent uppercase block mb-2">THE PLATFORM SOLVE</span>
+<!-- Ecosystem / Portal Section -->
+<section id="portal_section" class="max-w-7xl mx-auto px-6 py-24">
+    <div class="mb-16">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3">
+            {{ SECTIONS.portal_section.content.section_tag }}
+        </span>
         <h2 class="font-headers text-3xl md:text-4xl font-bold tracking-tight uppercase text-text-primary mb-4">
-            {{ LANDING_PAGE.solution_section.heading }}
+            {{ SECTIONS.portal_section.content.header }}
         </h2>
-        <p class="font-mono text-sm md:text-base text-text-muted leading-relaxed max-w-4xl">
-            {{ LANDING_PAGE.solution_section.body }}
-        </p>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {% for benefit in LANDING_PAGE.solution_section.benefits %}
-            <div class="relative border border-baseline/30 bg-bg-alt/30 p-8 rounded flex flex-col items-start transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_20px_var(--color-accent-dim)] group">
-                <span class="font-mono text-xs font-bold text-accent tracking-wider uppercase mb-4">BENEFIT_{{ loop.index | string | format }}</span>
-                <h3 class="font-headers text-lg font-semibold uppercase text-text-primary mb-3">
-                    {{ benefit.title }}
-                </h3>
-                <p class="font-mono text-xs text-text-muted leading-relaxed">
-                    {{ benefit.description }}
-                </p>
-                <!-- Decorative corner indicator -->
-                <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-        {% endfor %}
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {% if SECTIONS.portal_section.content.cards %}
+            {% for card in SECTIONS.portal_section.content.cards %}
+                <div class="relative border border-baseline/30 bg-bg-alt/30 p-8 rounded flex flex-col justify-between items-start transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_20px_var(--color-accent-dim)] group min-h-[320px]">
+                    <div class="w-full">
+                        <span class="font-mono text-xs font-bold text-accent tracking-wider uppercase mb-2 block">
+                            {{ card.tagline }}
+                        </span>
+                        <h3 class="font-headers text-lg font-bold uppercase text-text-primary mb-4">
+                            {{ card.header }}
+                        </h3>
+                        <p class="font-mono text-xs text-text-muted leading-relaxed mb-6">
+                            {{ card.body }}
+                        </p>
+                    </div>
+                    
+                    {% if card.cta %}
+                    <a href="{{ card.cta.url }}" class="inline-flex items-center gap-2 font-headers text-xs font-bold uppercase tracking-wider text-accent hover:text-text-primary transition-colors duration-200 group/arrow">
+                        {{ card.cta.label }}
+                        <svg class="w-3.5 h-3.5 transform transition-transform duration-300 group-hover/arrow:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                    {% endif %}
+                    
+                    <!-- Decorative technical corner indicator -->
+                    <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+            {% endfor %}
+        {% endif %}
     </div>
 </section>
 
-<!-- How It Works Section -->
-<section class="w-full bg-bg-alt/30 py-20 border-t border-baseline/30">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="mb-12 text-center">
-            <span class="font-mono text-xs font-semibold tracking-widest text-accent uppercase block mb-2">PROCESS FLOW</span>
-            <h2 class="font-headers text-3xl font-bold tracking-tight uppercase text-text-primary">
-                {{ LANDING_PAGE.how_it_works_section.heading }}
+<!-- Split IP Framework Section -->
+<section id="split_ip_framework" class="w-full bg-bg-alt/30 py-24 border-t border-baseline/20">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left: Text Explanations -->
+        <div class="lg:col-span-6 flex flex-col items-start">
+            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3">
+                {{ SECTIONS.split_ip_framework.content.section_tag }}
+            </span>
+            <h2 class="font-headers text-3xl font-bold tracking-tight uppercase text-text-primary mb-6">
+                {{ SECTIONS.split_ip_framework.content.header }}
             </h2>
+            <p class="font-mono text-sm text-text-muted leading-relaxed mb-8">
+                {{ SECTIONS.split_ip_framework.content.body_paragraph }}
+            </p>
+            
+            <div class="flex flex-col gap-6 w-full">
+                {% if SECTIONS.split_ip_framework.content.bullet_points %}
+                    {% for pt in SECTIONS.split_ip_framework.content.bullet_points %}
+                        <div class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <span class="flex items-center justify-center w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_#00F0FF]"></span>
+                            </div>
+                            <div>
+                                <h4 class="font-headers text-sm font-bold uppercase text-text-primary mb-1">
+                                    {{ pt.title }}
+                                </h4>
+                                <p class="font-mono text-xs text-text-muted leading-relaxed">
+                                    {{ pt.description }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
         </div>
         
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
-            {% for step in LANDING_PAGE.how_it_works_section.steps %}
-                <div class="relative border border-baseline/20 bg-bg/50 p-8 rounded flex flex-col items-start group">
-                    <div class="flex justify-between items-center w-full mb-6">
-                        <span class="font-mono text-xs font-bold text-accent tracking-wider uppercase">PHASE_{{ step.step_number }}</span>
-                        <span class="font-headers text-3xl font-bold text-baseline/50 group-hover:text-accent/30 transition-colors duration-300">0{{ step.step_number }}</span>
-                    </div>
-                    <h3 class="font-headers text-lg font-semibold uppercase text-text-primary mb-3">
-                        {{ step.title }}
-                    </h3>
-                    <p class="font-mono text-xs text-text-muted leading-relaxed">
-                        {{ step.description }}
-                    </p>
-                </div>
-            {% endfor %}
+        <!-- Right: Flowchart Diagram -->
+        <div class="lg:col-span-6 flex justify-center items-center">
+            <div class="w-full p-4 border border-baseline/30 bg-bg/50 rounded flex justify-center items-center hover:border-accent/30 transition-colors duration-300">
+                <svg viewBox="0 0 500 300" class="w-full h-auto max-w-[500px]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="diagram-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#333F4A" stroke-width="0.5" opacity="0.3"/>
+                        </pattern>
+                    </defs>
+                    <rect width="500" height="300" fill="url(#diagram-grid)" rx="8" stroke="#333F4A" stroke-width="1"/>
+                    
+                    <!-- Input Box (Client Requirements) -->
+                    <rect x="30" y="110" width="110" height="60" rx="4" fill="#12161A" stroke="#333F4A" stroke-width="1.5"/>
+                    <text x="85" y="140" fill="#FFFFFF" font-family="var(--font-mono)" font-size="10" text-anchor="middle">CLIENT TARGETS</text>
+                    <text x="85" y="152" fill="#8B9BB0" font-family="var(--font-mono)" font-size="8" text-anchor="middle">(Performance Specs)</text>
+
+                    <!-- Arrow from input to discovery loop -->
+                    <path d="M 140 140 L 180 140" stroke="#00F0FF" stroke-width="1.5" stroke-dasharray="3 3"/>
+                    <polygon points="180,140 174,136 174,144" fill="#00F0FF"/>
+
+                    <!-- Discovery Engine Loop (Central Box) -->
+                    <rect x="180" y="90" width="140" height="100" rx="6" fill="#1A2026" stroke="#00F0FF" stroke-width="1.5" filter="drop-shadow(0 0 8px rgba(0, 240, 255, 0.15))"/>
+                    <text x="250" y="125" fill="#FFFFFF" font-family="var(--font-headers)" font-size="11" font-weight="bold" text-anchor="middle">SOLBION ENGINE</text>
+                    <text x="250" y="140" fill="#00F0FF" font-family="var(--font-mono)" font-size="9" text-anchor="middle">Bayesian Optimization</text>
+                    <text x="250" y="155" fill="#8B9BB0" font-family="var(--font-mono)" font-size="8" text-anchor="middle">&amp; Combinatorial PVD</text>
+
+                    <!-- Arrow branching from Central box to Client (Foreground IP) -->
+                    <path d="M 320 120 L 375 120 L 375 60 L 390 60" stroke="#FFFFFF" stroke-width="1.5"/>
+                    <polygon points="390,60 384,56 384,64" fill="#FFFFFF"/>
+                    
+                    <!-- Foreground IP Box -->
+                    <rect x="390" y="30" width="90" height="60" rx="4" fill="#12161A" stroke="#FFFFFF" stroke-width="1.5"/>
+                    <text x="435" y="60" fill="#FFFFFF" font-family="var(--font-mono)" font-size="9" font-weight="bold" text-anchor="middle">FOREGROUND IP</text>
+                    <text x="435" y="72" fill="#8B9BB0" font-family="var(--font-mono)" font-size="8" text-anchor="middle">(100% Client Owned)</text>
+
+                    <!-- Arrow branching from Central box to Solbion Cloud DB (Background Telemetry) -->
+                    <path d="M 320 160 L 375 160 L 375 220 L 390 220" stroke="#00F0FF" stroke-width="1.5"/>
+                    <polygon points="390,220 384,216 384,224" fill="#00F0FF"/>
+
+                    <!-- Background Telemetry Box -->
+                    <rect x="390" y="190" width="90" height="60" rx="4" fill="#12161A" stroke="#00F0FF" stroke-width="1.5" filter="drop-shadow(0 0 6px rgba(0, 240, 255, 0.1))"/>
+                    <text x="435" y="215" fill="#00F0FF" font-family="var(--font-mono)" font-size="9" font-weight="bold" text-anchor="middle">BACKGROUND</text>
+                    <text x="435" y="227" fill="#00F0FF" font-family="var(--font-mono)" font-size="9" font-weight="bold" text-anchor="middle">TELEMETRY</text>
+                    <text x="435" y="239" fill="#8B9BB0" font-family="var(--font-mono)" font-size="8" text-anchor="middle">(Anonymized Data)</text>
+                </svg>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Bottom CTA Section -->
-<section class="max-w-7xl mx-auto px-6 py-20">
-    <div class="relative border border-baseline/40 bg-bg-alt/60 p-10 md:p-16 rounded text-center flex flex-col items-center max-w-4xl mx-auto overflow-hidden group hover:border-accent/40 transition-colors duration-300">
-        <!-- Matrix backdrop grid -->
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-baseline)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
-        
-        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4 z-10">INITIATE MAPPING CAMPAIGN</span>
-        <h2 class="font-headers text-3xl md:text-4xl font-bold tracking-tight uppercase text-text-primary mb-4 z-10">
-            {{ LANDING_PAGE.bottom_cta_section.heading }}
-        </h2>
-        <p class="font-mono text-sm text-text-muted leading-relaxed mb-8 max-w-xl z-10">
-            {{ LANDING_PAGE.bottom_cta_section.body }}
-        </p>
-        <a href="{{ LANDING_PAGE.bottom_cta_section.button.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-bg font-headers text-sm font-semibold uppercase tracking-wider rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_25px_var(--color-accent-glow)] transition-all duration-300 z-10">
-            {{ LANDING_PAGE.bottom_cta_section.button.label }}
-        </a>
-    </div>
+<section id="closing_call_to_action" class="max-w-7xl mx-auto px-6 py-24">
+    {% if SECTIONS.closing_call_to_action %}
+        <div class="relative border border-baseline/40 bg-bg-alt/60 p-10 md:p-16 rounded text-center flex flex-col items-center max-w-4xl mx-auto overflow-hidden group hover:border-accent/40 transition-colors duration-300">
+            <!-- Matrix backdrop grid -->
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-baseline)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+            
+            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4 z-10">INITIATE INTEGRATION BRIEFING</span>
+            <h2 class="font-headers text-3xl md:text-4xl font-bold tracking-tight uppercase text-text-primary mb-4 z-10">
+                {{ SECTIONS.closing_call_to_action.content.header }}
+            </h2>
+            <p class="font-mono text-sm text-text-muted leading-relaxed mb-8 max-w-xl z-10">
+                {{ SECTIONS.closing_call_to_action.content.body }}
+            </p>
+            {% if SECTIONS.closing_call_to_action.content.button %}
+                <a href="{{ SECTIONS.closing_call_to_action.content.button.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-bg font-headers text-sm font-semibold uppercase tracking-wider rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_25px_var(--color-accent-glow)] transition-all duration-300 z-10">
+                    {{ SECTIONS.closing_call_to_action.content.button.label }}
+                </a>
+            {% endif %}
+        </div>
+    {% endif %}
 </section>
 {% endblock %}

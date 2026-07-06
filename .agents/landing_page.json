@@ -1,70 +1,194 @@
 {
-  "landing_page": {
-    "metadata": {
-      "title": "Solbion | Materials Discovery Platform",
-      "description": "The autonomous engine for materials discovery. We combine combinatorial synthesis, automated metrology, and active learning to map chemical spaces at unprecedented velocity."
+  "landing_page_specification": {
+    "page_settings": {
+      "page_title": "Solbion | Autonomous Materials Discovery Platform",
+      "meta_description": "Solbion bridges the gap between physical hardware and AI orchestration. Explore our autonomous ecosystem through System Integration, Lab-as-a-Service, and the Data Consortium.",
+      "global_styles": {
+        "theme": "Dark Tech Industrial",
+        "colors": {
+          "background": "#12161A",
+          "text_primary": "#FFFFFF",
+          "accent_action": "#00F0FF",
+          "neutral_baseline": "#333F4A"
+        },
+        "typography": {
+          "headings": "Space Grotesk / Inter (Geometric Sans-Serif)",
+          "body_and_data": "Roboto Mono / Fira Code (Monospaced)"
+        }
+      }
     },
-    "hero_section": {
-      "headline": "Mapping the physical world at the speed of software.",
-      "subheadline": "High-throughput materials discovery. Zero human bottlenecks. We bridge the commercialization gap for scientific research by turning the laboratory into an autonomous data factory.",
-      "primary_cta": {
-        "label": "Request a Pilot",
-        "url": "/contact"
+    "layout_structure": [
+      {
+        "section_id": "global_navigation",
+        "component_type": "Navbar",
+        "layout": "Sticky, horizontal top-bar, transparent background transitioning to solid Carbon Black on scroll",
+        "content": {
+          "logo": {
+            "alt_text": "Solbion Lattice Matrix Icon",
+            "source_placeholder": "/assets/brand/logo-icon-only.svg"
+          },
+          "brand_name": "Solbion",
+          "nav_links": [
+            { "label": "System Integration", "url": "/hardware" },
+            { "label": "Lab-as-a-Service", "url": "/services" },
+            { "label": "Data Consortium", "url": "/data" },
+            { "label": "About", "url": "/about" }
+          ],
+          "cta_button": {
+            "label": "Access API",
+            "url": "/dashboard",
+            "style": "Outline, Titanium White"
+          }
+        }
       },
-      "secondary_cta": {
-        "label": "Explore the Platform",
-        "url": "/platform"
-      }
-    },
-    "problem_section": {
-      "heading": "The 10-Year Bottleneck",
-      "body": "Every breakthrough in your product roadmap is currently waiting on a material science bottleneck. Sequential, human-driven trial-and-error is obsolete. Guessing in an infinite multi-dimensional chemical space costs millions and takes decades."
-    },
-    "solution_section": {
-      "heading": "Don't guess. Map the material space.",
-      "body": "Solbion operates as a Lab-as-a-Service (LaaS). You provide the performance targets. Our Python-driven active learning loops and closed-loop Bayesian optimization autonomously synthesize, measure, and iterate up to 500 alloy combinations a week.",
-      "benefits": [
-        {
-          "title": "10x Speed-to-Data",
-          "description": "Collapse 6 to 9 months of traditional sequential testing into a two-week combinatorial PVD screening campaign."
-        },
-        {
-          "title": "De-risking-as-a-Service",
-          "description": "We don't just find the winning material; we map the negative space. Save millions in downstream R&D by definitively charting where your team should not look."
-        },
-        {
-          "title": "Machine-Readable Telemetry",
-          "description": "Escape fragmented ELNs. Receive structurally unified, perfectly logged metadata ready to plug directly into your internal AI models."
+      {
+        "section_id": "hero_anchor",
+        "component_type": "HeroSplit",
+        "layout": "Two-column viewport height container. Left: Typography and primary actions. Right: Animated interactive vector graphic.",
+        "content": {
+          "headline": "Mapping the physical world at the speed of software.",
+          "subheadline": "Solbion is an autonomous ecosystem for materials discovery. We combine combinatorial synthesis, automated metrology, and active learning to completely eliminate human bottlenecks from deep tech R&D.",
+          "primary_cta": {
+            "label": "Request an R&D Pilot",
+            "url": "/contact?intent=laas",
+            "style": "Solid, Laser Cyan Fill"
+          },
+          "secondary_cta": {
+            "label": "Explore the Platform",
+            "url": "#portal_section",
+            "style": "Text link with chevron arrow"
+          },
+          "visual_element": {
+            "type": "Interactive Canvas / SVG Animation",
+            "description": "Subtly pulsing, interactive Laser Cyan active paths navigating a dark Steel Grey hexagonal lattice matrix background.",
+            "source_placeholder": "/assets/animations/hero-lattice.js"
+          }
         }
-      ]
-    },
-    "how_it_works_section": {
-      "heading": "The Data Flywheel",
-      "steps": [
-        {
-          "step_number": 1,
-          "title": "Define Targets",
-          "description": "Set precise thermodynamic, electrical, or structural parameters for your next-generation semiconductor layer or non-PGM catalyst."
-        },
-        {
-          "step_number": 2,
-          "title": "Autonomous Synthesis",
-          "description": "Our hardware executes continuous combinatorial spreads, building vast libraries of physical samples without manual intervention."
-        },
-        {
-          "step_number": 3,
-          "title": "Active Orchestration",
-          "description": "Automated metrology feeds structural data back to the orchestration layer, allowing the system to learn and adapt the next synthesis run in real-time."
+      },
+      {
+        "section_id": "problem_statement",
+        "component_type": "CenteredTextWithBackgroundGrid",
+        "layout": "Full-width section with a faint, low-opacity background grid. Typographic focus with high white space.",
+        "content": {
+          "section_tag": "THE INFRASTRUCTURE GAP",
+          "header": "The 10-Year Bottleneck",
+          "body_paragraph": "Every breakthrough in your technology roadmap is currently waiting on a material science bottleneck. Legacy, sequential, human-driven trial-and-error is obsolete. Blindly searching an infinite multi-dimensional chemical space costs fortunes and takes decades. R&D teams need speed-to-data, ground-truth physical feedback, and automated workflows."
         }
-      ]
-    },
-    "bottom_cta_section": {
-      "heading": "Ready to accelerate your product roadmap?",
-      "body": "Don't spend the next two years blindly searching. Let us map the space for you in two weeks.",
-      "button": {
-        "label": "Map Your Chemical Space",
-        "url": "/contact"
+      },
+      {
+        "section_id": "portal_section",
+        "component_type": "ThreeColumnFeatureGrid",
+        "layout": "Horizontal row featuring three structurally identical geometric cards. Hover state highlights card border with Laser Cyan.",
+        "content": {
+          "section_tag": "THE SOLBION ECOSYSTEM",
+          "header": "Choose Your Interface",
+          "cards": [
+            {
+              "id": "card_build",
+              "header": "1. System Integration",
+              "tagline": "BUILD & RETROFIT",
+              "body": "Bring autonomy to your own facility. We retrofit legacy and commoditized OEM thin-film deposition and spark ablation hardware with custom mechatronics, inline metrology, and our open-architecture Python orchestration layer.",
+              "cta": {
+                "label": "Explore Custom Hardware",
+                "url": "/hardware",
+                "style": "Text Link with Arrow"
+              }
+            },
+            {
+              "id": "card_accelerate",
+              "header": "2. Lab-as-a-Service (LaaS)",
+              "tagline": "ACCELERATE SCREENING",
+              "body": "Rent our centralized high-throughput discovery engine. Define your performance metrics—such as sub-5nm semiconductor layers or non-PGM catalysts—and let our active learning loops screen up to 500 alloy combinations a week.",
+              "cta": {
+                "label": "Request an R&D Pilot",
+                "url": "/services",
+                "style": "Text Link with Arrow"
+              }
+            },
+            {
+              "id": "card_train",
+              "header": "3. Data Consortium",
+              "tagline": "TRAIN MATERIAL MODELS",
+              "body": "Fuel your internal machine learning architectures with physical reality. Subscribe to a continuous, cleanly formatted stream of standardized metadata, mapping both highly optimized material recipes and valuable synthesis failures.",
+              "cta": {
+                "label": "Access Data API",
+                "url": "/data",
+                "style": "Text Link with Arrow"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "section_id": "split_ip_framework",
+        "component_type": "TwoColumnAsymmetric",
+        "layout": "Left column: Text explanation. Right column: Technical block diagram showing data and asset flows.",
+        "content": {
+          "section_tag": "COMMERCIAL TRUST",
+          "header": "The Split-IP Framework",
+          "body_paragraph": "We treat information as a shared mental context, protecting your commercial advantages while expanding our data flywheel. You retain complete ownership of the destination; we retain the optimization capabilities of the map.",
+          "bullet_points": [
+            {
+              "title": "Your Foreground IP",
+              "description": "The customer completely owns, patents, and controls the specific, optimized composition of matter discovered during their campaign."
+            },
+            {
+              "title": "Our Background Telemetry",
+              "description": "Solbion retains anonymized machine metadata, failure logs, and baseline process curves to continuously update the core orchestration brain."
+            }
+          ],
+          "diagram_placeholder": {
+            "type": "Block Flowchart",
+            "description": "Sankey or block flow diagram depicting client inputs leading to proprietary material IP while engineering metadata branches cleanly into the Solbion database cloud."
+          }
+        }
+      },
+      {
+        "section_id": "closing_call_to_action",
+        "component_type": "CenteredFocusBox",
+        "layout": "Solid Steel Grey block container floating centered inside a Carbon Black viewport. Clean, loud typography.",
+        "content": {
+          "header": "Stop searching blindly. Start mapping.",
+          "body": "Collapse your multi-year material innovation timelines down to weeks. Partner with Solbion to build your custom autonomous workcell, run a high-throughput pilot, or access ground-truth training data.",
+          "button": {
+            "label": "Initiate Integration Briefing",
+            "url": "/contact",
+            "style": "Solid, Laser Cyan Fill, Centered"
+          }
+        }
+      },
+      {
+        "section_id": "global_footer",
+        "component_type": "FooterMatrix",
+        "layout": "Four-column footer with minimalist micro-copy, copyright details, and clean column links.",
+        "content": {
+          "copyright": "© 2026 Solbion. All rights reserved. Operating open-architecture materials acceleration platforms from Amsterdam.",
+          "columns": [
+            {
+              "title": "Platform",
+              "links": [
+                { "label": "System Integration", "url": "/hardware" },
+                { "label": "Lab-as-a-Service", "url": "/services" },
+                { "label": "Data Consortium", "url": "/data" }
+              ]
+            },
+            {
+              "title": "Company",
+              "links": [
+                { "label": "About Us", "url": "/about" },
+                { "label": "Contact", "url": "/contact" }
+              ]
+            },
+            {
+              "title": "Developer Hub",
+              "links": [
+                { "label": "API Docs", "url": "/docs/api" },
+                { "label": "Open Hardware Specifications", "url": "/docs/hardware" }
+              ]
+            }
+          ]
+        }
       }
-    }
+    ]
   }
 }
