@@ -91,6 +91,19 @@ npm run build
 
 ---
 
+## ☁️ Deployment on Cloudflare Pages
+
+To deploy this project on Cloudflare Pages, configure the application with the following build settings in the Cloudflare Dashboard:
+
+1. **Framework Preset**: `None`
+2. **Build Command**: `pip install -r requirements.txt && npm run build`
+3. **Build Directory / Output Directory**: `output`
+4. **Environment Variables**:
+   - `PYTHON_VERSION`: `3.12` (or the version matching your python runtime)
+   - `NODE_VERSION`: `18` (or greater, if required by npm packages)
+
+---
+
 ## 📝 Contribution & Code Style
 
 - **Keep It Semantic**: Ensure all templates and pages use valid HTML5 semantic tags.

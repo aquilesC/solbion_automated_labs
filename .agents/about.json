@@ -1,0 +1,130 @@
+{
+  "about_page_specification": {
+    "page_settings": {
+      "page_title": "Solbion | About the Team",
+      "meta_description": "We are a team of engineers, scientists, and business developers with decades of collective experience in deep tech automation, scientific instrumentation, and materials commercialization.",
+      "global_styles": {
+        "theme": "Dark Tech Industrial",
+        "colors": {
+          "background": "#12161A",
+          "text_primary": "#FFFFFF",
+          "accent_action": "#00F0FF",
+          "neutral_baseline": "#333F4A"
+        },
+        "typography": {
+          "headings": "Space Grotesk / Inter",
+          "body_and_data": "Roboto Mono / Fira Code"
+        }
+      }
+    },
+    "layout_structure": [
+      {
+        "section_id": "global_navigation",
+        "component_type": "Navbar",
+        "layout": "Sticky top-bar, solid Carbon Black background.",
+        "content": {
+          "logo": {
+            "alt_text": "Solbion Lattice Matrix Icon",
+            "source_placeholder": "/assets/brand/logo-icon-only.svg"
+          },
+          "active_link": "About"
+        }
+      },
+      {
+        "section_id": "about_hero",
+        "component_type": "HeroCorporate",
+        "layout": "Centered alignment, clean and authoritative typography. Background is a subtle, static rendering of the Solbion Lattice Matrix.",
+        "content": {
+          "super_header": "OUR DNA",
+          "headline": "Engineered by Experience.",
+          "subheadline": "We are not software developers guessing at physics. We are a team of scientists, hardware engineers, and technical business developers with decades of experience building, automating, and commercializing high-end scientific instrumentation.",
+          "primary_cta": {
+            "label": "Partner With Us",
+            "url": "/contact",
+            "style": "Solid, Laser Cyan Fill"
+          }
+        }
+      },
+      {
+        "section_id": "the_solbion_philosophy",
+        "component_type": "TwoColumnText",
+        "layout": "High-contrast section emphasizing trust and industry knowledge.",
+        "content": {
+          "left_column": {
+            "heading": "Bridging the Commercialization Gap",
+            "body": "The leap from an academic breakthrough to an industrial-scale process is where most materials fail. We founded Solbion because we lived that bottleneck. Having spent years embedded in the deep tech sector and the semiconductor equipment supply chain, we saw firsthand how rigid, closed-source hardware stifled discovery. We built Solbion to be the autonomous orchestration layer that the industry was missing."
+          },
+          "right_column": {
+            "heading": "An Open-Architecture Mandate",
+            "body": "We believe the future of R&D belongs to open-source hardware and software. By leveraging frameworks like Python and PyQt, we break open the 'black boxes' of legacy deposition and metrology tools. We provide the transparency, control, and precision required to turn traditional laboratories into autonomous data factories."
+          }
+        }
+      },
+      {
+        "section_id": "core_expertise",
+        "component_type": "ThreeColumnFeatureGrid",
+        "layout": "Horizontal row detailing the three pillars of the team's expertise. Utilitarian, icon-driven design.",
+        "content": {
+          "section_tag": "OUR EXPERTISE",
+          "header": "Decades of Deep Tech Execution",
+          "pillars": [
+            {
+              "icon": "Cpu",
+              "title": "Hardware & Instrumentation",
+              "description": "Deep domain expertise in gas-phase synthesis, ultra-high vacuum systems, and automated metrology. We know how to build, tune, and maintain the physical tools that generate ground-truth data."
+            },
+            {
+              "icon": "Code",
+              "title": "Software & Orchestration",
+              "description": "Extensive background in mechatronics, edge computing, and AI orchestration. We write the middleware that connects complex physical APIs directly to active learning algorithms."
+            },
+            {
+              "icon": "Briefcase",
+              "title": "Venture & Commercialization",
+              "description": "Proven track records in technical business development and co-building deep tech spinouts. We structure our contracts to protect your IP and accelerate your product roadmap."
+            }
+          ]
+        }
+      },
+      {
+        "section_id": "ecosystem_roots",
+        "component_type": "CenteredFocusBox",
+        "layout": "Solid Steel Grey block container inside a Carbon Black viewport, featuring minimal graphical accents representing a global network.",
+        "content": {
+          "header": "Rooted in Amsterdam. Built for global R&D.",
+          "body": "Headquartered in the Netherlands, Solbion is deeply integrated into the European deep tech and semiconductor ecosystem. We partner with global foundries, Tier 1 suppliers, and leading academic institutions to push the boundaries of automated materials discovery.",
+          "button": {
+            "label": "Get in Touch",
+            "url": "/contact",
+            "style": "Outline, Titanium White"
+          }
+        }
+      },
+      {
+        "section_id": "global_footer",
+        "component_type": "FooterMatrix",
+        "layout": "Minimalist four-column footer.",
+        "content": {
+          "copyright": "© 2026 Solbion. All rights reserved. Operating open-architecture materials acceleration platforms from Amsterdam.",
+          "columns": [
+            {
+              "title": "Platform",
+              "links": [
+                { "label": "System Integration", "url": "/hardware" },
+                { "label": "Lab-as-a-Service", "url": "/services" },
+                { "label": "Data Consortium", "url": "/data" }
+              ]
+            },
+            {
+              "title": "Company",
+              "links": [
+                { "label": "About Us", "url": "/about" },
+                { "label": "Contact", "url": "/contact" }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

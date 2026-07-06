@@ -6,8 +6,8 @@
   "scripts": {
     "build:css": "tailwindcss -i themes/solbion/static/css/src/style.css -o themes/solbion/static/css/style.css",
     "watch:css": "tailwindcss -i themes/solbion/static/css/src/style.css -o themes/solbion/static/css/style.css --watch",
-    "build": "npm run build:css && ./.venv/bin/pelican content",
-    "dev": "concurrently \"npm run watch:css\" \"./.venv/bin/pelican -r -l -p 8123\""
+    "build": "npm run build:css && pelican content",
+    "dev": "concurrently \"npm run watch:css\" \"pelican -r -l -p 8123\""
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.0",

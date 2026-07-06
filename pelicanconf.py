@@ -66,6 +66,17 @@ except Exception as e:
     CONTACT_SPEC = {}
     CONTACT_SECTIONS = {}
 
+# Load about page specification
+try:
+    with open('.agents/about.json', 'r') as f:
+        data = json.load(f)
+        ABOUT_SPEC = data.get('about_page_specification', {})
+        ABOUT_SECTIONS = {s['section_id']: s for s in ABOUT_SPEC.get('layout_structure', [])}
+except Exception as e:
+    print(f"Error loading about.json: {e}")
+    ABOUT_SPEC = {}
+    ABOUT_SECTIONS = {}
+
 # Pelican paths configuration
 PAGE_PATHS = ['pages']
 ARTICLE_PATHS = ['articles']
