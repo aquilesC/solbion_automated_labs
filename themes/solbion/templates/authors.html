@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="container">
+    <h1 class="text-glow">Authors</h1>
+    <ul style="margin-block-start: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+        {% for author, articles in authors|sort %}
+            <li>
+                <a href="{{ SITEURL }}/{{ author.url }}" class="cyber-card" style="padding: 0.5rem 1rem; display: inline-block;">
+                    {{ author }} <span class="mono-label">({{ articles|length }})</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

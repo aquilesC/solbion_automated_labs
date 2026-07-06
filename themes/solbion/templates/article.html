@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title }} | {{ SITENAME }}{% endblock %}
+{% block description %}{{ article.description or article.summary or super() }}{% endblock %}
+
+{% block content %}
+<article class="container">
+    <header class="article-header" style="margin-block-end: 2rem; border-bottom: 1px solid var(--color-border); padding-block-end: 1.5rem;">
+        <span class="mono-label" style="font-size: 0.8rem; text-transform: uppercase;">{{ article.date|strftime('%Y-%m-%d') }} | {{ article.category }}</span>
+        <h1 class="text-glow" style="margin-block: 0.5rem 1rem;">{{ article.title }}</h1>
+        <p class="mono-label" style="font-size: 0.9rem; color: var(--color-text-muted);">Authored by: {{ article.author }}</p>
+    </header>
+    
+    <div class="article-body">
+        {{ article.content }}
+    </div>
+</article>
+{% endblock %}

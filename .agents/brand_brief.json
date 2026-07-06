@@ -1,0 +1,88 @@
+{
+  "brand_identity": {
+    "name": "Solbion",
+    "etymology": {
+      "sol": "Solid / Solution (Physical world, solid-state physics, metallurgical alloys)",
+      "bion": "Bionic / Biological (Software orchestration, active learning, autonomous adaptation)"
+    },
+    "positioning": {
+      "statement": "The autonomous engine for materials discovery. A data factory for the physical world.",
+      "core_philosophy": "Moving away from sequential, human-driven trial-and-error toward closed-loop Bayesian optimization and active learning.",
+      "value_proposition": "10x speed-to-data, drastic cost reduction per formulation, and complete mapping of the physical multi-dimensional chemical space."
+    }
+  },
+  "visual_identity": {
+    "color_palette": {
+      "primary_background": {
+        "name": "Carbon Black",
+        "hex": "#12161A",
+        "usage": "Main background, laboratory aesthetic, vacuum environments"
+      },
+      "primary_text": {
+        "name": "Titanium White",
+        "hex": "#FFFFFF",
+        "usage": "Headers, primary typography, maximum contrast"
+      },
+      "accent": {
+        "name": "Laser Cyan",
+        "hex": "#00F0FF",
+        "usage": "Data streams, active learning paths, plasma plumes, call-to-action elements"
+      },
+      "baseline": {
+        "name": "Steel Grey",
+        "hex": "#333F4A",
+        "usage": "Lattice grid lines, secondary text, negative/failed data points"
+      }
+    },
+    "typography": {
+      "headers": {
+        "font_family": "'Space Grotesk', 'Inter', sans-serif",
+        "style": "Geometric, sharp, uniform weight"
+      },
+      "body_and_code": {
+        "font_family": "'Roboto Mono', 'Fira Code', monospace",
+        "style": "Data-heavy, machine-readable, precise numerical layouts"
+      }
+    },
+    "logo_concept": {
+      "name": "The Lattice Matrix",
+      "geometry": "Hexagonal grid system (representing close-packing in crystalline structures)",
+      "elements": {
+        "background_dots": "Steel Grey points representing the uncharted theoretical space",
+        "active_path": "Laser Cyan connected line representing autonomous AI navigation",
+        "nodes": "Glow-effect Cyan circles marking discovered, highly optimized knowledge points"
+      }
+    },
+    "imagery_strategy": {
+      "allowed": [
+        "Macro-photography of hardware (PVD plasma plumes, ultra-high vacuum flanges, silicon wafers)",
+        "High-fidelity data visualizations (3D topological maps of resistivity/conductivity curves)"
+      ],
+      "forbidden": [
+        "Generic stock photos of scientists in lab coats looking at colored liquids in beakers"
+      ]
+    }
+  },
+  "editorial_guidelines": {
+    "tone_of_voice": "Hyper-pragmatic, confident, technically authoritative, and direct",
+    "vocabulary": {
+      "preferred": [
+        "Closed-loop Bayesian optimization",
+        "Combinatorial PVD screening",
+        "Active learning loops",
+        "Data factory",
+        "De-risking-as-a-Service"
+      ],
+      "avoid": [
+        "Revolutionary AI magic",
+        "Inventing materials",
+        "Traditional R&D"
+      ]
+    },
+    "taglines": [
+      "Mapping the physical world at the speed of software.",
+      "High-throughput materials discovery. Zero human bottlenecks.",
+      "Don't spend two years searching a chemical space. Let Solbion map it in two weeks."
+    ]
+  }
+}

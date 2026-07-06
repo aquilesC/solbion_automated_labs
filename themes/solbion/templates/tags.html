@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="container">
+    <h1 class="text-glow">Tags</h1>
+    <ul style="margin-block-start: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+        {% for tag, articles in tags|sort %}
+            <li>
+                <a href="{{ SITEURL }}/{{ tag.url }}" class="cyber-card" style="padding: 0.5rem 1rem; display: inline-block;">
+                    {{ tag }} <span class="mono-label">({{ articles|length }})</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

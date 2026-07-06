@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="container">
+    <h1 class="text-glow">Archives</h1>
+    <ul style="margin-block-start: 2rem;">
+        {% for article in dates %}
+            <li style="margin-block-end: 1rem; border-bottom: 1px solid var(--color-border); padding-block-end: 0.5rem; display: flex; justify-content: space-between;">
+                <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                <span class="mono-label">{{ article.date|strftime('%Y-%m-%d') }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

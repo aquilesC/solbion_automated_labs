@@ -1,0 +1,70 @@
+{
+  "landing_page": {
+    "metadata": {
+      "title": "Solbion | Materials Discovery Platform",
+      "description": "The autonomous engine for materials discovery. We combine combinatorial synthesis, automated metrology, and active learning to map chemical spaces at unprecedented velocity."
+    },
+    "hero_section": {
+      "headline": "Mapping the physical world at the speed of software.",
+      "subheadline": "High-throughput materials discovery. Zero human bottlenecks. We bridge the commercialization gap for scientific research by turning the laboratory into an autonomous data factory.",
+      "primary_cta": {
+        "label": "Request a Pilot",
+        "url": "/contact"
+      },
+      "secondary_cta": {
+        "label": "Explore the Platform",
+        "url": "/platform"
+      }
+    },
+    "problem_section": {
+      "heading": "The 10-Year Bottleneck",
+      "body": "Every breakthrough in your product roadmap is currently waiting on a material science bottleneck. Sequential, human-driven trial-and-error is obsolete. Guessing in an infinite multi-dimensional chemical space costs millions and takes decades."
+    },
+    "solution_section": {
+      "heading": "Don't guess. Map the material space.",
+      "body": "Solbion operates as a Lab-as-a-Service (LaaS). You provide the performance targets. Our Python-driven active learning loops and closed-loop Bayesian optimization autonomously synthesize, measure, and iterate up to 500 alloy combinations a week.",
+      "benefits": [
+        {
+          "title": "10x Speed-to-Data",
+          "description": "Collapse 6 to 9 months of traditional sequential testing into a two-week combinatorial PVD screening campaign."
+        },
+        {
+          "title": "De-risking-as-a-Service",
+          "description": "We don't just find the winning material; we map the negative space. Save millions in downstream R&D by definitively charting where your team should not look."
+        },
+        {
+          "title": "Machine-Readable Telemetry",
+          "description": "Escape fragmented ELNs. Receive structurally unified, perfectly logged metadata ready to plug directly into your internal AI models."
+        }
+      ]
+    },
+    "how_it_works_section": {
+      "heading": "The Data Flywheel",
+      "steps": [
+        {
+          "step_number": 1,
+          "title": "Define Targets",
+          "description": "Set precise thermodynamic, electrical, or structural parameters for your next-generation semiconductor layer or non-PGM catalyst."
+        },
+        {
+          "step_number": 2,
+          "title": "Autonomous Synthesis",
+          "description": "Our hardware executes continuous combinatorial spreads, building vast libraries of physical samples without manual intervention."
+        },
+        {
+          "step_number": 3,
+          "title": "Active Orchestration",
+          "description": "Automated metrology feeds structural data back to the orchestration layer, allowing the system to learn and adapt the next synthesis run in real-time."
+        }
+      ]
+    },
+    "bottom_cta_section": {
+      "heading": "Ready to accelerate your product roadmap?",
+      "body": "Don't spend the next two years blindly searching. Let us map the space for you in two weeks.",
+      "button": {
+        "label": "Map Your Chemical Space",
+        "url": "/contact"
+      }
+    }
+  }
+}

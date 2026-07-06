@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }} | {{ SITENAME }}{% endblock %}
+{% block description %}{{ page.description or page.summary or super() }}{% endblock %}
+
+{% block content %}
+<article class="container">
+    <header class="page-header" style="margin-block-end: 2rem;">
+        <h1 class="text-glow">{{ page.title }}</h1>
+        {% if page.subtitle %}
+            <p class="mono-label" style="font-size: 1.1rem; margin-block-start: -1rem; color: var(--color-accent);">{{ page.subtitle }}</p>
+        {% endif %}
+    </header>
+    
+    <div class="page-body">
+        {{ page.content }}
+    </div>
+</article>
+{% endblock %}

@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 py-12 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7 flex flex-col items-start text-left">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4">SYSTEM INITIATED // AUTONOMOUS MATERIALS SYNTHESIS</span>
+        <h1 class="font-headers text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] uppercase text-text-primary mb-6 drop-shadow-[0_0_15px_var(--color-accent-dim)]">
+            {{ LANDING_PAGE.hero_section.headline }}
+        </h1>
+        <p class="font-mono text-sm md:text-base text-text-muted leading-relaxed mb-8 max-w-2xl">
+            {{ LANDING_PAGE.hero_section.subheadline }}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <a href="{{ LANDING_PAGE.hero_section.primary_cta.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-bg font-headers text-sm font-semibold uppercase tracking-wider rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_20px_var(--color-accent-glow)] transition-all duration-300">
+                {{ LANDING_PAGE.hero_section.primary_cta.label }}
+            </a>
+            <a href="{{ LANDING_PAGE.hero_section.secondary_cta.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-transparent text-text-primary font-headers text-sm font-semibold uppercase tracking-wider rounded border border-baseline hover:border-accent hover:text-accent transition-all duration-300">
+                {{ LANDING_PAGE.hero_section.secondary_cta.label }}
+            </a>
+        </div>
+    </div>
+    
+    <div class="lg:col-span-5 flex justify-center items-center">
+        <!-- Visual representation of the Lattice Matrix -->
+        <div class="relative w-full max-w-[400px] aspect-square rounded border border-baseline/30 bg-bg-alt/40 p-8 flex items-center justify-center overflow-hidden group hover:border-accent/50 transition-colors duration-500">
+            <!-- Background dot grid -->
+            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(var(--color-baseline)_1.5px,transparent_1.5px)] bg-[size:24px_24px] pointer-events-none"></div>
+            
+            <svg class="w-4/5 h-4/5 animate-[spin_120s_linear_infinite]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Hexagonal Packed Dots -->
+                <circle cx="50" cy="15" r="2.5" fill="#333F4A" />
+                <circle cx="20" cy="32.5" r="2.5" fill="#333F4A" />
+                <circle cx="80" cy="32.5" r="2.5" fill="#333F4A" />
+                <circle cx="20" cy="67.5" r="2.5" fill="#333F4A" />
+                <circle cx="80" cy="67.5" r="2.5" fill="#333F4A" />
+                <circle cx="50" cy="85" r="2.5" fill="#333F4A" />
+                <circle cx="50" cy="50" r="2.5" fill="#333F4A" />
+                
+                <!-- Inner Hexagon Ring -->
+                <circle cx="35" cy="41.25" r="2.5" fill="#333F4A" />
+                <circle cx="65" cy="41.25" r="2.5" fill="#333F4A" />
+                <circle cx="35" cy="58.75" r="2.5" fill="#333F4A" />
+                <circle cx="65" cy="58.75" r="2.5" fill="#333F4A" />
+                
+                <!-- Active Navigation Paths -->
+                <path d="M20 32.5 L35 41.25 L50 50 L65 58.75 L80 67.5" stroke="#00F0FF" stroke-width="1.5" stroke-dasharray="3 3" stroke-linecap="round" />
+                <path d="M50 15 L65 41.25 L50 50 L35 58.75 L20 67.5" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" />
+                
+                <!-- Glowing cyan nodes -->
+                <circle class="animate-pulse" cx="50" cy="15" r="4.5" fill="#00F0FF" filter="drop-shadow(0 0 6px #00F0FF)" />
+                <circle cx="65" cy="41.25" r="3.5" fill="#00F0FF" filter="drop-shadow(0 0 4px #00F0FF)" />
+                <circle class="animate-[pulse_1.5s_infinite]" cx="50" cy="50" r="4.5" fill="#00F0FF" filter="drop-shadow(0 0 6px #00F0FF)" />
+                <circle cx="35" cy="58.75" r="3.5" fill="#00F0FF" filter="drop-shadow(0 0 4px #00F0FF)" />
+                <circle class="animate-pulse" cx="20" cy="67.5" r="4.5" fill="#00F0FF" filter="drop-shadow(0 0 6px #00F0FF)" />
+            </svg>
+            
+            <!-- Technical frame borders -->
+            <span class="absolute top-2 left-2 font-mono text-[9px] text-accent opacity-50">SYS.LOC: LAB_01</span>
+            <span class="absolute bottom-2 right-2 font-mono text-[9px] text-accent opacity-50">LATTICE_OP: ACTIVE</span>
+        </div>
+    </div>
+</section>
+
+<!-- Problem Section -->
+<section class="w-full bg-bg-alt/60 py-20 border-y border-baseline/30">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-4">
+            <span class="font-mono text-xs font-semibold tracking-widest text-accent uppercase block mb-2">THE PROBLEM SPACE</span>
+            <h2 class="font-headers text-2xl lg:text-3xl font-bold tracking-tight uppercase text-text-primary">
+                {{ LANDING_PAGE.problem_section.heading }}
+            </h2>
+        </div>
+        <div class="lg:col-span-8">
+            <p class="font-mono text-base text-text-muted leading-relaxed max-w-3xl">
+                {{ LANDING_PAGE.problem_section.body }}
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Solution Section & Benefits -->
+<section class="max-w-7xl mx-auto px-6 py-20">
+    <div class="mb-12">
+        <span class="font-mono text-xs font-semibold tracking-widest text-accent uppercase block mb-2">THE PLATFORM SOLVE</span>
+        <h2 class="font-headers text-3xl md:text-4xl font-bold tracking-tight uppercase text-text-primary mb-4">
+            {{ LANDING_PAGE.solution_section.heading }}
+        </h2>
+        <p class="font-mono text-sm md:text-base text-text-muted leading-relaxed max-w-4xl">
+            {{ LANDING_PAGE.solution_section.body }}
+        </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {% for benefit in LANDING_PAGE.solution_section.benefits %}
+            <div class="relative border border-baseline/30 bg-bg-alt/30 p-8 rounded flex flex-col items-start transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_20px_var(--color-accent-dim)] group">
+                <span class="font-mono text-xs font-bold text-accent tracking-wider uppercase mb-4">BENEFIT_{{ loop.index | string | format }}</span>
+                <h3 class="font-headers text-lg font-semibold uppercase text-text-primary mb-3">
+                    {{ benefit.title }}
+                </h3>
+                <p class="font-mono text-xs text-text-muted leading-relaxed">
+                    {{ benefit.description }}
+                </p>
+                <!-- Decorative corner indicator -->
+                <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="w-full bg-bg-alt/30 py-20 border-t border-baseline/30">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-12 text-center">
+            <span class="font-mono text-xs font-semibold tracking-widest text-accent uppercase block mb-2">PROCESS FLOW</span>
+            <h2 class="font-headers text-3xl font-bold tracking-tight uppercase text-text-primary">
+                {{ LANDING_PAGE.how_it_works_section.heading }}
+            </h2>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
+            {% for step in LANDING_PAGE.how_it_works_section.steps %}
+                <div class="relative border border-baseline/20 bg-bg/50 p-8 rounded flex flex-col items-start group">
+                    <div class="flex justify-between items-center w-full mb-6">
+                        <span class="font-mono text-xs font-bold text-accent tracking-wider uppercase">PHASE_{{ step.step_number }}</span>
+                        <span class="font-headers text-3xl font-bold text-baseline/50 group-hover:text-accent/30 transition-colors duration-300">0{{ step.step_number }}</span>
+                    </div>
+                    <h3 class="font-headers text-lg font-semibold uppercase text-text-primary mb-3">
+                        {{ step.title }}
+                    </h3>
+                    <p class="font-mono text-xs text-text-muted leading-relaxed">
+                        {{ step.description }}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Bottom CTA Section -->
+<section class="max-w-7xl mx-auto px-6 py-20">
+    <div class="relative border border-baseline/40 bg-bg-alt/60 p-10 md:p-16 rounded text-center flex flex-col items-center max-w-4xl mx-auto overflow-hidden group hover:border-accent/40 transition-colors duration-300">
+        <!-- Matrix backdrop grid -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-baseline)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+        
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4 z-10">INITIATE MAPPING CAMPAIGN</span>
+        <h2 class="font-headers text-3xl md:text-4xl font-bold tracking-tight uppercase text-text-primary mb-4 z-10">
+            {{ LANDING_PAGE.bottom_cta_section.heading }}
+        </h2>
+        <p class="font-mono text-sm text-text-muted leading-relaxed mb-8 max-w-xl z-10">
+            {{ LANDING_PAGE.bottom_cta_section.body }}
+        </p>
+        <a href="{{ LANDING_PAGE.bottom_cta_section.button.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-bg font-headers text-sm font-semibold uppercase tracking-wider rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_25px_var(--color-accent-glow)] transition-all duration-300 z-10">
+            {{ LANDING_PAGE.bottom_cta_section.button.label }}
+        </a>
+    </div>
+</section>
+{% endblock %}
