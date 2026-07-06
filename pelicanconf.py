@@ -84,6 +84,7 @@ STATIC_PATHS = ['images', 'extra']
 
 # Extra path metadata to copy custom assets (e.g. CNAME, robots.txt, favicon)
 EXTRA_PATH_METADATA = {
+    'extra/favicon.svg': {'path': 'favicon.svg'},
     'extra/favicon.ico': {'path': 'favicon.ico'},
 }
 

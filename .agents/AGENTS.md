@@ -5,8 +5,8 @@ This file outlines the project guidelines, technology stack, visual design const
 ## Technical Choices
 - **Static Site Generator:** Pelican (configured via `pelicanconf.py`).
 - **Python Environment:** Managed via `uv` using Python 3.12 (inside `.venv` virtual environment).
-- **Styling:** Vanilla CSS (no TailwindCSS or CSS frameworks unless requested).
-- **Core Strategy:** Data-centric, high-fidelity layouts using modern CSS features, subtle animations, and semantic HTML structure.
+- **Styling:** TailwindCSS via the Tailwind v4 CLI (`npm run build:css` or `npm run dev` handles compilation). No direct Vanilla CSS unless required for scoped overrides.
+- **Core Strategy:** Data-centric, high-fidelity layouts using Tailwind utility classes, subtle animations, and semantic HTML structure.
 
 ## Visual Identity (from brand_brief.json)
 - **Primary Background:** Carbon Black (`#12161A`) — represents laboratory/vacuum environments.
