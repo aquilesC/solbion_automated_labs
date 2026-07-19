@@ -7,18 +7,18 @@
 {% block content %}
 
 <!-- Hero Section -->
-<section class="relative w-full overflow-hidden border-b border-baseline/30 py-16 md:py-24 bg-bg">
+<section class="relative w-full overflow-hidden border-b border-baseline py-16 md:py-24 bg-bg">
     <!-- Low-opacity grid background -->
-    <div class="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(51,63,74,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(51,63,74,0.15)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none"></div>
+    <div class="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(226,232,240,0.6)_1px,transparent_1px),linear-gradient(90deg,rgba(226,232,240,0.6)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none"></div>
     
     <div class="max-w-7xl mx-auto px-6 relative z-10 text-left">
-        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3 animate-pulse">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase block mb-3">
             {{ CONTACT_SECTIONS.contact_hero.content.super_header }}
         </span>
-        <h1 class="font-headers text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] uppercase text-text-primary mb-6 drop-shadow-[0_0_15px_var(--color-accent-dim)]">
+        <h1 class="font-headers text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] uppercase text-text-primary mb-6">
             {{ CONTACT_SECTIONS.contact_hero.content.headline }}
         </h1>
-        <p class="font-mono text-sm md:text-base text-text-muted leading-relaxed max-w-3xl">
+        <p class="font-sans text-base md:text-lg text-text-muted leading-relaxed max-w-3xl">
             {{ CONTACT_SECTIONS.contact_hero.content.subheadline }}
         </p>
     </div>
@@ -31,24 +31,24 @@
     <div class="lg:col-span-5 flex flex-col gap-8">
         
         <!-- Physical Coordinates Box -->
-        <div class="border border-baseline/30 bg-bg-alt/30 p-8 rounded relative overflow-hidden group hover:border-accent/40 transition-colors duration-300">
-            <span class="absolute top-2 right-3 font-mono text-[9px] text-text-muted opacity-45">NODE_LOC // v1.0.2</span>
+        <div class="border border-baseline bg-card p-8 rounded-card relative overflow-hidden shadow-card-resting hover:border-accent/50 hover:shadow-card-hover transition-all duration-300">
+            <span class="absolute top-2 right-3 font-mono text-[9px] text-text-tertiary opacity-70">NODE_LOC // v1.0.2</span>
             
-            <h2 class="font-headers text-xs font-bold uppercase tracking-wider text-text-primary mb-6 pb-2 border-b border-baseline/20">
+            <h2 class="font-headers text-xs font-bold uppercase tracking-wider text-text-primary mb-6 pb-2 border-b border-baseline">
                 {{ CONTACT_SECTIONS.system_status_panel.content.node_title }}
             </h2>
             
-            <div class="flex flex-col gap-4 font-mono text-xs">
+            <div class="flex flex-col gap-4 font-sans text-sm">
                 <div>
-                    <span class="text-text-muted block text-[10px] uppercase tracking-wider mb-0.5">Location</span>
+                    <span class="text-text-tertiary block text-[10px] uppercase tracking-wider mb-0.5">Location</span>
                     <span class="text-text-primary font-semibold text-sm">{{ CONTACT_SECTIONS.system_status_panel.content.node_location }}</span>
                 </div>
                 <div>
-                    <span class="text-text-muted block text-[10px] uppercase tracking-wider mb-0.5">Geospatial Coordinates</span>
+                    <span class="text-text-tertiary block text-[10px] uppercase tracking-wider mb-0.5">Geospatial Coordinates</span>
                     <span class="text-accent font-semibold tracking-wider">{{ CONTACT_SECTIONS.system_status_panel.content.node_coords }}</span>
                 </div>
                 <div>
-                    <span class="text-text-muted block text-[10px] uppercase tracking-wider mb-0.5">Communication Channel</span>
+                    <span class="text-text-tertiary block text-[10px] uppercase tracking-wider mb-0.5">Communication Channel</span>
                     <a href="mailto:{{ CONTACT_SECTIONS.system_status_panel.content.node_email }}" class="text-text-primary hover:text-accent underline transition-colors duration-200">
                         {{ CONTACT_SECTIONS.system_status_panel.content.node_email }}
                     </a>
@@ -57,23 +57,23 @@
         </div>
         
         <!-- Telemetry Logs Monitor -->
-        <div class="border border-baseline/30 bg-[#0d1115] rounded overflow-hidden flex flex-col shadow-lg">
+        <div class="border border-baseline bg-[#0d1115] rounded-card overflow-hidden flex flex-col shadow-md">
             <!-- Terminal Header -->
-            <div class="bg-[#0b0e11] px-4 py-3 flex justify-between items-center border-b border-baseline/20">
+            <div class="bg-[#080b0e] px-4 py-3 flex justify-between items-center border-b border-baseline/10">
                 <div class="flex items-center gap-2">
                     <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
                     <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
                     <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
                 </div>
                 <span class="font-mono text-[10px] text-text-muted">system_telemetry.log</span>
-                <span class="w-2 h-2 rounded-full bg-accent animate-status-blink shadow-[0_0_6px_#00F0FF]"></span>
+                <span class="w-2 h-2 rounded-full bg-accent-secondary animate-status-blink"></span>
             </div>
             
             <!-- Terminal Body -->
             <div class="p-6 flex flex-col gap-3 font-mono text-[10px] text-text-muted leading-relaxed">
-                <div class="text-accent/65 font-bold">// ESTABLISHING ACTIVE TELEMETRY LINK...</div>
+                <div class="text-accent/80 font-bold">// ESTABLISHING ACTIVE TELEMETRY LINK...</div>
                 {% for log in CONTACT_SECTIONS.system_status_panel.content.status_logs %}
-                    <div class="border-l-2 border-baseline pl-3 transition-all duration-300 hover:border-accent hover:bg-[rgba(0,240,255,0.02)]">
+                    <div class="border-l-2 border-baseline pl-3 transition-all duration-300 hover:border-accent hover:bg-accent/5">
                         {{ log }}
                     </div>
                 {% endfor %}
@@ -85,8 +85,8 @@
     <div class="lg:col-span-7">
         
         <!-- Formspree success container -->
-        <div data-fs-success class="hidden border border-accent/60 bg-bg-alt/45 p-8 md:p-12 rounded flex flex-col items-center text-center shadow-[0_0_30px_var(--color-accent-dim)]">
-            <div class="w-16 h-16 rounded-full border border-accent flex items-center justify-center mb-6 shadow-[0_0_15px_var(--color-accent-dim)]">
+        <div data-fs-success class="hidden border border-accent bg-card p-8 md:p-12 rounded-card flex flex-col items-center text-center shadow-card-resting hover:shadow-card-hover transition-all duration-300">
+            <div class="w-16 h-16 rounded-full border-2 border-accent flex items-center justify-center mb-6">
                 <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
@@ -96,15 +96,15 @@
                 {{ CONTACT_SECTIONS.integration_form.content.success_message.header }}
             </h3>
             
-            <p class="font-mono text-xs text-accent opacity-80 uppercase tracking-widest mb-6">
+            <p class="font-mono text-xs text-accent-secondary opacity-90 uppercase tracking-widest mb-6">
                 {{ CONTACT_SECTIONS.integration_form.content.success_message.subheader }}
             </p>
             
-            <p class="font-mono text-sm text-text-muted leading-relaxed mb-8 max-w-md">
+            <p class="font-sans text-sm text-text-muted leading-relaxed mb-8 max-w-md">
                 {{ CONTACT_SECTIONS.integration_form.content.success_message.body }}
             </p>
             
-            <div class="bg-[#12161A] border border-baseline/35 px-5 py-2.5 rounded font-mono text-[10px] text-text-muted uppercase tracking-wider">
+            <div class="bg-bg-alt border border-baseline px-5 py-2.5 rounded font-mono text-[10px] text-text-muted uppercase tracking-wider">
                 {{ CONTACT_SECTIONS.integration_form.content.success_message.status_code }}
             </div>
         </div>
@@ -115,13 +115,13 @@
         </div>
         
         <!-- Form Element -->
-        <form id="contact-form" class="flex flex-col gap-6 border border-baseline/30 bg-bg-alt/20 p-8 rounded relative overflow-hidden group hover:border-baseline/50 transition-colors duration-300">
+        <form id="contact-form" class="flex flex-col gap-6 border border-baseline bg-card p-8 rounded-card relative overflow-hidden shadow-card-resting hover:border-baseline/80 hover:shadow-card-hover transition-all duration-300">
             
-            <div class="absolute top-0 left-0 h-[3px] w-full bg-gradient-to-r from-transparent via-accent/30 to-transparent"></div>
+            <div class="absolute top-0 left-0 h-[3px] w-full bg-gradient-to-r from-transparent via-accent/20 to-transparent"></div>
             
             <!-- Name (Identifier) -->
             <div class="flex flex-col gap-1.5">
-                <label for="name" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">
+                <label for="name" class="font-mono text-[10px] text-text-tertiary uppercase tracking-wider">
                     {{ CONTACT_SECTIONS.integration_form.content.fields.name.label }}
                 </label>
                 <input 
@@ -131,14 +131,14 @@
                     required 
                     data-fs-field
                     placeholder="{{ CONTACT_SECTIONS.integration_form.content.fields.name.placeholder }}"
-                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
+                    class="w-full bg-white border border-baseline text-text-primary px-4 py-3 rounded-button focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-sans text-sm transition-all duration-300 placeholder:text-text-tertiary/40 aria-[invalid=true]:!border-red-500 aria-[invalid=true]:!ring-red-500"
                 />
                 <span data-fs-error="name" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
             </div>
             
             <!-- Email (Endpoint) -->
             <div class="flex flex-col gap-1.5">
-                <label for="email" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">
+                <label for="email" class="font-mono text-[10px] text-text-tertiary uppercase tracking-wider">
                     {{ CONTACT_SECTIONS.integration_form.content.fields.email.label }}
                 </label>
                 <input 
@@ -148,14 +148,14 @@
                     required 
                     data-fs-field
                     placeholder="{{ CONTACT_SECTIONS.integration_form.content.fields.email.placeholder }}"
-                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
+                    class="w-full bg-white border border-baseline text-text-primary px-4 py-3 rounded-button focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-sans text-sm transition-all duration-300 placeholder:text-text-tertiary/40 aria-[invalid=true]:!border-red-500 aria-[invalid=true]:!ring-red-500"
                 />
                 <span data-fs-error="email" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
             </div>
             
             <!-- Organization (Domain) -->
             <div class="flex flex-col gap-1.5">
-                <label for="organization" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">
+                <label for="organization" class="font-mono text-[10px] text-text-tertiary uppercase tracking-wider">
                     {{ CONTACT_SECTIONS.integration_form.content.fields.organization.label }}
                 </label>
                 <input 
@@ -164,14 +164,14 @@
                     name="organization" 
                     data-fs-field
                     placeholder="{{ CONTACT_SECTIONS.integration_form.content.fields.organization.placeholder }}"
-                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
+                    class="w-full bg-white border border-baseline text-text-primary px-4 py-3 rounded-button focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-sans text-sm transition-all duration-300 placeholder:text-text-tertiary/40 aria-[invalid=true]:!border-red-500 aria-[invalid=true]:!ring-red-500"
                 />
                 <span data-fs-error="organization" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
             </div>
             
             <!-- Objective (Objective Vector) -->
             <div class="flex flex-col gap-1.5">
-                <label for="objective" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">
+                <label for="objective" class="font-mono text-[10px] text-text-tertiary uppercase tracking-wider">
                     {{ CONTACT_SECTIONS.integration_form.content.fields.objective.label }}
                 </label>
                 <div class="relative">
@@ -180,7 +180,7 @@
                         name="objective" 
                         required 
                         data-fs-field
-                        class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 appearance-none cursor-pointer aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
+                        class="w-full bg-white border border-baseline text-text-primary px-4 py-3 rounded-button focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-sans text-sm transition-all duration-300 appearance-none cursor-pointer aria-[invalid=true]:!border-red-500 aria-[invalid=true]:!ring-red-500"
                     >
                         {% for option in CONTACT_SECTIONS.integration_form.content.fields.objective.options %}
                             <option value="{{ option.value }}">{{ option.label }}</option>
@@ -198,7 +198,7 @@
             
             <!-- Message (Payload) -->
             <div class="flex flex-col gap-1.5">
-                <label for="message" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">
+                <label for="message" class="font-mono text-[10px] text-text-tertiary uppercase tracking-wider">
                     {{ CONTACT_SECTIONS.integration_form.content.fields.message.label }}
                 </label>
                 <textarea 
@@ -208,7 +208,7 @@
                     data-fs-field
                     rows="5"
                     placeholder="{{ CONTACT_SECTIONS.integration_form.content.fields.message.placeholder }}"
-                    class="w-full bg-[#12161A] border border-baseline/35 text-text-primary px-4 py-3 rounded focus:outline-none focus:border-accent focus:shadow-[0_0_10px_var(--color-accent-dim)] font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 resize-y aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
+                    class="w-full bg-white border border-baseline text-text-primary px-4 py-3 rounded-button focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-sans text-sm transition-all duration-300 placeholder:text-text-tertiary/40 resize-y aria-[invalid=true]:!border-red-500 aria-[invalid=true]:!ring-red-500"
                 ></textarea>
                 <span data-fs-error="message" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
             </div>
@@ -217,7 +217,7 @@
             <button 
                 type="submit" 
                 data-fs-submit-btn
-                class="w-full mt-2 inline-flex items-center justify-center px-8 py-3.5 bg-accent text-bg font-headers text-xs font-bold uppercase tracking-widest rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_20px_var(--color-accent-glow)] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+                class="w-full mt-2 inline-flex items-center justify-center px-8 py-3.5 bg-accent text-white font-headers text-xs font-bold uppercase tracking-widest rounded-button border border-accent hover:bg-accent-hover hover:border-accent-hover hover:shadow-card-hover cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
             >
                 {{ CONTACT_SECTIONS.integration_form.content.submit_label }}
             </button>

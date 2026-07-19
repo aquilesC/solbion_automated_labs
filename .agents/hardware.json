@@ -4,16 +4,16 @@
       "page_title": "Solbion | System Integration & Open Hardware",
       "meta_description": "Break free from vendor lock-in. Solbion retrofits legacy vacuum chambers and synthesis tools with open-architecture robotics and Python-driven middleware to create autonomous laboratories.",
       "global_styles": {
-        "theme": "Dark Tech Industrial",
+        "theme": "Warm Clinical Light",
         "colors": {
-          "background": "#12161A",
-          "text_primary": "#FFFFFF",
-          "accent_action": "#00F0FF",
-          "neutral_baseline": "#333F4A"
+          "background": "#FAFAFA",
+          "text_primary": "#1A202C",
+          "accent_action": "#005E7A",
+          "neutral_baseline": "#E2E8F0"
         },
         "typography": {
-          "headings": "Space Grotesk / Inter",
-          "body_and_code": "Roboto Mono / Fira Code"
+          "headings": "Inter",
+          "body_and_code": "Inter / JetBrains Mono"
         }
       }
     },
@@ -21,7 +21,7 @@
       {
         "section_id": "global_navigation",
         "component_type": "Navbar",
-        "layout": "Sticky top-bar, Carbon Black background.",
+        "layout": "Sticky top-bar, solid off-white background.",
         "content": {
           "logo": {
             "alt_text": "Solbion Lattice Matrix Icon",
@@ -36,12 +36,12 @@
         "layout": "Left-aligned heavy typography with right-aligned wireframe animation of a vacuum chamber being digitized.",
         "content": {
           "super_header": "SYSTEM INTEGRATION SERVICES",
-          "headline": "Break the Black Box.",
-          "subheadline": "Don't buy a closed-source million-euro tool. Let us turn your existing vacuum chambers and legacy deposition hardware into a programmable, autonomous laboratory.",
+          "headline": "Open-Architecture Integration",
+          "subheadline": "Collaborate beyond black-box architectures. Let us help you turn your existing vacuum chambers and deposition setups into programmable, open-access discovery platforms.",
           "primary_cta": {
             "label": "Schedule an Integration Audit",
             "url": "/contact?intent=hardware",
-            "style": "Solid, Laser Cyan Fill"
+            "style": "Solid, Deep Teal Fill"
           },
           "secondary_cta": {
             "label": "View Architecture",
@@ -142,14 +142,14 @@
       {
         "section_id": "closing_call_to_action",
         "component_type": "CenteredFocusBox",
-        "layout": "Solid Steel Grey block container inside Carbon Black viewport. Data-heavy aesthetic.",
+        "layout": "Solid off-white block container inside clean viewport.",
         "content": {
-          "header": "Take command of your hardware.",
-          "body": "Stop adapting your R&D to the limitations of proprietary software. Let us build the middleware that sets your discovery loops free.",
+          "header": "Open your laboratory's capabilities.",
+          "body": "Empower your team to programmatically control your R&D. Let's design the custom middleware and mechatronics to run active learning loops on your own terms.",
           "button": {
             "label": "Request an Integration Audit",
             "url": "/contact",
-            "style": "Solid, Laser Cyan Fill, Centered"
+            "style": "Solid, Deep Teal Fill, Centered"
           }
         }
       }

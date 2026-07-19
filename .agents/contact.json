@@ -4,16 +4,16 @@
       "page_title": "Solbion | Contact & Technical Integration Briefing",
       "meta_description": "Connect with Solbion's AI and hardware engineers to establish your materials optimization loop. Request custom workcells, LaaS pilots, or Data Consortium access.",
       "global_styles": {
-        "theme": "Dark Tech Industrial",
+        "theme": "Warm Clinical Light",
         "colors": {
-          "background": "#12161A",
-          "text_primary": "#FFFFFF",
-          "accent_action": "#00F0FF",
-          "neutral_baseline": "#333F4A"
+          "background": "#FAFAFA",
+          "text_primary": "#1A202C",
+          "accent_action": "#005E7A",
+          "neutral_baseline": "#E2E8F0"
         },
         "typography": {
-          "headings": "Space Grotesk / Inter",
-          "body_and_data": "Roboto Mono / Fira Code"
+          "headings": "Inter",
+          "body_and_data": "Inter / JetBrains Mono"
         }
       }
     },
@@ -23,8 +23,8 @@
         "component_type": "HeroTechnical",
         "content": {
           "super_header": "ESTABLISH LINK",
-          "headline": "Initiate Active Learning Loop.",
-          "subheadline": "Our systems operate closed-loop optimization workflows 24/7. Connect your material goals to our automated physical engine. Queue your integration briefing below."
+          "headline": "Connect with our team.",
+          "subheadline": "Whether you want to deploy custom automation in your facility, run a screening campaign in our lab, or access materials datasets, we are here to support your team. Send us a message below."
         }
       },
       {
@@ -53,19 +53,19 @@
           "endpoint_url": "https://formspree.io/f/xvzjyzdb",
           "fields": {
             "name": {
-              "label": "IDENTIFIER (FULL NAME)",
-              "placeholder": "Enter full name / callsign"
+              "label": "FULL NAME",
+              "placeholder": "Your name"
             },
             "email": {
-              "label": "ENDPOINT (EMAIL ADDRESS)",
+              "label": "EMAIL ADDRESS",
               "placeholder": "e.g., name@organization.com"
             },
             "organization": {
-              "label": "DOMAIN (ORGANIZATION)",
+              "label": "ORGANIZATION",
               "placeholder": "Company, university, or lab name"
             },
             "objective": {
-              "label": "OBJECTIVE VECTOR (PRIMARY INTEREST)",
+              "label": "PRIMARY INTEREST",
               "options": [
                 { "value": "", "label": "Select objective..." },
                 { "value": "hardware", "label": "1. System Integration (Custom Workcells & Hardware)" },
@@ -75,16 +75,16 @@
               ]
             },
             "message": {
-              "label": "PAYLOAD SPECIFICATION (PROJECT PARAMETERS)",
+              "label": "YOUR MESSAGE / PROJECT PARAMETERS",
               "placeholder": "Outline your mechatronic requirements, target materials chemistry, performance bottlenecks, or research goals..."
             }
           },
-          "submit_label": "ESTABLISH LINK",
+          "submit_label": "SEND MESSAGE",
           "success_message": {
-            "header": "LINK ESTABLISHED",
-            "subheader": "Payload transmitted successfully.",
-            "body": "Your integration briefing request has been queued in our active learning scheduler. A technical representative will establish a return channel shortly.",
-            "status_code": "HTTP 202 ACCEPTED // SESSION_INIT"
+            "header": "MESSAGE RECEIVED",
+            "subheader": "Thank you for reaching out.",
+            "body": "Your inquiry has been successfully received. A technical representative from our team will get in touch with you shortly to discuss your materials R&D goals.",
+            "status_code": "MESSAGE TRANSMITTED"
           }
         }
       }

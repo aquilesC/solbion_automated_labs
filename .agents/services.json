@@ -4,16 +4,16 @@
       "page_title": "Solbion | Lab-as-a-Service (LaaS) for Materials R&D",
       "meta_description": "Accelerate your product roadmap with Solbion's Lab-as-a-Service. Collapse 6-month sequential material screening campaigns into a two-week automated run.",
       "global_styles": {
-        "theme": "Dark Tech Industrial",
+        "theme": "Warm Clinical Light",
         "colors": {
-          "background": "#12161A",
-          "text_primary": "#FFFFFF",
-          "accent_action": "#00F0FF",
-          "neutral_baseline": "#333F4A"
+          "background": "#FAFAFA",
+          "text_primary": "#1A202C",
+          "accent_action": "#005E7A",
+          "neutral_baseline": "#E2E8F0"
         },
         "typography": {
-          "headings": "Space Grotesk / Inter",
-          "body_and_data": "Roboto Mono / Fira Code"
+          "headings": "Inter",
+          "body_and_data": "Inter / JetBrains Mono"
         }
       }
     },
@@ -21,7 +21,7 @@
       {
         "section_id": "global_navigation",
         "component_type": "Navbar",
-        "layout": "Sticky top-bar, solid Carbon Black background.",
+        "layout": "Sticky top-bar, solid off-white background.",
         "content": {
           "logo": {
             "alt_text": "Solbion Lattice Matrix Icon",
@@ -36,12 +36,12 @@
         "layout": "Centered alignment, bold typography maximizing screen real estate. Background features a fast-moving, high-contrast data cascade.",
         "content": {
           "super_header": "LAB-AS-A-SERVICE (LAAS)",
-          "headline": "Outpace the Market.",
-          "subheadline": "Collapse a 6-month sequential screening campaign into a two-week automated run. We deliver the winning material and the negative space map.",
+          "headline": "Accelerate materials discovery.",
+          "subheadline": "Accelerate your R&D pipelines. Collapse months of traditional trial-and-error into a rapid automated campaign, gaining the optimized formulation and a full map of the search space.",
           "primary_cta": {
             "label": "Request a Pilot Proposal",
             "url": "/contact?intent=laas_pilot",
-            "style": "Solid, Laser Cyan Fill, Large"
+            "style": "Solid, Deep Teal Fill, Large"
           },
           "secondary_cta": {
             "label": "See How We Protect Your IP",
@@ -56,22 +56,22 @@
         "layout": "Three-column grid showcasing hard ROI metrics and business value. Heavy numerical emphasis.",
         "content": {
           "section_tag": "R&D ACCELERATION",
-          "header": "De-Risking as a Service",
+          "header": "Ecosystem-scale R&D",
           "metrics": [
             {
               "stat": "10x",
               "label": "Speed-to-Data",
-              "description": "Skip the CapEx of building a wet lab or outfitting a cleanroom. Tap directly into our high-throughput automated workflow to screen hundreds of combinations per week."
+              "description": "Avoid large upfront CapEx. Partner with our automated platform to screen hundreds of material variations per week, keeping your focus on core product design."
             },
             {
               "stat": "90%",
               "label": "Cost Reduction per Formulation",
-              "description": "By eliminating manual human labor and parallelizing metrology, the unit cost of discovering and validating a new alloy or coating drops drastically."
+              "description": "Standardized process automation and parallelized metrology lower the barrier to discovering and validating new thin-films and coatings."
             },
             {
               "stat": "100%",
               "label": "Negative Space Mapped",
-              "description": "Knowing what fails is just as valuable as knowing what succeeds. We provide a high-fidelity map of the boundaries of your chemical space to prevent future wasted R&D."
+              "description": "We believe failure is a vital scientific step. A complete map of the search space boundaries helps you understand behavior limits and guides future research."
             }
           ]
         }
@@ -79,11 +79,11 @@
       {
         "section_id": "split_ip_framework",
         "component_type": "SplitIPDiagram",
-        "layout": "High-contrast dual-zone layout. Left side (Client Zone) highlighted in white/grey; Right side (Solbion Zone) highlighted with Laser Cyan accents.",
+        "layout": "High-contrast dual-zone layout. Left side (Client Zone) highlighted in white/grey; Right side (Solbion Zone) highlighted with Deep Teal accents.",
         "content": {
           "section_tag": "ASSET PROTECTION",
-          "header": "Complete Commercial Security",
-          "body": "When you engage our Lab-as-a-Service, you are buying a definitive commercial advantage. Our master service agreements utilize a strict Split-IP framework to ensure your product roadmap remains exclusively yours.",
+          "header": "Collaborative IP Framework",
+          "body": "We align our discovery platform with your product goals. Our split-IP agreements are designed to respect and secure your ownership while keeping general workflows open and collaborative.",
           "zones": [
             {
               "zone_name": "Your Foreground IP",
@@ -109,7 +109,7 @@
       {
         "section_id": "campaign_workflow",
         "component_type": "HorizontalProcessFlow",
-        "layout": "Four-step horizontal pipeline with progressive Laser Cyan highlight states.",
+        "layout": "Four-step horizontal pipeline with progressive Deep Teal highlight states.",
         "content": {
           "section_tag": "THE PIPELINE",
           "header": "From Hypothesis to IP in Weeks",
@@ -136,14 +136,14 @@
       {
         "section_id": "closing_call_to_action",
         "component_type": "CenteredFocusBox",
-        "layout": "Solid Steel Grey block container inside Carbon Black viewport. Sharp, executive-level messaging.",
+        "layout": "Solid off-white block container floating centered inside a clean viewport.",
         "content": {
-          "header": "Your product roadmap cannot wait.",
-          "body": "Whether you are a deep tech spinout scaling up a prototype or an enterprise foundry battling Moore's Law, speed is your only defensible moat. Schedule a technical scoping session today.",
+          "header": "Let's explore your material landscape.",
+          "body": "Whether you are a deep-tech spinout scaleup or an established enterprise team, we can design high-throughput experiments to de-risk your development path together.",
           "button": {
             "label": "Book a Scoping Session",
             "url": "/contact",
-            "style": "Solid, Laser Cyan Fill, Centered"
+            "style": "Solid, Deep Teal Fill, Centered"
           }
         }
       },

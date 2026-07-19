@@ -8,23 +8,23 @@
 <!-- Hardware Hero Section -->
 <section class="max-w-7xl mx-auto px-6 py-16 md:py-28 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
     <div class="lg:col-span-7 flex flex-col items-start text-left">
-        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase mb-4">
             {{ HARDWARE_SECTIONS.hardware_hero.content.super_header }}
         </span>
-        <h1 class="font-headers text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] uppercase text-text-primary mb-6 drop-shadow-[0_0_15px_var(--color-accent-dim)]">
+        <h1 class="font-headers text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] uppercase text-text-primary mb-6">
             {{ HARDWARE_SECTIONS.hardware_hero.content.headline }}
         </h1>
-        <p class="font-mono text-sm md:text-base text-text-muted leading-relaxed mb-8 max-w-2xl">
+        <p class="font-sans text-base md:text-lg text-text-muted leading-relaxed mb-8 max-w-2xl">
             {{ HARDWARE_SECTIONS.hardware_hero.content.subheadline }}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             {% if HARDWARE_SECTIONS.hardware_hero.content.primary_cta %}
-            <a href="{{ HARDWARE_SECTIONS.hardware_hero.content.primary_cta.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-bg font-headers text-sm font-semibold uppercase tracking-wider rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_20px_var(--color-accent-glow)] transition-all duration-300">
+            <a href="{{ HARDWARE_SECTIONS.hardware_hero.content.primary_cta.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-white font-headers text-sm font-semibold uppercase tracking-wider rounded-button border border-accent hover:bg-accent-hover hover:border-accent-hover hover:shadow-card-hover transition-all duration-300">
                 {{ HARDWARE_SECTIONS.hardware_hero.content.primary_cta.label }}
             </a>
             {% endif %}
             {% if HARDWARE_SECTIONS.hardware_hero.content.secondary_cta %}
-            <a href="{{ HARDWARE_SECTIONS.hardware_hero.content.secondary_cta.url }}" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-transparent text-text-primary font-headers text-sm font-semibold uppercase tracking-wider rounded border border-baseline hover:border-accent hover:text-accent transition-all duration-300 group/link">
+            <a href="{{ HARDWARE_SECTIONS.hardware_hero.content.secondary_cta.url }}" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-transparent text-text-primary font-headers text-sm font-semibold uppercase tracking-wider rounded-button border border-baseline hover:border-accent hover:text-accent hover:bg-accent/5 transition-all duration-300 group/link">
                 {{ HARDWARE_SECTIONS.hardware_hero.content.secondary_cta.label }}
                 <svg class="w-4 h-4 transform transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -36,79 +36,79 @@
     
     <div class="lg:col-span-5 flex justify-center items-center">
         <!-- SVG Wireframe Animation of a vacuum chamber being digitized -->
-        <div class="relative w-full max-w-[420px] aspect-square rounded border border-baseline/30 bg-bg-alt/40 p-6 flex items-center justify-center overflow-hidden group hover:border-accent/40 transition-colors duration-500">
-            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-baseline)_1.5px,transparent_1.5px)] bg-[size:20px_20px] pointer-events-none"></div>
+        <div class="relative w-full max-w-[420px] aspect-square rounded-card border border-baseline bg-card p-6 flex items-center justify-center overflow-hidden shadow-card-resting group hover:border-accent/40 hover:shadow-card-hover transition-all duration-500">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-text-tertiary)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none"></div>
             
             <svg class="w-full h-full" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <!-- Vacuum Chamber Outer Shell -->
-                <circle cx="100" cy="100" r="70" stroke="#333F4A" stroke-width="1.5" stroke-dasharray="2 4"/>
-                <circle cx="100" cy="100" r="66" stroke="#333F4A" stroke-width="1"/>
+                <circle cx="100" cy="100" r="70" stroke="var(--color-text-tertiary)" stroke-width="1.5" stroke-dasharray="2 4" opacity="0.5"/>
+                <circle cx="100" cy="100" r="66" stroke="var(--color-baseline)" stroke-width="1"/>
                 
                 <!-- Chamber Ports (Flanges) -->
                 <!-- Top Flange -->
-                <rect x="85" y="20" width="30" height="10" rx="1" stroke="#333F4A" stroke-width="1.5"/>
-                <path d="M90 30 L90 34 M110 30 L110 34" stroke="#333F4A" stroke-width="1.5"/>
+                <rect x="85" y="20" width="30" height="10" rx="1" stroke="var(--color-baseline)" stroke-width="1.5"/>
+                <path d="M90 30 L90 34 M110 30 L110 34" stroke="var(--color-baseline)" stroke-width="1.5"/>
                 <!-- Left Flange -->
-                <rect x="20" y="85" width="10" height="30" rx="1" stroke="#333F4A" stroke-width="1.5"/>
-                <path d="M30 90 M30 110" stroke="#333F4A" stroke-width="1.5"/>
+                <rect x="20" y="85" width="10" height="30" rx="1" stroke="var(--color-baseline)" stroke-width="1.5"/>
+                <path d="M30 90 M30 110" stroke="var(--color-baseline)" stroke-width="1.5"/>
                 <!-- Right Flange -->
-                <rect x="170" y="85" width="10" height="30" rx="1" stroke="#333F4A" stroke-width="1.5"/>
+                <rect x="170" y="85" width="10" height="30" rx="1" stroke="var(--color-baseline)" stroke-width="1.5"/>
                 
                 <!-- Scanning Laser Line (CSS animated vertical movement) -->
                 <g class="animate-[pulse_2s_infinite]">
-                    <line x1="30" y1="100" x2="170" y2="100" stroke="#00F0FF" stroke-width="1.5" filter="drop-shadow(0 0 3px #00F0FF)"/>
+                    <line x1="30" y1="100" x2="170" y2="100" stroke="var(--color-accent)" stroke-width="1.5"/>
                 </g>
                 
                 <!-- Internal Grid representation (Digitization) -->
-                <path d="M 50 60 L 150 60 M 40 80 L 160 80 M 34 100 L 166 100 M 40 120 L 160 120 M 50 140 L 150 140" stroke="#333F4A" stroke-width="0.5" opacity="0.3"/>
-                <path d="M 60 50 L 60 150 M 80 40 L 80 160 M 100 34 L 100 166 M 120 40 L 120 160 M 140 50 L 140 150" stroke="#333F4A" stroke-width="0.5" opacity="0.3"/>
+                <path d="M 50 60 L 150 60 M 40 80 L 160 80 M 34 100 L 166 100 M 40 120 L 160 120 M 50 140 L 150 140" stroke="var(--color-baseline)" stroke-width="0.5" opacity="0.3"/>
+                <path d="M 60 50 L 60 150 M 80 40 L 80 160 M 100 34 L 100 166 M 120 40 L 120 160 M 140 50 L 140 150" stroke="var(--color-baseline)" stroke-width="0.5" opacity="0.3"/>
                 
-                <!-- Substrate Stage (Laser Cyan) -->
-                <rect x="75" y="130" width="50" height="8" rx="1" fill="#12161A" stroke="#00F0FF" stroke-width="1.5" filter="drop-shadow(0 0 4px rgba(0, 240, 255, 0.3))"/>
-                <path d="M100 138 L100 166" stroke="#00F0FF" stroke-width="1.5" stroke-dasharray="2 2"/>
+                <!-- Substrate Stage (Terracotta Highlight) -->
+                <rect x="75" y="130" width="50" height="8" rx="1" fill="var(--color-bg)" stroke="var(--color-accent-secondary)" stroke-width="1.5"/>
+                <path d="M100 138 L100 166" stroke="var(--color-accent-secondary)" stroke-width="1.5" stroke-dasharray="2 2"/>
                 
                 <!-- Deposition Plume (Aesthetic gradients) -->
-                <path d="M70 70 Q100 120 130 70 Z" fill="url(#plume-gradient)" opacity="0.4"/>
+                <path d="M70 70 Q100 120 130 70 Z" fill="url(#plume-gradient)" opacity="0.3"/>
                 <defs>
                     <linearGradient id="plume-gradient" x1="100" y1="120" x2="100" y2="70" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.8"/>
-                        <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"/>
+                        <stop offset="0%" stop-color="var(--color-accent)" stop-opacity="0.8"/>
+                        <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0"/>
                     </linearGradient>
                 </defs>
                 
                 <!-- Target Source -->
-                <rect x="80" y="55" width="40" height="10" rx="1" fill="#1A2026" stroke="#333F4A" stroke-width="1.5"/>
+                <rect x="80" y="55" width="40" height="10" rx="1" fill="var(--color-bg-alt)" stroke="var(--color-baseline)" stroke-width="1.5"/>
             </svg>
             
-            <span class="absolute top-2 left-2 font-mono text-[9px] text-accent opacity-50">DEPOSITION_SYS: RETROFITTED</span>
-            <span class="absolute bottom-2 right-2 font-mono text-[9px] text-accent opacity-50">CHAMBER_STATUS: VACUUM_OK</span>
+            <span class="absolute top-2 left-2 font-mono text-[9px] text-accent-secondary opacity-70">DEPOSITION_SYS: RETROFITTED</span>
+            <span class="absolute bottom-2 right-2 font-mono text-[9px] text-accent-secondary opacity-70">CHAMBER_STATUS: VACUUM_OK</span>
         </div>
     </div>
 </section>
 
 <!-- The Problem (TwoColumnText) -->
-<section id="the_problem_lock_in" class="w-full bg-bg-alt/40 py-24 border-y border-baseline/20 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(51,63,74,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(51,63,74,0.1)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+<section id="the_problem_lock_in" class="w-full bg-bg-alt/50 py-24 border-y border-baseline relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(226,232,240,0.6)_1px,transparent_1px),linear-gradient(90deg,rgba(226,232,240,0.6)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
     
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
         <!-- Left: Proprietary Trap -->
-        <div class="flex flex-col items-start border-l border-baseline/30 pl-8">
-            <span class="font-mono text-xs font-bold text-baseline uppercase mb-3 tracking-widest">THE LEGACY TRAP</span>
+        <div class="flex flex-col items-start border-l border-baseline pl-8">
+            <span class="font-mono text-xs font-bold text-text-tertiary uppercase mb-3 tracking-widest">THE LEGACY TRAP</span>
             <h2 class="font-headers text-2xl lg:text-3xl font-bold uppercase text-text-primary mb-6">
                 {{ HARDWARE_SECTIONS.the_problem_lock_in.content.left_column.heading }}
             </h2>
-            <p class="font-mono text-sm text-text-muted leading-relaxed">
+            <p class="font-sans text-base text-text-muted leading-relaxed">
                 {{ HARDWARE_SECTIONS.the_problem_lock_in.content.left_column.body }}
             </p>
         </div>
         
         <!-- Right: Open Architecture -->
-        <div class="flex flex-col items-start border-l border-accent/30 pl-8">
-            <span class="font-mono text-xs font-bold text-accent uppercase mb-3 tracking-widest">THE OPEN PARADIGM</span>
+        <div class="flex flex-col items-start border-l-2 border-accent pl-8">
+            <span class="font-mono text-xs font-bold text-accent-secondary uppercase mb-3 tracking-widest">THE OPEN PARADIGM</span>
             <h2 class="font-headers text-2xl lg:text-3xl font-bold uppercase text-text-primary mb-6">
                 {{ HARDWARE_SECTIONS.the_problem_lock_in.content.right_column.heading }}
             </h2>
-            <p class="font-mono text-sm text-text-muted leading-relaxed">
+            <p class="font-sans text-base text-text-muted leading-relaxed">
                 {{ HARDWARE_SECTIONS.the_problem_lock_in.content.right_column.body }}
             </p>
         </div>
@@ -118,7 +118,7 @@
 <!-- Interactive Block Diagram (digital_twin_architecture) -->
 <section id="digital_twin_architecture" class="max-w-7xl mx-auto px-6 py-24">
     <div class="mb-16 text-center">
-        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase block mb-3">
             {{ HARDWARE_SECTIONS.digital_twin_architecture.content.section_tag }}
         </span>
         <h2 class="font-headers text-3xl md:text-4xl font-bold tracking-tight uppercase text-text-primary">
@@ -132,19 +132,19 @@
         <div class="lg:col-span-7 flex flex-col gap-4">
             {% if HARDWARE_SECTIONS.digital_twin_architecture.content.diagram_layers %}
                 {% for layer in HARDWARE_SECTIONS.digital_twin_architecture.content.diagram_layers %}
-                    <div class="border border-baseline/30 bg-bg-alt/30 p-6 rounded flex flex-col justify-between items-start transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_15px_var(--color-accent-dim)] group cursor-pointer active-layer-card" data-layer-idx="{{ loop.index0 }}">
+                    <div class="border border-baseline bg-card p-6 rounded-card flex flex-col justify-between items-start transition-all duration-300 shadow-card-resting hover:border-accent/50 hover:shadow-card-hover group cursor-pointer active-layer-card" data-layer-idx="{{ loop.index0 }}">
                         <div class="flex justify-between items-center w-full mb-3">
                             <h3 class="font-headers text-base font-bold uppercase text-text-primary group-hover:text-accent transition-colors duration-300">
                                 {{ layer.layer }}
                             </h3>
-                            <span class="font-mono text-xs text-baseline group-hover:text-accent/50 transition-colors duration-300">LAYER_0{{ loop.index }}</span>
+                            <span class="font-mono text-xs text-text-tertiary group-hover:text-accent transition-colors duration-300">LAYER_0{{ loop.index }}</span>
                         </div>
-                        <p class="font-mono text-xs text-text-muted leading-relaxed mb-4">
+                        <p class="font-sans text-sm text-text-muted leading-relaxed mb-4">
                             {{ layer.description }}
                         </p>
                         <div class="flex flex-wrap gap-2">
                             {% for comp in layer.components %}
-                                <span class="font-mono text-[10px] bg-bg px-2.5 py-1 rounded border border-baseline/30 text-text-muted group-hover:border-accent/30 transition-colors duration-300">
+                                <span class="font-mono text-[10px] bg-bg-alt px-2.5 py-1 rounded border border-baseline text-text-muted group-hover:border-accent/30 transition-colors duration-300">
                                     {{ comp }}
                                 </span>
                             {% endfor %}
@@ -155,19 +155,19 @@
         </div>
         
         <!-- Live status visualizer simulator on right (Col 5) -->
-        <div class="lg:col-span-5 border border-baseline/30 bg-bg-alt/50 p-6 rounded flex flex-col justify-between items-stretch overflow-hidden relative min-h-[350px]">
-            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-baseline)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+        <div class="lg:col-span-5 border border-baseline bg-[#0d1115] p-6 rounded-card flex flex-col justify-between items-stretch overflow-hidden relative min-h-[350px] shadow-md">
+            <div class="absolute inset-0 opacity-5 bg-[radial-gradient(var(--color-text-tertiary)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
             
             <div class="relative z-10 flex flex-col gap-4">
-                <div class="flex justify-between items-center pb-3 border-b border-baseline/30">
+                <div class="flex justify-between items-center pb-3 border-b border-baseline/10">
                     <span class="font-mono text-xs font-bold text-accent tracking-wider uppercase">SIMULATED TELEMETRY</span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-accent animate-pulse shadow-[0_0_8px_#00F0FF]"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-accent-secondary animate-pulse shadow-[0_0_8px_var(--color-accent-glow)]"></span>
                 </div>
                 
                 <!-- Content updates dynamically via simple JS depending on active hovered layer -->
                 <div id="sim-layer-title" class="font-headers text-sm font-bold uppercase text-text-primary">LAYER_01: PHYSICAL HARDWARE</div>
                 
-                <div class="bg-bg p-4 rounded border border-baseline/20 font-mono text-[11px] leading-relaxed flex flex-col gap-2 min-h-[220px]" id="sim-console-output">
+                <div class="bg-[#090c0e] p-4 rounded-button border border-baseline/10 font-mono text-[11px] leading-relaxed flex flex-col gap-2 min-h-[220px]" id="sim-console-output">
                     <!-- Initial State -->
                     <div class="text-text-muted">&gt; Initializing digital twin feedback...</div>
                     <div class="text-accent">&gt; Reading inline metrology sensors: NOMINAL</div>
@@ -177,7 +177,7 @@
                 </div>
             </div>
             
-            <div class="relative z-10 pt-3 border-t border-baseline/30 flex justify-between items-center text-[10px] text-text-muted font-mono">
+            <div class="relative z-10 pt-3 border-t border-baseline/10 flex justify-between items-center text-[10px] text-text-muted font-mono">
                 <span>ORCHESTRATOR STATUS</span>
                 <span class="text-accent font-bold">READY TO DISCOVER</span>
             </div>
@@ -186,10 +186,10 @@
 </section>
 
 <!-- Timeline Section (integration_process) -->
-<section id="integration_process" class="w-full bg-bg-alt/30 py-24 border-t border-baseline/20">
+<section id="integration_process" class="w-full bg-bg-alt/30 py-24 border-t border-baseline">
     <div class="max-w-7xl mx-auto px-6">
         <div class="mb-16 text-center">
-            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3">
+            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase block mb-3">
                 {{ HARDWARE_SECTIONS.integration_process.content.section_tag }}
             </span>
             <h2 class="font-headers text-3xl font-bold tracking-tight uppercase text-text-primary">
@@ -197,19 +197,19 @@
             </h2>
         </div>
         
-        <div class="max-w-4xl mx-auto relative border-l border-baseline/30 pl-8 md:pl-12 flex flex-col gap-12">
+        <div class="max-w-4xl mx-auto relative border-l border-baseline pl-8 md:pl-12 flex flex-col gap-12">
             {% if HARDWARE_SECTIONS.integration_process.content.steps %}
                 {% for step in HARDWARE_SECTIONS.integration_process.content.steps %}
                     <div class="relative group">
                         <!-- Glowing timeline dot -->
-                        <span class="absolute -left-[41px] md:-left-[57px] top-1.5 w-4 h-4 rounded-full bg-bg border-2 border-baseline group-hover:border-accent group-hover:shadow-[0_0_10px_var(--color-accent-glow)] transition-all duration-300 flex items-center justify-center">
+                        <span class="absolute -left-[41px] md:-left-[57px] top-1.5 w-4 h-4 rounded-full bg-bg border-2 border-baseline group-hover:border-accent group-hover:bg-accent/15 transition-all duration-300 flex items-center justify-center">
                             <span class="w-1.5 h-1.5 rounded-full bg-baseline group-hover:bg-accent transition-colors duration-300"></span>
                         </span>
                         
                         <h3 class="font-headers text-lg font-bold uppercase text-text-primary mb-3 group-hover:text-accent transition-colors duration-300">
                             {{ step.phase }}
                         </h3>
-                        <p class="font-mono text-xs text-text-muted leading-relaxed max-w-2xl">
+                        <p class="font-sans text-sm text-text-muted leading-relaxed max-w-2xl">
                             {{ step.description }}
                         </p>
                     </div>
@@ -222,18 +222,18 @@
 <!-- Centered Focus Box (closing_call_to_action) -->
 <section id="closing_call_to_action" class="max-w-7xl mx-auto px-6 py-24">
     {% if HARDWARE_SECTIONS.closing_call_to_action %}
-        <div class="relative border border-baseline/40 bg-bg-alt/60 p-10 md:p-16 rounded text-center flex flex-col items-center max-w-4xl mx-auto overflow-hidden group hover:border-accent/40 transition-colors duration-300">
-            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-baseline)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+        <div class="relative border border-baseline bg-card p-10 md:p-16 rounded-card text-center flex flex-col items-center max-w-4xl mx-auto overflow-hidden shadow-card-resting group hover:border-accent/40 transition-all duration-300">
+            <div class="absolute inset-0 opacity-5 bg-[radial-gradient(var(--color-text-tertiary)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
             
-            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4 z-10">INITIATE INTEGRATION BRIEFING</span>
+            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase mb-4 z-10">INITIATE INTEGRATION BRIEFING</span>
             <h2 class="font-headers text-3xl md:text-4xl font-bold tracking-tight uppercase text-text-primary mb-4 z-10">
                 {{ HARDWARE_SECTIONS.closing_call_to_action.content.header }}
             </h2>
-            <p class="font-mono text-sm text-text-muted leading-relaxed mb-8 max-w-xl z-10">
+            <p class="font-sans text-base text-text-muted leading-relaxed mb-8 max-w-xl z-10">
                 {{ HARDWARE_SECTIONS.closing_call_to_action.content.body }}
             </p>
             {% if HARDWARE_SECTIONS.closing_call_to_action.content.button %}
-                <a href="{{ HARDWARE_SECTIONS.closing_call_to_action.content.button.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-bg font-headers text-sm font-semibold uppercase tracking-wider rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_25px_var(--color-accent-glow)] transition-all duration-300 z-10">
+                <a href="{{ HARDWARE_SECTIONS.closing_call_to_action.content.button.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-white font-headers text-sm font-semibold uppercase tracking-wider rounded-button border border-accent hover:bg-accent-hover hover:border-accent-hover hover:shadow-card-hover transition-all duration-300 z-10">
                     {{ HARDWARE_SECTIONS.closing_call_to_action.content.button.label }}
                 </a>
             {% endif %}
@@ -299,7 +299,7 @@
             
             // Set dynamic visual styles
             layerCards.forEach(c => c.classList.remove('border-accent/40', 'shadow-[0_0_15px_var(--color-accent-dim)]'));
-            card.classList.add('border-accent/40', 'shadow-[0_0_15px_var(--color-accent-dim)]');
+            card.classList.add('border-accent/40');
             
             // Update terminal log simulation
             const data = simulatorData[idx];

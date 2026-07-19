@@ -5,21 +5,21 @@
 <!-- Hero Section -->
 <section class="max-w-7xl mx-auto px-6 py-16 md:py-28 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
     <div class="lg:col-span-7 flex flex-col items-start text-left">
-        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4">SYSTEM INITIATED // ACTIVE ORCHESTRATION</span>
-        <h1 class="font-headers text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] uppercase text-text-primary mb-6 drop-shadow-[0_0_15px_var(--color-accent-dim)]">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase mb-4">SYSTEM INITIATED // ACTIVE ORCHESTRATION</span>
+        <h1 class="font-headers text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] uppercase text-text-primary mb-6">
             {{ SECTIONS.hero_anchor.content.headline }}
         </h1>
-        <p class="font-mono text-sm md:text-base text-text-muted leading-relaxed mb-8 max-w-2xl">
+        <p class="font-sans text-base md:text-lg text-text-muted leading-relaxed mb-8 max-w-2xl">
             {{ SECTIONS.hero_anchor.content.subheadline }}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             {% if SECTIONS.hero_anchor.content.primary_cta %}
-            <a href="{{ SECTIONS.hero_anchor.content.primary_cta.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-bg font-headers text-sm font-semibold uppercase tracking-wider rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_20px_var(--color-accent-glow)] transition-all duration-300">
+            <a href="{{ SECTIONS.hero_anchor.content.primary_cta.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-white font-headers text-sm font-semibold uppercase tracking-wider rounded-button border border-accent hover:bg-accent-hover hover:border-accent-hover hover:shadow-card-hover transition-all duration-300">
                 {{ SECTIONS.hero_anchor.content.primary_cta.label }}
             </a>
             {% endif %}
             {% if SECTIONS.hero_anchor.content.secondary_cta %}
-            <a href="{{ SECTIONS.hero_anchor.content.secondary_cta.url }}" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-transparent text-text-primary font-headers text-sm font-semibold uppercase tracking-wider rounded border border-baseline hover:border-accent hover:text-accent transition-all duration-300 group/link">
+            <a href="{{ SECTIONS.hero_anchor.content.secondary_cta.url }}" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-transparent text-text-primary font-headers text-sm font-semibold uppercase tracking-wider rounded-button border border-baseline hover:border-accent hover:text-accent hover:bg-accent/5 transition-all duration-300 group/link">
                 {{ SECTIONS.hero_anchor.content.secondary_cta.label }}
                 <svg class="w-4 h-4 transform transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -31,53 +31,53 @@
     
     <div class="lg:col-span-5 flex justify-center items-center">
         <!-- Visual representation of the Lattice Matrix -->
-        <div class="relative w-full max-w-[420px] aspect-square rounded border border-baseline/30 bg-bg-alt/40 p-8 flex items-center justify-center overflow-hidden group hover:border-accent/50 transition-colors duration-500">
+        <div class="relative w-full max-w-[420px] aspect-square rounded-card border border-baseline bg-card p-8 flex items-center justify-center overflow-hidden shadow-card-resting group hover:border-accent/50 hover:shadow-card-hover transition-all duration-500">
             <!-- Background dot grid -->
-            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(var(--color-baseline)_1.5px,transparent_1.5px)] bg-[size:24px_24px] pointer-events-none"></div>
+            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(var(--color-text-tertiary)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
             
             <svg class="w-4/5 h-4/5 animate-[spin_120s_linear_infinite]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <!-- Hexagonal Packed Dots -->
-                <circle cx="50" cy="15" r="2.5" fill="#333F4A" />
-                <circle cx="20" cy="32.5" r="2.5" fill="#333F4A" />
-                <circle cx="80" cy="32.5" r="2.5" fill="#333F4A" />
-                <circle cx="20" cy="67.5" r="2.5" fill="#333F4A" />
-                <circle cx="80" cy="67.5" r="2.5" fill="#333F4A" />
-                <circle cx="50" cy="85" r="2.5" fill="#333F4A" />
-                <circle cx="50" cy="50" r="2.5" fill="#333F4A" />
+                <circle cx="50" cy="15" r="2.5" fill="var(--color-text-tertiary)" opacity="0.3" />
+                <circle cx="20" cy="32.5" r="2.5" fill="var(--color-text-tertiary)" opacity="0.3" />
+                <circle cx="80" cy="32.5" r="2.5" fill="var(--color-text-tertiary)" opacity="0.3" />
+                <circle cx="20" cy="67.5" r="2.5" fill="var(--color-text-tertiary)" opacity="0.3" />
+                <circle cx="80" cy="67.5" r="2.5" fill="var(--color-text-tertiary)" opacity="0.3" />
+                <circle cx="50" cy="85" r="2.5" fill="var(--color-text-tertiary)" opacity="0.3" />
+                <circle cx="50" cy="50" r="2.5" fill="var(--color-text-tertiary)" opacity="0.3" />
                 
                 <!-- Inner Hexagon Ring -->
-                <circle cx="35" cy="41.25" r="2.5" fill="#333F4A" />
-                <circle cx="65" cy="41.25" r="2.5" fill="#333F4A" />
-                <circle cx="35" cy="58.75" r="2.5" fill="#333F4A" />
-                <circle cx="65" cy="58.75" r="2.5" fill="#333F4A" />
+                <circle cx="35" cy="41.25" r="2.5" fill="var(--color-text-tertiary)" opacity="0.3" />
+                <circle cx="65" cy="41.25" r="2.5" fill="var(--color-text-tertiary)" opacity="0.3" />
+                <circle cx="35" cy="58.75" r="2.5" fill="var(--color-text-tertiary)" opacity="0.3" />
+                <circle cx="65" cy="58.75" r="2.5" fill="var(--color-text-tertiary)" opacity="0.3" />
                 
                 <!-- Active Navigation Paths -->
-                <path d="M20 32.5 L35 41.25 L50 50 L65 58.75 L80 67.5" stroke="#00F0FF" stroke-width="1.5" stroke-dasharray="3 3" stroke-linecap="round" />
-                <path d="M50 15 L65 41.25 L50 50 L35 58.75 L20 67.5" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" />
+                <path d="M20 32.5 L35 41.25 L50 50 L65 58.75 L80 67.5" stroke="var(--color-accent)" stroke-width="1.5" stroke-dasharray="3 3" stroke-linecap="round" />
+                <path d="M50 15 L65 41.25 L50 50 L35 58.75 L20 67.5" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" />
                 
-                <!-- Glowing cyan nodes -->
-                <circle class="animate-pulse" cx="50" cy="15" r="4.5" fill="#00F0FF" filter="drop-shadow(0 0 6px #00F0FF)" />
-                <circle cx="65" cy="41.25" r="3.5" fill="#00F0FF" filter="drop-shadow(0 0 4px #00F0FF)" />
-                <circle class="animate-[pulse_1.5s_infinite]" cx="50" cy="50" r="4.5" fill="#00F0FF" filter="drop-shadow(0 0 6px #00F0FF)" />
-                <circle cx="35" cy="58.75" r="3.5" fill="#00F0FF" filter="drop-shadow(0 0 4px #00F0FF)" />
-                <circle class="animate-pulse" cx="20" cy="67.5" r="4.5" fill="#00F0FF" filter="drop-shadow(0 0 6px #00F0FF)" />
+                <!-- Optimized nodes -->
+                <circle class="animate-pulse" cx="50" cy="15" r="4.5" fill="var(--color-accent-secondary)" />
+                <circle cx="65" cy="41.25" r="3.5" fill="var(--color-accent)" />
+                <circle class="animate-[pulse_1.5s_infinite]" cx="50" cy="50" r="4.5" fill="var(--color-accent-secondary)" />
+                <circle cx="35" cy="58.75" r="3.5" fill="var(--color-accent)" />
+                <circle class="animate-pulse" cx="20" cy="67.5" r="4.5" fill="var(--color-accent)" />
             </svg>
             
             <!-- Technical frame borders -->
-            <span class="absolute top-2 left-2 font-mono text-[9px] text-accent opacity-50">SYS.LOC: AMS_LAB_01</span>
-            <span class="absolute bottom-2 right-2 font-mono text-[9px] text-accent opacity-50">LATTICE_OP: NOMINAL</span>
+            <span class="absolute top-2 left-2 font-mono text-[9px] text-accent-secondary opacity-70">SYS.LOC: AMS_LAB_01</span>
+            <span class="absolute bottom-2 right-2 font-mono text-[9px] text-accent-secondary opacity-70">LATTICE_OP: NOMINAL</span>
         </div>
     </div>
 </section>
 
 <!-- Problem Section -->
-<section id="problem_statement" class="w-full bg-bg-alt/40 py-24 border-y border-baseline/20 relative overflow-hidden">
+<section id="problem_statement" class="w-full bg-bg-alt/50 py-24 border-y border-baseline relative overflow-hidden">
     <!-- Low opacity grid background -->
-    <div class="absolute inset-0 opacity-15 bg-[linear-gradient(rgba(51,63,74,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(51,63,74,0.1)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none"></div>
+    <div class="absolute inset-0 opacity-15 bg-[linear-gradient(rgba(226,232,240,0.6)_1px,transparent_1px),linear-gradient(90deg,rgba(226,232,240,0.6)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none"></div>
     
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
         <div class="lg:col-span-4">
-            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3">
+            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase block mb-3">
                 {{ SECTIONS.problem_statement.content.section_tag }}
             </span>
             <h2 class="font-headers text-2xl lg:text-3xl font-bold tracking-tight uppercase text-text-primary">
@@ -85,7 +85,7 @@
             </h2>
         </div>
         <div class="lg:col-span-8">
-            <p class="font-mono text-sm md:text-base text-text-muted leading-relaxed max-w-3xl">
+            <p class="font-sans text-base md:text-lg text-text-muted leading-relaxed max-w-3xl">
                 {{ SECTIONS.problem_statement.content.body_paragraph }}
             </p>
         </div>
@@ -95,7 +95,7 @@
 <!-- Ecosystem / Portal Section -->
 <section id="portal_section" class="max-w-7xl mx-auto px-6 py-24">
     <div class="mb-16">
-        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase block mb-3">
             {{ SECTIONS.portal_section.content.section_tag }}
         </span>
         <h2 class="font-headers text-3xl md:text-4xl font-bold tracking-tight uppercase text-text-primary mb-4">
@@ -106,21 +106,21 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {% if SECTIONS.portal_section.content.cards %}
             {% for card in SECTIONS.portal_section.content.cards %}
-                <div class="relative border border-baseline/30 bg-bg-alt/30 p-8 rounded flex flex-col justify-between items-start transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_20px_var(--color-accent-dim)] group min-h-[320px]">
+                <div class="relative border border-baseline bg-card p-8 rounded-card flex flex-col justify-between items-start transition-all duration-300 shadow-card-resting hover:border-accent/50 hover:shadow-card-hover group min-h-[320px]">
                     <div class="w-full">
-                        <span class="font-mono text-xs font-bold text-accent tracking-wider uppercase mb-2 block">
+                        <span class="font-mono text-xs font-bold text-accent-secondary tracking-wider uppercase mb-2 block">
                             {{ card.tagline }}
                         </span>
                         <h3 class="font-headers text-lg font-bold uppercase text-text-primary mb-4">
                             {{ card.header }}
                         </h3>
-                        <p class="font-mono text-xs text-text-muted leading-relaxed mb-6">
+                        <p class="font-sans text-sm text-text-muted leading-relaxed mb-6">
                             {{ card.body }}
                         </p>
                     </div>
                     
                     {% if card.cta %}
-                    <a href="{{ card.cta.url }}" class="inline-flex items-center gap-2 font-headers text-xs font-bold uppercase tracking-wider text-accent hover:text-text-primary transition-colors duration-200 group/arrow">
+                    <a href="{{ card.cta.url }}" class="inline-flex items-center gap-2 font-headers text-xs font-bold uppercase tracking-wider text-accent hover:text-accent-hover transition-colors duration-200 group/arrow">
                         {{ card.cta.label }}
                         <svg class="w-3.5 h-3.5 transform transition-transform duration-300 group-hover/arrow:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -129,7 +129,7 @@
                     {% endif %}
                     
                     <!-- Decorative technical corner indicator -->
-                    <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
             {% endfor %}
         {% endif %}
@@ -137,17 +137,17 @@
 </section>
 
 <!-- Split IP Framework Section -->
-<section id="split_ip_framework" class="w-full bg-bg-alt/30 py-24 border-t border-baseline/20">
+<section id="split_ip_framework" class="w-full bg-bg-alt/30 py-24 border-t border-baseline">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <!-- Left: Text Explanations -->
         <div class="lg:col-span-6 flex flex-col items-start">
-            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3">
+            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase block mb-3">
                 {{ SECTIONS.split_ip_framework.content.section_tag }}
             </span>
             <h2 class="font-headers text-3xl font-bold tracking-tight uppercase text-text-primary mb-6">
                 {{ SECTIONS.split_ip_framework.content.header }}
             </h2>
-            <p class="font-mono text-sm text-text-muted leading-relaxed mb-8">
+            <p class="font-sans text-base text-text-muted leading-relaxed mb-8">
                 {{ SECTIONS.split_ip_framework.content.body_paragraph }}
             </p>
             
@@ -156,13 +156,13 @@
                     {% for pt in SECTIONS.split_ip_framework.content.bullet_points %}
                         <div class="flex gap-4 items-start">
                             <div class="flex-shrink-0 mt-1">
-                                <span class="flex items-center justify-center w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_#00F0FF]"></span>
+                                <span class="flex items-center justify-center w-2 h-2 rounded-full bg-accent"></span>
                             </div>
                             <div>
                                 <h4 class="font-headers text-sm font-bold uppercase text-text-primary mb-1">
                                     {{ pt.title }}
                                 </h4>
-                                <p class="font-mono text-xs text-text-muted leading-relaxed">
+                                <p class="font-sans text-sm text-text-muted leading-relaxed">
                                     {{ pt.description }}
                                 </p>
                             </div>
@@ -174,48 +174,48 @@
         
         <!-- Right: Flowchart Diagram -->
         <div class="lg:col-span-6 flex justify-center items-center">
-            <div class="w-full p-4 border border-baseline/30 bg-bg/50 rounded flex justify-center items-center hover:border-accent/30 transition-colors duration-300">
+            <div class="w-full p-4 border border-baseline bg-card rounded-card shadow-card-resting hover:border-accent/30 transition-all duration-300">
                 <svg viewBox="0 0 500 300" class="w-full h-auto max-w-[500px]" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <pattern id="diagram-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#333F4A" stroke-width="0.5" opacity="0.3"/>
+                            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="var(--color-baseline)" stroke-width="0.5"/>
                         </pattern>
                     </defs>
-                    <rect width="500" height="300" fill="url(#diagram-grid)" rx="8" stroke="#333F4A" stroke-width="1"/>
+                    <rect width="500" height="300" fill="url(#diagram-grid)" rx="8" stroke="var(--color-baseline)" stroke-width="1"/>
                     
                     <!-- Input Box (Client Requirements) -->
-                    <rect x="30" y="110" width="110" height="60" rx="4" fill="#12161A" stroke="#333F4A" stroke-width="1.5"/>
-                    <text x="85" y="140" fill="#FFFFFF" font-family="var(--font-mono)" font-size="10" text-anchor="middle">CLIENT TARGETS</text>
-                    <text x="85" y="152" fill="#8B9BB0" font-family="var(--font-mono)" font-size="8" text-anchor="middle">(Performance Specs)</text>
+                    <rect x="30" y="110" width="110" height="60" rx="4" fill="var(--color-bg)" stroke="var(--color-baseline)" stroke-width="1.5"/>
+                    <text x="85" y="140" fill="var(--color-text-primary)" font-family="var(--font-mono)" font-size="10" text-anchor="middle">CLIENT TARGETS</text>
+                    <text x="85" y="152" fill="var(--color-text-muted)" font-family="var(--font-mono)" font-size="8" text-anchor="middle">(Performance Specs)</text>
 
                     <!-- Arrow from input to discovery loop -->
-                    <path d="M 140 140 L 180 140" stroke="#00F0FF" stroke-width="1.5" stroke-dasharray="3 3"/>
-                    <polygon points="180,140 174,136 174,144" fill="#00F0FF"/>
+                    <path d="M 140 140 L 180 140" stroke="var(--color-accent-secondary)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                    <polygon points="180,140 174,136 174,144" fill="var(--color-accent-secondary)"/>
 
                     <!-- Discovery Engine Loop (Central Box) -->
-                    <rect x="180" y="90" width="140" height="100" rx="6" fill="#1A2026" stroke="#00F0FF" stroke-width="1.5" filter="drop-shadow(0 0 8px rgba(0, 240, 255, 0.15))"/>
-                    <text x="250" y="125" fill="#FFFFFF" font-family="var(--font-headers)" font-size="11" font-weight="bold" text-anchor="middle">SOLBION ENGINE</text>
-                    <text x="250" y="140" fill="#00F0FF" font-family="var(--font-mono)" font-size="9" text-anchor="middle">Bayesian Optimization</text>
-                    <text x="250" y="155" fill="#8B9BB0" font-family="var(--font-mono)" font-size="8" text-anchor="middle">&amp; Combinatorial PVD</text>
+                    <rect x="180" y="90" width="140" height="100" rx="6" fill="var(--color-bg-alt)" stroke="var(--color-accent)" stroke-width="1.5"/>
+                    <text x="250" y="125" fill="var(--color-text-primary)" font-family="var(--font-headers)" font-size="11" font-weight="bold" text-anchor="middle">SOLBION ENGINE</text>
+                    <text x="250" y="140" fill="var(--color-accent)" font-family="var(--font-mono)" font-size="9" text-anchor="middle">Bayesian Optimization</text>
+                    <text x="250" y="155" fill="var(--color-text-muted)" font-family="var(--font-mono)" font-size="8" text-anchor="middle">&amp; Combinatorial PVD</text>
 
                     <!-- Arrow branching from Central box to Client (Foreground IP) -->
-                    <path d="M 320 120 L 375 120 L 375 60 L 390 60" stroke="#FFFFFF" stroke-width="1.5"/>
-                    <polygon points="390,60 384,56 384,64" fill="#FFFFFF"/>
+                    <path d="M 320 120 L 375 120 L 375 60 L 390 60" stroke="var(--color-text-primary)" stroke-width="1.5"/>
+                    <polygon points="390,60 384,56 384,64" fill="var(--color-text-primary)"/>
                     
                     <!-- Foreground IP Box -->
-                    <rect x="390" y="30" width="90" height="60" rx="4" fill="#12161A" stroke="#FFFFFF" stroke-width="1.5"/>
-                    <text x="435" y="60" fill="#FFFFFF" font-family="var(--font-mono)" font-size="9" font-weight="bold" text-anchor="middle">FOREGROUND IP</text>
-                    <text x="435" y="72" fill="#8B9BB0" font-family="var(--font-mono)" font-size="8" text-anchor="middle">(100% Client Owned)</text>
+                    <rect x="390" y="30" width="90" height="60" rx="4" fill="var(--color-bg)" stroke="var(--color-accent-secondary)" stroke-width="1.5"/>
+                    <text x="435" y="60" fill="var(--color-text-primary)" font-family="var(--font-mono)" font-size="9" font-weight="bold" text-anchor="middle">FOREGROUND IP</text>
+                    <text x="435" y="72" fill="var(--color-text-muted)" font-family="var(--font-mono)" font-size="8" text-anchor="middle">(100% Client Owned)</text>
 
                     <!-- Arrow branching from Central box to Solbion Cloud DB (Background Telemetry) -->
-                    <path d="M 320 160 L 375 160 L 375 220 L 390 220" stroke="#00F0FF" stroke-width="1.5"/>
-                    <polygon points="390,220 384,216 384,224" fill="#00F0FF"/>
+                    <path d="M 320 160 L 375 160 L 375 220 L 390 220" stroke="var(--color-accent)" stroke-width="1.5"/>
+                    <polygon points="390,220 384,216 384,224" fill="var(--color-accent)"/>
 
                     <!-- Background Telemetry Box -->
-                    <rect x="390" y="190" width="90" height="60" rx="4" fill="#12161A" stroke="#00F0FF" stroke-width="1.5" filter="drop-shadow(0 0 6px rgba(0, 240, 255, 0.1))"/>
-                    <text x="435" y="215" fill="#00F0FF" font-family="var(--font-mono)" font-size="9" font-weight="bold" text-anchor="middle">BACKGROUND</text>
-                    <text x="435" y="227" fill="#00F0FF" font-family="var(--font-mono)" font-size="9" font-weight="bold" text-anchor="middle">TELEMETRY</text>
-                    <text x="435" y="239" fill="#8B9BB0" font-family="var(--font-mono)" font-size="8" text-anchor="middle">(Anonymized Data)</text>
+                    <rect x="390" y="190" width="90" height="60" rx="4" fill="var(--color-bg)" stroke="var(--color-accent)" stroke-width="1.5"/>
+                    <text x="435" y="215" fill="var(--color-accent)" font-family="var(--font-mono)" font-size="9" font-weight="bold" text-anchor="middle">BACKGROUND</text>
+                    <text x="435" y="227" fill="var(--color-accent)" font-family="var(--font-mono)" font-size="9" font-weight="bold" text-anchor="middle">TELEMETRY</text>
+                    <text x="435" y="239" fill="var(--color-text-muted)" font-family="var(--font-mono)" font-size="8" text-anchor="middle">(Anonymized Data)</text>
                 </svg>
             </div>
         </div>
@@ -225,19 +225,19 @@
 <!-- Bottom CTA Section -->
 <section id="closing_call_to_action" class="max-w-7xl mx-auto px-6 py-24">
     {% if SECTIONS.closing_call_to_action %}
-        <div class="relative border border-baseline/40 bg-bg-alt/60 p-10 md:p-16 rounded text-center flex flex-col items-center max-w-4xl mx-auto overflow-hidden group hover:border-accent/40 transition-colors duration-300">
+        <div class="relative border border-baseline bg-card p-10 md:p-16 rounded-card text-center flex flex-col items-center max-w-4xl mx-auto overflow-hidden shadow-card-resting group hover:border-accent/40 transition-all duration-300">
             <!-- Matrix backdrop grid -->
-            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-baseline)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+            <div class="absolute inset-0 opacity-5 bg-[radial-gradient(var(--color-text-tertiary)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
             
-            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-4 z-10">INITIATE INTEGRATION BRIEFING</span>
+            <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent-secondary mb-4 z-10">INITIATE INTEGRATION BRIEFING</span>
             <h2 class="font-headers text-3xl md:text-4xl font-bold tracking-tight uppercase text-text-primary mb-4 z-10">
                 {{ SECTIONS.closing_call_to_action.content.header }}
             </h2>
-            <p class="font-mono text-sm text-text-muted leading-relaxed mb-8 max-w-xl z-10">
+            <p class="font-sans text-base text-text-muted leading-relaxed mb-8 max-w-xl z-10">
                 {{ SECTIONS.closing_call_to_action.content.body }}
             </p>
             {% if SECTIONS.closing_call_to_action.content.button %}
-                <a href="{{ SECTIONS.closing_call_to_action.content.button.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-bg font-headers text-sm font-semibold uppercase tracking-wider rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_25px_var(--color-accent-glow)] transition-all duration-300 z-10">
+                <a href="{{ SECTIONS.closing_call_to_action.content.button.url }}" class="inline-flex items-center justify-center px-8 py-3 bg-accent text-white font-headers text-sm font-semibold uppercase tracking-wider rounded-button border border-accent hover:bg-accent-hover hover:border-accent-hover hover:shadow-card-hover transition-all duration-300 z-10">
                     {{ SECTIONS.closing_call_to_action.content.button.label }}
                 </a>
             {% endif %}

@@ -1,17 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #12161a;
-  --color-text-primary: #ffffff;
-  --color-accent: #00f0ff;
-  --color-baseline: #333f4a;
-  --color-bg-alt: #1a2026;
-  --color-text-muted: #8b9bb0;
-  --color-accent-dim: rgba(0, 240, 255, 0.15);
-  --color-accent-glow: rgba(0, 240, 255, 0.4);
+  --color-bg: #FAFAFA;
+  --color-bg-alt: #F3F4F6;
+  --color-card: #FFFFFF;
+  --color-text-primary: #1A202C;
+  --color-text-muted: #4A5568;
+  --color-text-tertiary: #718096;
+  --color-accent: #005E7A;
+  --color-accent-secondary: #E28743;
+  --color-accent-hover: #00475C;
+  --color-baseline: #E2E8F0;
+  --color-accent-dim: rgba(0, 94, 122, 0.08);
+  --color-accent-glow: rgba(0, 94, 122, 0.2);
 
-  --font-headers: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
-  --font-mono: 'Roboto Mono', 'Fira Code', monospace;
+  --radius-card: 8px;
+  --radius-button: 6px;
+
+  --shadow-card-resting: 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-card-hover: 0 10px 15px rgba(0,0,0,0.08);
+
+  --font-headers: 'Inter', 'Helvetica Neue', -apple-system, sans-serif;
+  --font-sans: 'Inter', 'Segoe UI', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
   --animate-status-blink: status-blink 1.5s step-start infinite;
   @keyframes status-blink {
@@ -23,24 +34,24 @@
   html {
     background-color: var(--color-bg);
     color: var(--color-text-primary);
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     scroll-behavior: smooth;
   }
 
   body {
     background-color: var(--color-bg);
-    /* Futuristic grid background representing the Lattice Matrix */
+    /* Subtle light grid background representing the Lattice Matrix */
     background-image: 
-      linear-gradient(rgba(51, 63, 74, 0.15) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(51, 63, 74, 0.15) 1px, transparent 1px);
+      linear-gradient(rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
     background-size: 40px 40px;
     background-position: center;
     min-height: 100vh;
   }
   
-  /* Scrollbar configuration for dark mode */
+  /* Scrollbar configuration for light mode */
   :root {
-    scrollbar-color: var(--color-baseline) var(--color-bg);
+    scrollbar-color: var(--color-text-tertiary) var(--color-bg-alt);
     scrollbar-width: thin;
   }
 }

@@ -9,16 +9,22 @@ This file outlines the project guidelines, technology stack, visual design const
 - **Core Strategy:** Data-centric, high-fidelity layouts using Tailwind utility classes, subtle animations, and semantic HTML structure.
 
 ## Visual Identity (from brand_brief.json)
-- **Primary Background:** Carbon Black (`#12161A`) — represents laboratory/vacuum environments.
-- **Primary Text:** Titanium White (`#FFFFFF`).
-- **Accent Color:** Laser Cyan (`#00F0FF`) — represents active learning paths, plasma plumes, and interaction elements.
-- **Baseline Color:** Steel Grey (`#333F4A`) — used for layout borders, secondary text, and inactive data points.
+- **Primary Background:** Warm Clinical Light (`#FAFAFA`) — evokes a bright, well-lit modern laboratory.
+- **Secondary Background:** Light Grey Slate (`#F3F4F6`).
+- **Card Surface:** Pure White (`#FFFFFF`).
+- **Primary Text:** Slate Heading (`#1A202C`).
+- **Secondary Text:** Charcoal Body (`#4A5568`).
+- **Accent Color:** Lab Teal (`#005E7A`) — represents active interaction pathways and primary actions.
+- **Secondary Highlight:** Terracotta Amber (`#E28743`) — represents discovered nodes and status badges.
+- **Baseline Border:** Soft Grey (`#E2E8F0`).
 - **Typography:**
-  - **Headers:** `'Space Grotesk', 'Inter', sans-serif` (geometric, sharp, uniform weight).
-  - **Body and Code:** `'Roboto Mono', 'Fira Code', monospace` (data-heavy, machine-readable, precise numerical layouts).
+  - **Headers:** `'Inter', 'Helvetica Neue', sans-serif` (clean, geometric, spacious tracking).
+  - **Body:** `'Inter', 'Segoe UI', sans-serif` (highly legible sans-serif font).
+  - **Technical and Code:** `'JetBrains Mono', 'Fira Code', monospace` (precise data and code blocks).
 
 ## Brand & Tone of Voice
-- **Tone:** Hyper-pragmatic, confident, technically authoritative, and direct.
-- **Key Message:** Moving from slow human-driven trial-and-error to closed-loop Bayesian optimization and active learning loops.
-- **Logo Concept:** "The Lattice Matrix" (Hexagonal grid system representing packing in crystalline structures, with active cyan paths and glow-effect nodes).
+- **Archetype:** The Collaborative Evangelist.
+- **Tone:** Transparent, Educational, Empowering, Authoritative yet approachable.
+- **Communication Style:** Like a senior engineer sharing a breakthrough methodology with a peer. Focuses on multiplying capabilities and building ecosystems rather than enforcing vendor lock-in.
+- **Logo Concept:** "The Lattice Matrix" (Hexagonal grid representing packing in crystalline structures, with soft grey background dots, Lab Teal paths, and Terracotta Amber nodes).
 - **Imagery Policy:** Macro-photography of hardware (plasma plumes, flanges, silicon wafers) and high-fidelity data visualizations. *Never* use generic stock photos of scientists in lab coats holding colored liquids.

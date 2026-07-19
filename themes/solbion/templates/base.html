@@ -8,8 +8,8 @@
     <!-- Meta tags for SEO -->
     <meta name="description" content="{% block description %}{{ LANDING_PAGE_SPEC.page_settings.meta_description or "Solbion is the autonomous engine for materials discovery." }}{% endblock %}">
     
-    <!-- Declaring dark theme support for browser UI / scrollbars -->
-    <meta name="color-scheme" content="dark">
+    <!-- Declaring light theme support for browser UI / scrollbars -->
+    <meta name="color-scheme" content="light">
     
     <!-- Favicon -->
     <link rel="icon" href="{{ SITEURL }}/favicon.svg" type="image/svg+xml">
@@ -17,14 +17,14 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
     
     {% block head %}{% endblock %}
 </head>
-<body class="bg-bg text-text-primary min-h-screen font-mono flex flex-col selection:bg-accent/30 selection:text-accent">
+<body class="bg-bg text-text-primary min-h-screen font-sans flex flex-col selection:bg-accent/20 selection:text-accent">
     <div class="flex flex-col min-h-screen">
         <!-- Site Header -->
         <header class="site-header sticky top-0 bg-bg/80 backdrop-blur-md border-b border-baseline/30 z-50 transition-all duration-300">
@@ -32,21 +32,21 @@
                 <a href="{{ SITEURL }}/" class="flex items-center gap-3 font-headers text-xl font-bold tracking-widest text-text-primary uppercase group" id="logo-link">
                     <!-- The Lattice Matrix Logo (Hexagonal grid concept) -->
                     <svg class="transition-transform duration-500 group-hover:rotate-12" width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Solbion Lattice Logo">
-                        <!-- Hexagonal grid lines / background dots (Steel Grey) -->
-                        <circle cx="50" cy="20" r="4" fill="#333F4A" />
-                        <circle cx="24" cy="35" r="4" fill="#333F4A" />
-                        <circle cx="76" cy="35" r="4" fill="#333F4A" />
-                        <circle cx="24" cy="65" r="4" fill="#333F4A" />
-                        <circle cx="76" cy="65" r="4" fill="#333F4A" />
-                        <circle cx="50" cy="80" r="4" fill="#333F4A" />
+                        <!-- Hexagonal grid lines / background dots -->
+                        <circle cx="50" cy="20" r="4" fill="var(--color-text-tertiary)" opacity="0.3" />
+                        <circle cx="24" cy="35" r="4" fill="var(--color-text-tertiary)" opacity="0.3" />
+                        <circle cx="76" cy="35" r="4" fill="var(--color-text-tertiary)" opacity="0.3" />
+                        <circle cx="24" cy="65" r="4" fill="var(--color-text-tertiary)" opacity="0.3" />
+                        <circle cx="76" cy="65" r="4" fill="var(--color-text-tertiary)" opacity="0.3" />
+                        <circle cx="50" cy="80" r="4" fill="var(--color-text-tertiary)" opacity="0.3" />
                         
-                        <!-- Active navigation path (Laser Cyan) -->
-                        <path d="M24 35 L50 20 L76 35 L76 65 L50 80" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <!-- Active navigation path (Lab Teal) -->
+                        <path d="M24 35 L50 20 L76 35 L76 65 L50 80" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                         
-                        <!-- Optimized Knowledge nodes (Glow Cyan circles) -->
-                        <circle cx="50" cy="20" r="6" fill="#00F0FF" filter="drop-shadow(0 0 4px #00F0FF)" />
-                        <circle cx="76" cy="35" r="6" fill="#00F0FF" filter="drop-shadow(0 0 4px #00F0FF)" />
-                        <circle cx="76" cy="65" r="6" fill="#00F0FF" filter="drop-shadow(0 0 4px #00F0FF)" />
+                        <!-- Optimized Knowledge nodes (Teal / Terracotta Highlight) -->
+                        <circle cx="50" cy="20" r="6" fill="var(--color-accent-secondary)" />
+                        <circle cx="76" cy="35" r="6" fill="var(--color-accent)" />
+                        <circle cx="76" cy="65" r="6" fill="var(--color-accent)" />
                     </svg>
                     <span class="group-hover:text-accent transition-colors duration-300">
                         {{ SECTIONS.global_navigation.content.brand_name or SITENAME }}
@@ -59,7 +59,7 @@
                             {% if SECTIONS.global_navigation %}
                                 {% for link in SECTIONS.global_navigation.content.nav_links %}
                                     <li>
-                                        <a href="{{ SITEURL }}{{ link.url }}" class="font-headers text-xs font-semibold uppercase tracking-wider {% if active_page == link.label %}text-accent drop-shadow-[0_0_6px_var(--color-accent-glow)]{% else %}text-text-muted{% endif %} hover:text-accent hover:drop-shadow-[0_0_6px_var(--color-accent-glow)] transition-all duration-200">
+                                        <a href="{{ SITEURL }}{{ link.url }}" class="font-headers text-xs font-semibold uppercase tracking-wider {% if active_page == link.label %}text-accent font-bold{% else %}text-text-muted{% endif %} hover:text-accent transition-all duration-200">
                                             {{ link.label }}
                                         </a>
                                     </li>
@@ -70,7 +70,7 @@
                     
                     {% if SECTIONS.global_navigation.content.cta_button %}
                     <div class="hidden md:block">
-                        <a href="{{ SITEURL }}{{ SECTIONS.global_navigation.content.cta_button.url }}" class="inline-flex items-center justify-center px-4 py-2 border border-text-primary text-text-primary hover:border-accent hover:text-accent font-headers text-xs font-semibold uppercase tracking-wider rounded transition-all duration-300">
+                        <a href="{{ SITEURL }}{{ SECTIONS.global_navigation.content.cta_button.url }}" class="inline-flex items-center justify-center px-4 py-2 border border-text-primary text-text-primary hover:border-accent hover:bg-accent hover:text-white font-headers text-xs font-semibold uppercase tracking-wider rounded transition-all duration-300">
                             {{ SECTIONS.global_navigation.content.cta_button.label }}
                         </a>
                     </div>
@@ -91,21 +91,21 @@
                 <div class="md:col-span-4 flex flex-col items-start gap-4">
                     <div class="flex items-center gap-3 font-headers text-lg font-bold tracking-widest text-text-primary uppercase">
                         <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="50" cy="20" r="4" fill="#333F4A" />
-                            <circle cx="24" cy="35" r="4" fill="#333F4A" />
-                            <circle cx="76" cy="35" r="4" fill="#333F4A" />
-                            <circle cx="24" cy="65" r="4" fill="#333F4A" />
-                            <circle cx="76" cy="65" r="4" fill="#333F4A" />
-                            <circle cx="50" cy="80" r="4" fill="#333F4A" />
-                            <path d="M24 35 L50 20 L76 35 L76 65 L50 80" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                            <circle cx="50" cy="20" r="6" fill="#00F0FF" filter="drop-shadow(0 0 4px #00F0FF)" />
-                            <circle cx="76" cy="35" r="6" fill="#00F0FF" filter="drop-shadow(0 0 4px #00F0FF)" />
-                            <circle cx="76" cy="65" r="6" fill="#00F0FF" filter="drop-shadow(0 0 4px #00F0FF)" />
+                            <circle cx="50" cy="20" r="4" fill="var(--color-text-tertiary)" opacity="0.3" />
+                            <circle cx="24" cy="35" r="4" fill="var(--color-text-tertiary)" opacity="0.3" />
+                            <circle cx="76" cy="35" r="4" fill="var(--color-text-tertiary)" opacity="0.3" />
+                            <circle cx="24" cy="65" r="4" fill="var(--color-text-tertiary)" opacity="0.3" />
+                            <circle cx="76" cy="65" r="4" fill="var(--color-text-tertiary)" opacity="0.3" />
+                            <circle cx="50" cy="80" r="4" fill="var(--color-text-tertiary)" opacity="0.3" />
+                            <path d="M24 35 L50 20 L76 35 L76 65 L50 80" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="50" cy="20" r="6" fill="var(--color-accent-secondary)" />
+                            <circle cx="76" cy="35" r="6" fill="var(--color-accent)" />
+                            <circle cx="76" cy="65" r="6" fill="var(--color-accent)" />
                         </svg>
                         <span>{{ SECTIONS.global_navigation.content.brand_name or SITENAME }}</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shadow-[0_0_8px_#00F0FF]"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent-secondary animate-pulse shadow-[0_0_8px_var(--color-accent-glow)]"></span>
                         <p class="font-mono text-[9px] tracking-wider uppercase opacity-70 text-accent">System Status: Active learning loop nominal</p>
                     </div>
                 </div>
@@ -147,10 +147,10 @@
             const header = document.querySelector('.site-header');
             if (window.scrollY > 20) {
                 header.classList.remove('bg-bg/80');
-                header.classList.add('bg-bg', 'shadow-[0_4px_30px_rgba(0,0,0,0.5)]');
+                header.classList.add('bg-bg', 'shadow-[0_4px_20px_rgba(0,0,0,0.06)]');
             } else {
                 header.classList.add('bg-bg/80');
-                header.classList.remove('bg-bg', 'shadow-[0_4px_30px_rgba(0,0,0,0.5)]');
+                header.classList.remove('bg-bg', 'shadow-[0_4px_20px_rgba(0,0,0,0.06)]');
             }
         });
     </script>

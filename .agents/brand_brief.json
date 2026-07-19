@@ -14,75 +14,104 @@
   "visual_identity": {
     "color_palette": {
       "primary_background": {
-        "name": "Carbon Black",
-        "hex": "#12161A",
-        "usage": "Main background, laboratory aesthetic, vacuum environments"
+        "name": "Warm Clinical Light",
+        "hex": "#FAFAFA",
+        "usage": "Main background, bright and welcoming laboratory environment"
+      },
+      "secondary_background": {
+        "name": "Light Grey Slate",
+        "hex": "#F3F4F6",
+        "usage": "Secondary background sections and structural blocks"
+      },
+      "card_surface": {
+        "name": "Pure White",
+        "hex": "#FFFFFF",
+        "usage": "Elevated card elements and interface surfaces"
       },
       "primary_text": {
-        "name": "Titanium White",
-        "hex": "#FFFFFF",
-        "usage": "Headers, primary typography, maximum contrast"
+        "name": "Slate Heading",
+        "hex": "#1A202C",
+        "usage": "Primary headings, titles, high contrast typography"
       },
-      "accent": {
-        "name": "Laser Cyan",
-        "hex": "#00F0FF",
-        "usage": "Data streams, active learning paths, plasma plumes, call-to-action elements"
+      "secondary_text": {
+        "name": "Charcoal Body",
+        "hex": "#4A5568",
+        "usage": "Body copy, paragraphs, general readability"
       },
-      "baseline": {
-        "name": "Steel Grey",
-        "hex": "#333F4A",
-        "usage": "Lattice grid lines, secondary text, negative/failed data points"
+      "accent_action": {
+        "name": "Lab Teal",
+        "hex": "#005E7A",
+        "usage": "Primary buttons, active links, hover actions, branding accents"
+      },
+      "secondary_highlight": {
+        "name": "Terracotta Amber",
+        "hex": "#E28743",
+        "usage": "Secondary action indicators, highlight nodes, status badges"
+      },
+      "baseline_border": {
+        "name": "Soft Grey",
+        "hex": "#E2E8F0",
+        "usage": "Delicate border dividers, grid lines, visual hierarchy separators"
       }
     },
     "typography": {
       "headers": {
-        "font_family": "'Space Grotesk', 'Inter', sans-serif",
-        "style": "Geometric, sharp, uniform weight"
+        "font_family": "'Inter', 'Helvetica Neue', sans-serif",
+        "style": "Clean, spacious tracking, professional structural headings"
       },
-      "body_and_code": {
-        "font_family": "'Roboto Mono', 'Fira Code', monospace",
-        "style": "Data-heavy, machine-readable, precise numerical layouts"
+      "body": {
+        "font_family": "'Inter', 'Segoe UI', sans-serif",
+        "style": "Optimized for maximum readability in paragraphs"
+      },
+      "code_and_data": {
+        "font_family": "'JetBrains Mono', 'Fira Code', monospace",
+        "style": "High-fidelity, monospaced computational datasets and code samples"
       }
     },
     "logo_concept": {
       "name": "The Lattice Matrix",
-      "geometry": "Hexagonal grid system (representing close-packing in crystalline structures)",
+      "geometry": "Hexagonal grid system (representing packing in crystalline structures)",
       "elements": {
-        "background_dots": "Steel Grey points representing the uncharted theoretical space",
-        "active_path": "Laser Cyan connected line representing autonomous AI navigation",
-        "nodes": "Glow-effect Cyan circles marking discovered, highly optimized knowledge points"
+        "background_dots": "Soft Grey points representing theoretical search boundaries",
+        "active_path": "Lab Teal path representing collaborative optimization tracking",
+        "nodes": "Terracotta Amber and Lab Teal circles marking highly optimized discovery coordinates"
       }
     },
     "imagery_strategy": {
       "allowed": [
-        "Macro-photography of hardware (PVD plasma plumes, ultra-high vacuum flanges, silicon wafers)",
-        "High-fidelity data visualizations (3D topological maps of resistivity/conductivity curves)"
+        "High-fidelity data visualizations (3D topological space mapping, optimization paths)",
+        "Macro-photography of hardware (plasma plumes, mechatronics control blocks, silicon wafers)"
       ],
       "forbidden": [
-        "Generic stock photos of scientists in lab coats looking at colored liquids in beakers"
+        "Generic stock photos of scientists in lab coats holding colored liquids in beakers"
       ]
     }
   },
   "editorial_guidelines": {
-    "tone_of_voice": "Hyper-pragmatic, confident, technically authoritative, and direct",
+    "archetype": "The Collaborative Evangelist",
+    "tone_of_voice": "Transparent, Educational, Empowering, Authoritative yet approachable",
+    "communication_style": "Like a senior engineer sharing a breakthrough methodology with a peer. Focuses on multiplying capabilities and building ecosystems rather than enforcing vendor lock-in.",
     "vocabulary": {
       "preferred": [
         "Closed-loop Bayesian optimization",
         "Combinatorial PVD screening",
         "Active learning loops",
-        "Data factory",
-        "De-risking-as-a-Service"
+        "Collaborative materials optimization",
+        "Shared telemetry consortium",
+        "Open-architecture laboratory"
       ],
       "avoid": [
         "Revolutionary AI magic",
         "Inventing materials",
-        "Traditional R&D"
+        "Traditional R&D",
+        "De-risking-as-a-Service",
+        "Enforcing vendor lock-in"
       ]
     },
     "taglines": [
-      "Mapping the physical world at the speed of software.",
-      "High-throughput materials discovery. Zero human bottlenecks.",
-      "Don't spend two years searching a chemical space. Let Solbion map it in two weeks."
+      "Mapping the physical world, together.",
+      "Empowering materials researchers through open-architecture automation.",
+      "Let's map your multi-dimensional chemical space."
     ]
   }
 }

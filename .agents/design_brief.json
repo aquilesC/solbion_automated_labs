@@ -1,0 +1,81 @@
+{
+  "solbion_design_system": {
+    "version": "1.0",
+    "theme_name": "Warm Clinical Light",
+    "brand_identity": {
+      "archetype": "The Collaborative Evangelist",
+      "tone": [
+        "Transparent",
+        "Educational",
+        "Empowering",
+        "Authoritative yet approachable"
+      ],
+      "communication_style": "Like a senior engineer sharing a breakthrough methodology with a peer. Focuses on multiplying capabilities and building ecosystems rather than enforcing vendor lock-in."
+    },
+    "ux_philosophy": {
+      "core_principle": "Progressive Disclosure",
+      "information_density": "Refined Minimalism. Clean, executive-level summaries default to view, with frictionless, obvious pathways to drill down into dense technical schematics, API docs, or raw telemetry.",
+      "emotional_resonance": "Empowerment. Users should feel like they have a clear, well-lit perspective of the entire landscape, with the tools to dig deep when necessary."
+    },
+    "visual_tokens": {
+      "color_palette": {
+        "backgrounds": {
+          "primary": "#FAFAFA",
+          "secondary": "#F3F4F6",
+          "card_surface": "#FFFFFF",
+          "description": "Warm, bright off-whites that evoke a well-lit modern lab without feeling like a sterile hospital."
+        },
+        "text": {
+          "primary_heading": "#1A202C",
+          "secondary_body": "#4A5568",
+          "tertiary_muted": "#718096",
+          "description": "Deep slate and charcoal tones instead of harsh pure black to maintain contrast while softening the reading experience."
+        },
+        "accents": {
+          "primary_action": "#005E7A",
+          "secondary_highlight": "#E28743",
+          "interactive_hover": "#00475C",
+          "description": "A deep, trustworthy lab teal (primary) paired with a warm, energetic terracotta/amber (secondary) to inject warmth and vitality into the technical space."
+        },
+        "semantic_data": {
+          "success": "#38A169",
+          "warning": "#DD6B20",
+          "error": "#E53E3E",
+          "info": "#3182CE"
+        }
+      },
+      "typography": {
+        "font_families": {
+          "primary_headings": "'Inter', 'Helvetica Neue', sans-serif",
+          "secondary_body": "'Inter', 'Segoe UI', sans-serif",
+          "technical_data": "'JetBrains Mono', 'Fira Code', monospace"
+        },
+        "hierarchy_rules": {
+          "h1": "Bold, spacious tracking, used for hero statements.",
+          "h2": "Semi-bold, acts as clear section dividers.",
+          "body": "Regular weight, optimized for high legibility in long-form reading.",
+          "code_blocks": "Slightly reduced font size, distinct background container for immediate visual separation."
+        }
+      },
+      "component_geometry": {
+        "borders": {
+          "radius_cards": "8px",
+          "radius_buttons": "6px",
+          "style": "Subtle, 1px solid #E2E8F0 for definition without heaviness.",
+          "description": "Slightly rounded corners to make the highly technical content feel approachable and human-centric."
+        },
+        "shadows": {
+          "card_resting": "0 2px 4px rgba(0,0,0,0.04)",
+          "card_hover": "0 10px 15px rgba(0,0,0,0.08)",
+          "description": "Soft, diffused drop shadows to gently lift elements off the warm lab background, establishing a clear Z-axis and hierarchy."
+        },
+        "spacing": {
+          "base_unit": "8px",
+          "section_padding": "96px",
+          "element_gap": "24px",
+          "description": "Generous macro-whitespace between sections to allow the user to breathe, with tighter micro-spacing within component groups to associate related data."
+        }
+      }
+    }
+  }
+}

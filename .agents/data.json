@@ -4,18 +4,18 @@
       "page_title": "Solbion | The Materials Data Consortium",
       "meta_description": "Fuel your materials AI with ground-truth physical reality. Subscribe to the world’s highest-fidelity stream of standardized material synthesis and failure data.",
       "global_styles": {
-        "theme": "Dark Tech Industrial",
+        "theme": "Warm Clinical Light",
         "colors": {
-          "background": "#12161A",
-          "text_primary": "#FFFFFF",
-          "accent_action": "#00F0FF",
-          "neutral_baseline": "#333F4A",
+          "background": "#FAFAFA",
+          "text_primary": "#1A202C",
+          "accent_action": "#005E7A",
+          "neutral_baseline": "#E2E8F0",
           "code_block_bg": "#0D1115",
           "syntax_highlight": "#F1FA8C"
         },
         "typography": {
-          "headings": "Space Grotesk / Inter",
-          "body_and_code": "Roboto Mono / Fira Code"
+          "headings": "Inter",
+          "body_and_code": "Inter / JetBrains Mono"
         }
       }
     },
@@ -23,7 +23,7 @@
       {
         "section_id": "global_navigation",
         "component_type": "Navbar",
-        "layout": "Sticky top-bar, solid Carbon Black background.",
+        "layout": "Sticky top-bar, solid off-white background.",
         "content": {
           "logo": {
             "alt_text": "Solbion Lattice Matrix Icon",
@@ -38,12 +38,12 @@
         "layout": "Left-aligned technical typography. Right side features a scrolling, syntax-highlighted terminal window streaming live data logs.",
         "content": {
           "super_header": "THE DATA CONSORTIUM",
-          "headline": "Simulation is just a guess.",
+          "headline": "Complement simulation with physical reality.",
           "subheadline": "Ground your internal AI models in thousands of physical, standardized data points. We provide the highest-fidelity, machine-readable training data for materials science, mapping both breakthroughs and invaluable synthesis failures.",
           "primary_cta": {
             "label": "Read the API Docs",
             "url": "/docs/api",
-            "style": "Solid, Laser Cyan Fill"
+            "style": "Solid, Deep Teal Fill"
           },
           "secondary_cta": {
             "label": "View Data Schema",
@@ -127,14 +127,14 @@
       {
         "section_id": "closing_call_to_action",
         "component_type": "CenteredFocusBox",
-        "layout": "Solid Steel Grey block container inside Carbon Black viewport.",
+        "layout": "Solid off-white block container inside clean viewport.",
         "content": {
-          "header": "Stop modeling in a vacuum.",
-          "body": "Your active learning algorithms are only as good as the physical data feeding them. Connect to the Solbion database and start mapping reality.",
+          "header": "Ground your models in physical data.",
+          "body": "Active learning and physical simulation thrive on high-quality empirical data. Connect to the Solbion database to train your algorithms on verified experimental loops.",
           "button": {
             "label": "Generate API Key",
             "url": "/dashboard/register",
-            "style": "Solid, Laser Cyan Fill, Centered"
+            "style": "Solid, Deep Teal Fill, Centered"
           }
         }
       },

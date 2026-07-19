@@ -4,16 +4,16 @@
       "page_title": "Solbion | About the Team",
       "meta_description": "We are a team of engineers, scientists, and business developers with decades of collective experience in deep tech automation, scientific instrumentation, and materials commercialization.",
       "global_styles": {
-        "theme": "Dark Tech Industrial",
+        "theme": "Warm Clinical Light",
         "colors": {
-          "background": "#12161A",
-          "text_primary": "#FFFFFF",
-          "accent_action": "#00F0FF",
-          "neutral_baseline": "#333F4A"
+          "background": "#FAFAFA",
+          "text_primary": "#1A202C",
+          "accent_action": "#005E7A",
+          "neutral_baseline": "#E2E8F0"
         },
         "typography": {
-          "headings": "Space Grotesk / Inter",
-          "body_and_data": "Roboto Mono / Fira Code"
+          "headings": "Inter",
+          "body_and_data": "Inter / JetBrains Mono"
         }
       }
     },
@@ -21,7 +21,7 @@
       {
         "section_id": "global_navigation",
         "component_type": "Navbar",
-        "layout": "Sticky top-bar, solid Carbon Black background.",
+        "layout": "Sticky top-bar, solid off-white background.",
         "content": {
           "logo": {
             "alt_text": "Solbion Lattice Matrix Icon",
@@ -37,11 +37,11 @@
         "content": {
           "super_header": "OUR DNA",
           "headline": "Engineered by Experience.",
-          "subheadline": "We are not software developers guessing at physics. We are a team of scientists, hardware engineers, and technical business developers with decades of experience building, automating, and commercializing high-end scientific instrumentation.",
+          "subheadline": "We are a multidisciplinary team of scientists, hardware engineers, and developers with decades of collective experience building, automating, and commercializing high-fidelity scientific instrumentation.",
           "primary_cta": {
             "label": "Partner With Us",
             "url": "/contact",
-            "style": "Solid, Laser Cyan Fill"
+            "style": "Solid, Deep Teal Fill"
           }
         }
       },
@@ -56,7 +56,7 @@
           },
           "right_column": {
             "heading": "An Open-Architecture Mandate",
-            "body": "We believe the future of R&D belongs to open-source hardware and software. By leveraging frameworks like Python and PyQt, we break open the 'black boxes' of legacy deposition and metrology tools. We provide the transparency, control, and precision required to turn traditional laboratories into autonomous data factories."
+            "body": "We believe the future of R&D belongs to open-source hardware and software. By leveraging frameworks like Python and PyQt, we break open the 'black boxes' of legacy deposition and metrology tools. We provide the transparency, control, and precision required to turn traditional laboratories into autonomous data-driven research nodes."
           }
         }
       },
@@ -89,14 +89,14 @@
       {
         "section_id": "ecosystem_roots",
         "component_type": "CenteredFocusBox",
-        "layout": "Solid Steel Grey block container inside a Carbon Black viewport, featuring minimal graphical accents representing a global network.",
+        "layout": "Solid off-white block container inside a clean viewport, featuring minimal graphical accents representing a global network.",
         "content": {
           "header": "Rooted in Amsterdam. Built for global R&D.",
           "body": "Headquartered in the Netherlands, Solbion is deeply integrated into the European deep tech and semiconductor ecosystem. We partner with global foundries, Tier 1 suppliers, and leading academic institutions to push the boundaries of automated materials discovery.",
           "button": {
             "label": "Get in Touch",
             "url": "/contact",
-            "style": "Outline, Titanium White"
+            "style": "Solid, Deep Teal Fill, Centered"
           }
         }
       },

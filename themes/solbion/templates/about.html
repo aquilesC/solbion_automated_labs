@@ -6,22 +6,22 @@
 
 {% block content %}
 <!-- About Hero Section -->
-<section class="relative w-full overflow-hidden border-b border-baseline/30 py-24 md:py-32 flex flex-col items-center justify-center text-center bg-bg">
+<section class="relative w-full overflow-hidden border-b border-baseline py-24 md:py-32 flex flex-col items-center justify-center text-center bg-bg">
     <!-- Pulse Lattice Network background decoration -->
-    <div class="absolute inset-0 opacity-15 bg-[linear-gradient(rgba(51,63,74,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(51,63,74,0.1)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none select-none"></div>
+    <div class="absolute inset-0 opacity-15 bg-[linear-gradient(rgba(226,232,240,0.6)_1px,transparent_1px),linear-gradient(90deg,rgba(226,232,240,0.6)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none select-none"></div>
     
     <div class="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
-        <span class="font-mono text-xs font-semibold tracking-[0.22em] text-accent uppercase mb-4 animate-pulse">
+        <span class="font-mono text-xs font-semibold tracking-[0.22em] text-accent-secondary uppercase mb-4">
             {{ ABOUT_SECTIONS.about_hero.content.super_header }}
         </span>
-        <h1 class="font-headers text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight uppercase text-text-primary mb-6 leading-tight drop-shadow-[0_0_20px_var(--color-accent-dim)]">
+        <h1 class="font-headers text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight uppercase text-text-primary mb-6 leading-tight">
             {{ ABOUT_SECTIONS.about_hero.content.headline }}
         </h1>
-        <p class="font-mono text-sm md:text-base text-text-muted leading-relaxed mb-10 max-w-2xl">
+        <p class="font-sans text-base md:text-lg text-text-muted leading-relaxed mb-10 max-w-2xl">
             {{ ABOUT_SECTIONS.about_hero.content.subheadline }}
         </p>
         {% if ABOUT_SECTIONS.about_hero.content.primary_cta %}
-        <a href="{{ SITEURL }}{{ ABOUT_SECTIONS.about_hero.content.primary_cta.url }}" class="inline-flex items-center justify-center px-10 py-4 bg-accent text-bg font-headers text-sm font-bold uppercase tracking-wider rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_25px_var(--color-accent-glow)] transition-all duration-300">
+        <a href="{{ SITEURL }}{{ ABOUT_SECTIONS.about_hero.content.primary_cta.url }}" class="inline-flex items-center justify-center px-10 py-4 bg-accent text-white font-headers text-sm font-bold uppercase tracking-wider rounded-button border border-accent hover:bg-accent-hover hover:border-accent-hover hover:shadow-card-hover transition-all duration-300">
             {{ ABOUT_SECTIONS.about_hero.content.primary_cta.label }}
         </a>
         {% endif %}
@@ -29,25 +29,25 @@
 </section>
 
 <!-- The Solbion Philosophy / TwoColumnText -->
-<section id="the_solbion_philosophy" class="w-full py-24 bg-bg-alt/20 border-b border-baseline/20">
+<section id="the_solbion_philosophy" class="w-full py-24 bg-bg-alt/40 border-b border-baseline">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         
         <!-- Left Column -->
-        <div class="border-l-2 border-baseline/40 pl-6 lg:pl-8 flex flex-col gap-4">
+        <div class="border-l-2 border-baseline pl-6 lg:pl-8 flex flex-col gap-4">
             <h2 class="font-headers text-2xl font-bold uppercase text-text-primary tracking-tight">
                 {{ ABOUT_SECTIONS.the_solbion_philosophy.content.left_column.heading }}
             </h2>
-            <p class="font-mono text-sm text-text-muted leading-relaxed">
+            <p class="font-sans text-base text-text-muted leading-relaxed">
                 {{ ABOUT_SECTIONS.the_solbion_philosophy.content.left_column.body }}
             </p>
         </div>
         
         <!-- Right Column -->
         <div class="border-l-2 border-accent pl-6 lg:pl-8 flex flex-col gap-4">
-            <h2 class="font-headers text-2xl font-bold uppercase text-accent tracking-tight drop-shadow-[0_0_10px_var(--color-accent-dim)]">
+            <h2 class="font-headers text-2xl font-bold uppercase text-accent tracking-tight">
                 {{ ABOUT_SECTIONS.the_solbion_philosophy.content.right_column.heading }}
             </h2>
-            <p class="font-mono text-sm text-text-muted leading-relaxed">
+            <p class="font-sans text-base text-text-muted leading-relaxed">
                 {{ ABOUT_SECTIONS.the_solbion_philosophy.content.right_column.body }}
             </p>
         </div>
@@ -58,7 +58,7 @@
 <!-- Core Expertise / Pillars -->
 <section id="core_expertise" class="max-w-7xl mx-auto px-6 py-24">
     <div class="mb-16 text-center lg:text-left">
-        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase block mb-3">
             {{ ABOUT_SECTIONS.core_expertise.content.section_tag }}
         </span>
         <h2 class="font-headers text-3xl font-bold tracking-tight uppercase text-text-primary">
@@ -69,9 +69,9 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {% if ABOUT_SECTIONS.core_expertise.content.pillars %}
             {% for pillar in ABOUT_SECTIONS.core_expertise.content.pillars %}
-                <div class="border border-baseline/30 bg-bg-alt/30 p-8 rounded flex flex-col items-start transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_15px_var(--color-accent-dim)] group relative">
+                <div class="border border-baseline bg-card p-8 rounded-card flex flex-col items-start transition-all duration-300 shadow-card-resting hover:border-accent/50 hover:shadow-card-hover group relative">
                     <!-- Dynamic Icon based on value in spec -->
-                    <div class="w-10 h-10 rounded border border-baseline/30 flex items-center justify-center mb-6 group-hover:border-accent/50 group-hover:bg-accent/5 transition-all duration-300">
+                    <div class="w-10 h-10 rounded border border-baseline flex items-center justify-center mb-6 group-hover:border-accent/50 group-hover:bg-accent/10 transition-all duration-300">
                         {% if pillar.icon == "Cpu" %}
                             <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <rect x="4" y="4" width="16" height="16" rx="2" />
@@ -91,7 +91,7 @@
                     <h3 class="font-headers text-lg font-bold uppercase text-text-primary mb-4">
                         {{ pillar.title }}
                     </h3>
-                    <p class="font-mono text-xs text-text-muted leading-relaxed">
+                    <p class="font-sans text-sm text-text-muted leading-relaxed">
                         {{ pillar.description }}
                     </p>
                 </div>
@@ -101,20 +101,20 @@
 </section>
 
 <!-- Ecosystem Roots / Centered Focus Box -->
-<section id="ecosystem_roots" class="max-w-7xl mx-auto px-6 py-24 border-t border-baseline/20">
+<section id="ecosystem_roots" class="max-w-7xl mx-auto px-6 py-24 border-t border-baseline">
     {% if ABOUT_SECTIONS.ecosystem_roots %}
-        <div class="relative border border-baseline/40 bg-bg-alt/60 p-10 md:p-16 rounded text-center flex flex-col items-center max-w-4xl mx-auto overflow-hidden group hover:border-accent/40 transition-colors duration-300">
+        <div class="relative border border-baseline bg-card p-10 md:p-16 rounded-card text-center flex flex-col items-center max-w-4xl mx-auto overflow-hidden shadow-card-resting group hover:border-accent/40 transition-all duration-300">
             <!-- Background dot highlights -->
-            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-baseline)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+            <div class="absolute inset-0 opacity-5 bg-[radial-gradient(var(--color-text-tertiary)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
             
             <h2 class="font-headers text-3xl md:text-4xl font-bold tracking-tight uppercase text-text-primary mb-4 z-10">
                 {{ ABOUT_SECTIONS.ecosystem_roots.content.header }}
             </h2>
-            <p class="font-mono text-sm text-text-muted leading-relaxed mb-8 max-w-2xl z-10">
+            <p class="font-sans text-base text-text-muted leading-relaxed mb-8 max-w-2xl z-10">
                 {{ ABOUT_SECTIONS.ecosystem_roots.content.body }}
             </p>
             {% if ABOUT_SECTIONS.ecosystem_roots.content.button %}
-                <a href="{{ SITEURL }}{{ ABOUT_SECTIONS.ecosystem_roots.content.button.url }}" class="inline-flex items-center justify-center px-8 py-3 border border-text-primary text-text-primary font-headers text-xs font-semibold uppercase tracking-wider rounded hover:border-accent hover:text-accent hover:shadow-[0_0_20px_var(--color-accent-glow)] transition-all duration-300 z-10">
+                <a href="{{ SITEURL }}{{ ABOUT_SECTIONS.ecosystem_roots.content.button.url }}" class="inline-flex items-center justify-center px-8 py-3 border border-text-primary text-text-primary font-headers text-xs font-semibold uppercase tracking-wider rounded-button hover:border-accent hover:bg-accent hover:text-white transition-all duration-300 z-10">
                     {{ ABOUT_SECTIONS.ecosystem_roots.content.button.label }}
                 </a>
             {% endif %}

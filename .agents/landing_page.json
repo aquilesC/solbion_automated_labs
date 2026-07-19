@@ -4,16 +4,16 @@
       "page_title": "Solbion | Autonomous Materials Discovery Platform",
       "meta_description": "Solbion bridges the gap between physical hardware and AI orchestration. Explore our autonomous ecosystem through System Integration, Lab-as-a-Service, and the Data Consortium.",
       "global_styles": {
-        "theme": "Dark Tech Industrial",
+        "theme": "Warm Clinical Light",
         "colors": {
-          "background": "#12161A",
-          "text_primary": "#FFFFFF",
-          "accent_action": "#00F0FF",
-          "neutral_baseline": "#333F4A"
+          "background": "#FAFAFA",
+          "text_primary": "#1A202C",
+          "accent_action": "#005E7A",
+          "neutral_baseline": "#E2E8F0"
         },
         "typography": {
-          "headings": "Space Grotesk / Inter (Geometric Sans-Serif)",
-          "body_and_data": "Roboto Mono / Fira Code (Monospaced)"
+          "headings": "Inter (Geometric Sans-Serif)",
+          "body_and_data": "Inter / JetBrains Mono (Monospaced)"
         }
       }
     },
@@ -21,7 +21,7 @@
       {
         "section_id": "global_navigation",
         "component_type": "Navbar",
-        "layout": "Sticky, horizontal top-bar, transparent background transitioning to solid Carbon Black on scroll",
+        "layout": "Sticky, horizontal top-bar, transparent background transitioning to solid off-white on scroll",
         "content": {
           "logo": {
             "alt_text": "Solbion Lattice Matrix Icon",
@@ -37,7 +37,7 @@
           "cta_button": {
             "label": "Access API",
             "url": "/api",
-            "style": "Outline, Titanium White"
+            "style": "Outline, Deep Teal"
           }
         }
       },
@@ -46,12 +46,12 @@
         "component_type": "HeroSplit",
         "layout": "Two-column viewport height container. Left: Typography and primary actions. Right: Animated interactive vector graphic.",
         "content": {
-          "headline": "Mapping the physical world at the speed of software.",
-          "subheadline": "Solbion is an autonomous ecosystem for materials discovery. We combine combinatorial synthesis, automated metrology, and active learning to completely eliminate human bottlenecks from deep tech R&D.",
+          "headline": "Accelerating material discovery through collaborative automation.",
+          "subheadline": "Solbion is a collaborative platform for automated materials discovery. We link experimental hardware with shared active learning loops to help research teams explore multi-dimensional search spaces together.",
           "primary_cta": {
             "label": "Request an R&D Pilot",
             "url": "/contact?intent=laas",
-            "style": "Solid, Laser Cyan Fill"
+            "style": "Solid, Deep Teal Fill"
           },
           "secondary_cta": {
             "label": "Explore the Platform",
@@ -60,7 +60,7 @@
           },
           "visual_element": {
             "type": "Interactive Canvas / SVG Animation",
-            "description": "Subtly pulsing, interactive Laser Cyan active paths navigating a dark Steel Grey hexagonal lattice matrix background.",
+            "description": "Subtly pulsing, interactive Deep Teal active paths navigating a light Grey hexagonal lattice matrix background.",
             "source_placeholder": "/assets/animations/hero-lattice.js"
           }
         }
@@ -72,13 +72,13 @@
         "content": {
           "section_tag": "THE INFRASTRUCTURE GAP",
           "header": "The 10-Year Bottleneck",
-          "body_paragraph": "Every breakthrough in your technology roadmap is currently waiting on a material science bottleneck. Legacy, sequential, human-driven trial-and-error is obsolete. Blindly searching an infinite multi-dimensional chemical space costs fortunes and takes decades. R&D teams need speed-to-data, ground-truth physical feedback, and automated workflows."
+          "body_paragraph": "Every breakthrough in clean energy, semiconductors, and catalysis depends on discovering the right materials. Traditional sequential trial-and-error is slow and isolates researchers. Solbion accelerates this process by introducing open active learning loops and automated feedback, transforming materials screening into a shared, digital roadmap."
         }
       },
       {
         "section_id": "portal_section",
         "component_type": "ThreeColumnFeatureGrid",
-        "layout": "Horizontal row featuring three structurally identical geometric cards. Hover state highlights card border with Laser Cyan.",
+        "layout": "Horizontal row featuring three structurally identical geometric cards. Hover state highlights card border with Deep Teal.",
         "content": {
           "section_tag": "THE SOLBION ECOSYSTEM",
           "header": "Choose Your Interface",
@@ -126,7 +126,7 @@
         "content": {
           "section_tag": "COMMERCIAL TRUST",
           "header": "The Split-IP Framework",
-          "body_paragraph": "We treat information as a shared mental context, protecting your commercial advantages while expanding our data flywheel. You retain complete ownership of the destination; we retain the optimization capabilities of the map.",
+          "body_paragraph": "We design discovery as a collaborative partnership, protecting your proprietary breakthroughs while enriching the open materials database. You own the specific material formulations; we share the optimization models that help you find them faster.",
           "bullet_points": [
             {
               "title": "Your Foreground IP",
@@ -146,14 +146,14 @@
       {
         "section_id": "closing_call_to_action",
         "component_type": "CenteredFocusBox",
-        "layout": "Solid Steel Grey block container floating centered inside a Carbon Black viewport. Clean, loud typography.",
+        "layout": "Solid off-white block container floating centered inside a clean viewport. Clean, loud typography.",
         "content": {
-          "header": "Stop searching blindly. Start mapping.",
-          "body": "Collapse your multi-year material innovation timelines down to weeks. Partner with Solbion to build your custom autonomous workcell, run a high-throughput pilot, or access ground-truth training data.",
+          "header": "Explore the materials landscape together.",
+          "body": "Bring speed and transparency to your materials development. Let's design custom automated setups, run high-throughput campaigns, or share standardized datasets to move clean science forward.",
           "button": {
-            "label": "Initiate Integration Briefing",
+            "label": "Book a Scoping Session",
             "url": "/contact",
-            "style": "Solid, Laser Cyan Fill, Centered"
+            "style": "Solid, Deep Teal Fill, Centered"
           }
         }
       },
