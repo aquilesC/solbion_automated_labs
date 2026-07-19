@@ -7,13 +7,16 @@
     "build:css": "tailwindcss -i themes/solbion/static/css/src/style.css -o themes/solbion/static/css/style.css",
     "watch:css": "tailwindcss -i themes/solbion/static/css/src/style.css -o themes/solbion/static/css/style.css --watch",
     "build": "npm run build:css && pelican content",
-    "dev": "concurrently \"npm run watch:css\" \"pelican -r -l -p 8123\""
+    "dev": "concurrently \"npm run watch:css\" \"pelican -r -l -p 8123\"",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.0",
     "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "wrangler": "^4.112.0"
   }
 }
