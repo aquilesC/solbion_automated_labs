@@ -7,18 +7,18 @@
 {% block content %}
 
 <!-- Hero Section -->
-<section class="relative w-full overflow-hidden border-b border-baseline/30 py-16 md:py-24 bg-bg">
+<section class="relative w-full overflow-hidden border-b border-baseline py-16 md:py-24 bg-bg">
     <!-- Low-opacity grid background -->
-    <div class="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(51,63,74,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(51,63,74,0.15)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none"></div>
+    <div class="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(226,232,240,0.6)_1px,transparent_1px),linear-gradient(90deg,rgba(226,232,240,0.6)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none"></div>
     
     <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
-        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent uppercase block mb-3 animate-pulse">
+        <span class="font-mono text-xs font-semibold tracking-[0.2em] text-accent-secondary uppercase block mb-3">
             DEVELOPER PREVIEW
         </span>
-        <h1 class="font-headers text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] uppercase text-text-primary mb-6 drop-shadow-[0_0_15px_var(--color-accent-dim)]">
+        <h1 class="font-headers text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] uppercase text-text-primary mb-6">
             Access The Network
         </h1>
-        <p class="font-mono text-sm md:text-base text-text-muted leading-relaxed mx-auto max-w-2xl">
+        <p class="font-sans text-base md:text-lg text-text-muted leading-relaxed mx-auto max-w-2xl">
             Register your interest to join the early access program for our autonomous orchestration APIs and the materials Data Consortium. We are onboarding technical teams directly integrating with our hardware and data layers.
         </p>
     </div>
@@ -27,24 +27,24 @@
 <!-- Main Form Section -->
 <section class="max-w-3xl mx-auto px-6 py-16 md:py-24">
     <!-- Form Container -->
-    <div class="relative bg-bg-alt/40 backdrop-blur-md border border-baseline/40 rounded-xl p-8 md:p-12 shadow-2xl overflow-hidden group hover:border-accent/40 transition-all duration-500">
+    <div class="relative border border-baseline bg-card p-8 md:p-12 rounded-card overflow-hidden shadow-card-resting hover:border-baseline/80 hover:shadow-card-hover transition-all duration-300">
         
         <!-- Top accent line -->
-        <div class="absolute top-0 left-0 h-[2px] w-full bg-gradient-to-r from-transparent via-accent to-transparent opacity-50"></div>
+        <div class="absolute top-0 left-0 h-[3px] w-full bg-gradient-to-r from-transparent via-accent/20 to-transparent"></div>
         
         <!-- Formspree success container -->
         <div data-fs-success class="hidden flex-col items-center justify-center text-center py-8">
-            <div class="w-16 h-16 rounded-full border border-accent flex items-center justify-center mb-6 shadow-[0_0_15px_var(--color-accent-dim)]">
+            <div class="w-16 h-16 rounded-full border-2 border-accent flex items-center justify-center mb-6">
                 <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
             </div>
             <h3 class="font-headers text-2xl font-bold uppercase text-text-primary mb-3">Transmission Received</h3>
-            <p class="font-mono text-sm text-text-muted leading-relaxed max-w-md">
+            <p class="font-sans text-sm text-text-muted leading-relaxed max-w-md">
                 Your request for API access has been logged in our system. A technical integration specialist will contact you with provisioning details.
             </p>
-            <div class="mt-8 bg-[#12161A] border border-baseline/35 px-4 py-2 rounded font-mono text-[10px] text-accent uppercase tracking-widest inline-flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-accent animate-status-blink"></span>
+            <div class="mt-8 bg-bg-alt border border-baseline px-4 py-2 rounded font-mono text-[10px] text-text-muted uppercase tracking-widest inline-flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-accent-secondary animate-status-blink"></span>
                 STATUS: 200 OK
             </div>
         </div>
@@ -58,7 +58,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Name -->
                 <div class="flex flex-col gap-2">
-                    <label for="name" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">Developer Name</label>
+                    <label for="name" class="font-mono text-[10px] text-text-tertiary uppercase tracking-wider">Developer Name</label>
                     <input 
                         type="text" 
                         id="name" 
@@ -66,14 +66,14 @@
                         required 
                         data-fs-field
                         placeholder="John Doe"
-                        class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
+                        class="w-full bg-white border border-baseline text-text-primary px-4 py-3 rounded-button focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-sans text-sm transition-all duration-300 placeholder:text-text-tertiary/40 aria-[invalid=true]:!border-red-500 aria-[invalid=true]:!ring-red-500"
                     />
                     <span data-fs-error="name" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
                 </div>
                 
                 <!-- Email -->
                 <div class="flex flex-col gap-2">
-                    <label for="email" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">Work Email</label>
+                    <label for="email" class="font-mono text-[10px] text-text-tertiary uppercase tracking-wider">Work Email</label>
                     <input 
                         type="email" 
                         id="email" 
@@ -81,7 +81,7 @@
                         required 
                         data-fs-field
                         placeholder="john@organization.com"
-                        class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
+                        class="w-full bg-white border border-baseline text-text-primary px-4 py-3 rounded-button focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-sans text-sm transition-all duration-300 placeholder:text-text-tertiary/40 aria-[invalid=true]:!border-red-500 aria-[invalid=true]:!ring-red-500"
                     />
                     <span data-fs-error="email" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
                 </div>
@@ -89,21 +89,21 @@
 
             <!-- Organization -->
             <div class="flex flex-col gap-2">
-                <label for="organization" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">Organization / Domain</label>
+                <label for="organization" class="font-mono text-[10px] text-text-tertiary uppercase tracking-wider">Organization / Domain</label>
                 <input 
                     type="text" 
                     id="organization" 
                     name="organization" 
                     data-fs-field
                     placeholder="E.g., Quantum Materials Inc."
-                    class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
+                    class="w-full bg-white border border-baseline text-text-primary px-4 py-3 rounded-button focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-sans text-sm transition-all duration-300 placeholder:text-text-tertiary/40 aria-[invalid=true]:!border-red-500 aria-[invalid=true]:!ring-red-500"
                 />
                 <span data-fs-error="organization" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
             </div>
 
             <!-- Use Case / Message -->
             <div class="flex flex-col gap-2">
-                <label for="message" class="font-mono text-[10px] text-text-muted uppercase tracking-wider">Intended Use Case</label>
+                <label for="message" class="font-mono text-[10px] text-text-tertiary uppercase tracking-wider">Intended Use Case</label>
                 <textarea 
                     id="message" 
                     name="message" 
@@ -111,7 +111,7 @@
                     data-fs-field
                     rows="4"
                     placeholder="Describe your technical requirements and data infrastructure..."
-                    class="w-full bg-[#0d1115] border border-baseline/50 text-text-primary px-4 py-3 rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 font-mono text-xs transition-all duration-300 placeholder:text-text-muted/30 resize-y aria-[invalid=true]:!border-[#f87171] aria-[invalid=true]:!shadow-[0_0_10px_rgba(248,113,113,0.15)]"
+                    class="w-full bg-white border border-baseline text-text-primary px-4 py-3 rounded-button focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-sans text-sm transition-all duration-300 placeholder:text-text-tertiary/40 resize-y aria-[invalid=true]:!border-red-500 aria-[invalid=true]:!ring-red-500"
                 ></textarea>
                 <span data-fs-error="message" class="text-red-400 font-mono text-[10px] mt-1 block"></span>
             </div>
@@ -120,7 +120,7 @@
             <button 
                 type="submit" 
                 data-fs-submit-btn
-                class="w-full mt-2 inline-flex items-center justify-center px-8 py-3.5 bg-accent text-bg font-headers text-xs font-bold uppercase tracking-widest rounded border border-accent hover:bg-transparent hover:text-accent hover:shadow-[0_0_20px_var(--color-accent-glow)] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+                class="w-full mt-2 inline-flex items-center justify-center px-8 py-3.5 bg-accent text-white font-headers text-xs font-bold uppercase tracking-widest rounded-button border border-accent hover:bg-accent-hover hover:border-accent-hover hover:shadow-card-hover cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
             >
                 Request Provisioning
             </button>
